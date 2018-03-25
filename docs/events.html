@@ -1,0 +1,215 @@
+<div class="main-frame" data-title="事件钩子">
+    <article class="main-container">
+        <div class="page-header"><h1>事件钩子</h1></div>
+
+        <div id="topEvents" class="container-fluid" data-title="顶部栏按钮事件">
+            <h2 class="text-primary">顶部栏按钮事件</h2>
+            <p class="indent28 f16">以下是当工具栏按钮被点击时触发的事件定义(虚函数)，只有初始化GooFlow实例时设置了顶部栏，这些事件钩子才存在。因为可直接用<code>this</code>访问GooFlow实例本身，无传参；用户可自行重定义。</p>
+            <p class="indent28 f16">另外，用户还可通过GooFlow实例内置的<code>bindHeadBtnEvent</code>接口，自行扩展另外自定义的头部按钮的点击事件。</p>
+            这些事件钩子的使用方法：
+            <pre><code class="language-javascript">    instance.myEvent = function(){
+        this;  //GooFlow实例本身
+        //TODO: 事件响应的实现
+    };</code></pre>
+            <div id="onBtnNewClick" class="container-fluid" data-title="onBtnNewClick">
+                <h3><span class="text-gray">this.</span>onBtnNewClick() <small>返回值：void</small></h3>
+                <p class="indent28 f16">新建流程图按钮事件定义。</p>
+            </div>
+            <div id="onBtnOpenClick" class="container-fluid" data-title="onBtnOpenClick">
+                <h3><span class="text-gray">this.</span>onBtnOpenClick() <small>返回值：void</small></h3>
+                <p class="indent28 f16">打开流程图按钮事件定义。</p>
+            </div>
+            <div id="onBtnSaveClick" class="container-fluid" data-title="onBtnSaveClick">
+                <h3><span class="text-gray">this.</span>onBtnSaveClick() <small>返回值：void</small></h3>
+                <p class="indent28 f16">保存流程图按钮事件定义。</p>
+            </div>
+            <div id="onFreshClick" class="container-fluid" data-title="onFreshClick">
+                <h3><span class="text-gray">this.</span>onFreshClick() <small>返回值：void</small></h3>
+                <p class="indent28 f16">刷新重载流程图按钮事件定义。</p>
+            </div>
+            <div id="onPrintClick" class="container-fluid" data-title="onPrintClick">
+                <h3><span class="text-gray">this.</span>onPrintClick() <small>返回值：void</small></h3>
+                <p class="indent28 f16">打印机按钮事件定义。</p>
+            </div>
+        </div>
+
+        <div id="elEvents" class="container-fluid" data-title="流程图元素事件">
+            <h2 class="text-primary">流程图元素事件</h2>
+            <p class="indent28 f16">以下绑定的是节点/连线/分组泳道的一些操作事件，用户可自行重定义。这些事件可直接通过<code>this</code>访问GooFlow实例本身；并且这些事件触发的方法若返回<code>false</code>将阻止默认操作或事件发生。</p>
+            这些事件钩子的使用方法：
+            <pre><code class="language-javascript">    instance.myEvent = function( args[] ){
+        this;  //GooFlow实例本身
+        //TODO: 事件响应的实现
+        return bool; //根据实例情况返回false阻止默认事件，或者返回其它值让默认事件发生
+    };</code></pre>
+
+            <div id="onItemFocus" class="container-fluid" data-title="onItemFocus">
+                <h3><span class="text-gray">this.</span>onItemFocus() <small>返回值：boolean</small></h3>
+                <p class="indent28">当操作某个元素（节点/连线）被由不选中变成选中时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线两种。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemBlur" class="container-fluid" data-title="onItemBlur">
+                <h3><span class="text-gray">this.</span>onItemBlur() <small>返回值：boolean</small></h3>
+                <p class="indent28">当操作某个元素（节点/连线）被由选中变成不选中时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线两种。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemMark" class="container-fluid" data-title="onItemMark">
+                <h3><span class="text-gray">this.</span>onItemMark() <small>返回值：boolean</small></h3>
+                <p class="indent28">当用醒目颜色标注某个元素（节点/连线）时触发的方法法。</p>
+                <p class="f16">传参：<code>( id, type, mark )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线两种。</td></tr>
+                    <tr><td class="text-primary f16">mark</td><td>Boolean</td><td class="text-muted text-left">是否加标注。是则<code>true</code>，否则<code>false</code>。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemDbClick" class="container-fluid" data-title="onItemDbClick">
+                <h3><span class="text-gray">this.</span>onItemDbClick() <small>返回值：boolean</small></h3>
+                <p class="indent28">当操作某个元素（节点/连线/分组泳道）被双击时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemRightClick" class="container-fluid" data-title="onItemRightClick">
+                <h3><span class="text-gray">this.</span>onItemRightClick() <small>返回值：boolean</small></h3>
+                <p class="indent28">当操作某个元素（节点/连线/分组泳道）被右键单击时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="onItemAdd" class="container-fluid" data-title="onItemAdd">
+                <h3><span class="text-gray">this.</span>onItemAdd() <small>返回值：boolean</small></h3>
+                <p class="indent28">当某个元素（节点/连线/分组泳道）被添加时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type, json )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    <tr><td class="text-primary f16">json</td><td>[ NodeItem | LineItem | AreaItem ]</td><td class="text-muted text-left">描述元素的相应结构数据。
+                        当元素是节点时为<code>NodeItem</code>型数据；当元素是连线时为<code>LineItem</code>型数据；当元素是分组泳道时为<code>AreaItem</code>型数据。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemDel" class="container-fluid" data-title="onItemDel">
+                <h3><span class="text-gray">this.</span>onItemDel() <small>返回值：boolean</small></h3>
+                <p class="indent28">当某个元素（节点/连线/分组泳道）被删除时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemMove" class="container-fluid" data-title="onItemMove">
+                <h3><span class="text-gray">this.</span>onItemMove() <small>返回值：boolean</small></h3>
+                <p class="indent28">当某个元素（节点/分组泳道）被移动至新位置时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type, left, top )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'area'</code>分组泳道两种。</td></tr>
+                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-muted text-left">元素在新位置上的相对于工作区的左边距，单位像素。</td></tr>
+                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-muted text-left">元素在新位置上的相对于工作区的上边距，单位像素。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemRename" class="container-fluid" data-title="onItemRename">
+                <h3><span class="text-gray">this.</span>onItemRename() <small>返回值：boolean</small></h3>
+                <p class="indent28">当某个元素（节点/连线/分组泳道）被重命名时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, name, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-muted text-left">元素的新名称（name属性的新值）。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onItemResize" class="container-fluid" data-title="onItemResize">
+                <h3><span class="text-gray">this.</span>onItemResize() <small>返回值：boolean</small></h3>
+                <p class="indent28">当某个元素（节点/分组泳道）被移动至新位置时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type, width, height )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的种类，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">元素的新宽度，单位像素；元素为节点时最小<code>104px</code>，元素为分组泳道时最小<code>200px</code>。</td></tr>
+                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">元素的新高度，单位像素；元素为节点时最小<code>26px</code>，元素为分组泳道时最小<code>100px</code>。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onLineMove" class="container-fluid" data-title="onLineMove">
+                <h3><span class="text-gray">this.</span>onLineMove() <small>返回值：boolean</small></h3>
+                <p class="indent28">当移动某条折线中段的位置时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, M )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">连线的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-muted text-left">折线中段的新X坐标（当<code>type='lr'</code>时）或者新y坐标（当<code>type='tb'</code>时），单位像素。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onLineSetType" class="container-fluid" data-title="onLineSetType">
+                <h3><span class="text-gray">this.</span>onLineSetType() <small>返回值：boolean</small></h3>
+                <p class="indent28">当变换某条连线的类型时，触发的方法。</p>
+                <p class="f16">传参：<code>( id, type )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">连线的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">连线的新类型，有三种：<code>'sl'</code>直线；<code>'lr'</code>中段可左右移动的折线'；<code>'tb'</code>中段可上下移动的折线有直线。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="onLinePointMove" class="container-fluid" data-title="onLinePointMove">
+                <h3><span class="text-gray">this.</span>onLinePointMove() <small>返回值：boolean</small></h3>
+                <p class="indent28">当变换某条连线的端点连接的节点时（即某端点由连着节点A改成连着节点B），触发的方法。</p>
+                <p class="f16">传参：<code>( id, newStart, newEnd )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">连线的id，唯一标识。</td></tr>
+                    <tr><td class="text-primary f16">newStart</td><td>String</td><td class="text-muted text-left">新的起始节点的id；如果为<code>null</code>则表示原端点不变。</td></tr>
+                    <tr><td class="text-primary f16">newEnd</td><td>String</td><td class="text-muted text-left">新的目标节点的id；如果为<code>null</code>则表示原端点不变。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+</div>

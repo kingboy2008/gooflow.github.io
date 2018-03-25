@@ -1,0 +1,91 @@
+<div class="main-frame" data-title="快速入门">
+    <article class="main-container">
+        <div class="page-header"><h1>GooFlow 使用文档 <small id="myVersion">v1.3.x</small></h1></div>
+        <p class="text-muted f16">本站内容为在线文档，各位记得收藏本站哦！</p>
+        <div id="overview" class="container-fluid" data-title="概述">
+            <div class="row mgb15">
+                <div class="col-md-8 col-ms-12">
+                    <h2 class="text-primary">概述</h2>
+                    <p class="indent28 f16">
+                        GooFlow是一个极易上手、使用方便、界面美观的网页端流程设计器，基于Jquery开发，继承了类似PhotoShop的操作体验习惯。
+                        它能将一个流程以特定的Json格式描述出来并展示给用户，提供丰富的操作功能让用户即时查看或编辑，并通过提供丰富的接口让其很容易被订制扩展成为一个在线的IDE。
+                        相信无论是开发者还是最终用户，都会爱上GooFlow。
+                    </p>
+                </div>
+                <div class="col-md-4 hidden-xs hidden-sm text-center"><img style="width:170px;margin-top:40px" src="../assets/img/logo_big.png"></div>
+            </div>
+        </div>
+        <div id="install" class="container-fluid" data-title="快速安装">
+            <h2 class="text-primary">快速安装</h2>
+            <p>确保你的本机已正确安装了<code>node.js</code>和<code>npm</code>。</p>
+            <p>首先从GitHub或才Gitee上把项目checkout到本地，然后就能运行安装命令了。</p>
+            <pre>$ npm install</pre>
+            <p>然后再运行构建命令:</p>
+            <pre>$ npm run build</pre>
+            <p>这时就会在dist目录下生成最新的GooFlow压缩包文件了。最后启动项目自带的http-server程序，开启本机静态Web服务:</p>
+            <pre>$ npm run start</pre>
+            <p>浏览器将自动打开项目主页，从上面的实例链接中即可打开浏览当前自带的几个演示实例。</p>
+        </div>
+        <div id="simpleEg" class="container-fluid" data-title="首个实例">
+            <h2 class="text-primary">首个实例</h2>
+            <p>接下来让我们写出第一个最简单的实例。</p>
+            <p>demo.html中，引入jquery、GooFlow样式文件和核心库文件</p>
+            <pre><code class="language-markup">&lt;!-- demo.html --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="./dist/GooFlow.min.css"/>
+&lt;/head>
+&lt;body&gt;
+    &lt;div id="demo">&lt;/div>
+    ……
+    &lt;script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./demo.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+            <pre><code class="language-javascript">//// demo.js
+    var options = {
+        toolBtns:["start round mix","end round","task","node","chat","state","plug","join","fork","complex mix"],
+        haveHead:true,
+        headLabel:true,
+        headBtns:["new","open","save","undo","redo","reload"],//如果haveHead=true，则定义HEAD区的按钮
+        haveTool:true,
+        haveGroup:true,
+        useOperStack:true
+    };
+    var demo = GooFlow.init("#demo",options);</code></pre>
+            <p>打开demo.html，就可以看到一个空白绘图区的设计器页了！体验一下绘画流程图时行云流水的快感。</p>
+            <div style="max-width:800px;" class="center-block"><img src="../assets/img/init.png" class="img-responsive center-block"></div>
+        </div>
+        <div id="uiDesign" class="container-fluid" data-title="界面设计">
+            <h2 class="text-primary">界面设计</h2>
+            <p>如图所示：</p>
+            <div><img src="../assets/img/aaa.png" class="img-responsive center-block"></div><br>
+            <p class="indent28"><b class="text-warning">工作区</b> 宽度高度初始为无滚动条时的大小，鼠标滑到最右/最下边时出现半透层，只要对其点击便可手工扩展工作区。
+                水平X轴方向<span class="text-warning">由左至右</span>，竖直Y轴方向<span class="text-warning">由上至下</span>，与CSS样式中的顶距top和左距left是一样的。
+                当载入一个已绘制好的JSON流程图数据时，工作区宽高也会自适应载入流程图的宽高大小，自动扩展。</p>
+            <p class="indent28"><b class="text-warning">绘制工具栏</b> 在绘图区左边是，从上至下依次为：
+                <span class="text-warning">选择指针、连接线、开始节点、结束节点、任务节点、自动节点、决策节点、状态节点、扩展附加节点、分支结点、聚合结点、复合子流程结点</span>
+                ；最后一个不是节点，而是节点连线编辑与分组泳道编辑两种工作区状态的切换开关，当切换至分组泳道编辑后，只能操作分组泳道块，节点与连线都被锁定；反之即然。</p>
+            <p class="indent28"><b class="text-warning">顶部操作栏</b> 是展示流程图标题和放置一些功能按钮的地方，这些按钮除了系统自带外，还可由用户自定义。</p>
+            <p class="indent28"><b class="text-warning">初始化时如果设置了不要左边工具栏</b> ，则关闭了编辑功能，该组件就变成了一个流程图查看/跟踪器。</p>
+        </div>
+        <div id="elDesign" class="container-fluid" data-title="绘图区元素">
+            <h2 class="text-primary">绘图区元素</h2>
+            <table class="table table-bordered">
+                <tr style="background:#f9f9f9"><th class="text-center">被选中的节点</th><th class="text-center">被选中的边线</th><th class="text-center">被选中的分组泳道</th></tr>
+                <tr>
+                    <td class="text-center"><img src="../assets/img/node.png"></td>
+                    <td class="text-center"><img src="../assets/img/line.png"></td>
+                    <td class="text-center"><img src="../assets/img/area.png"></td>
+                </tr>
+            </table>
+            <p>结合<b class="text-warning">“界面设计”</b>一节中的完整截图及以上的元素选中样式图例表格，你可以发现：</p>
+            <ul>
+                <li><b class="text-warning">节点</b> 默认为淡蓝色的圆角矩形；若加入了<code>.item_mix</code>类，则显示为绿色；若加入了<code>.item_round</code>类，则显示为圆形。</li>
+                <li><b class="text-warning">节点</b> 一共有双击文字更名、拖动、调整大小、新增、删除的默认功能，可自定义右键单击事件。</li>
+                <li><b class="text-warning">有向连线</b> 有实线和虚线两种，并有直线、中段可上下拖动的折线、中段可左右拖动的折线共三种绘画方式，双击线条可直接编辑线条的文字说明内容，也可手动改变连线的起点或终点。</li>
+                <li><b class="text-warning">分组泳道</b> 需要左下角的开关被按下后才可编辑，有四种随机颜色，点击左上角的圆形图标后可改变颜色，双击文本可直接编辑，也可像节点一样拖动和调整大小。</li>
+            </ul>
+        </div>
+    </article>
+</div>
+<script>$("#myVersion").text($("#version").text())</script>

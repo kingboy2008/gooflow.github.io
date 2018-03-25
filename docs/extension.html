@@ -1,0 +1,67 @@
+<div class="main-frame" data-title="个性化扩展">
+    <article class="main-container">
+        <div class="page-header"><h1>个性化扩展</h1></div>
+        本章节的功能点，之前章节均虽已提到过，但需再次拿出来以介绍实用的技巧。
+
+        <div id="skin" class="container-fluid" data-title="个性化皮肤">
+            <h2 class="text-primary">个性化皮肤</h2>
+            <p>担心GooFlow原生皮肤不适合项目系统UI样式？那就重设置吧。这里提供几种方法：</p>
+            <ol>
+                <li>初始化实例前直接重写修改<code>GooFlow.colors</code>属性。</li>
+                <li>初始化实例前通过<code>GooFlow.setColors</code>接口覆盖部分或全部颜色定义。</li>
+                <li>终极大法：直接修改GooFlow.css源码，然后重新<code> npm run build </code>！</li>
+            </ol>
+        </div>
+
+        <div id="interface" class="container-fluid" data-title="扩展方法接口">
+            <h2 class="text-primary">扩展方法接口</h2>
+            <p>嫌GooFlow实例提供的功能接口不够多？那就扩展新的功能接口吧！</p>
+            <p>使用<code>GooFlow.extend</code>静态方法扩展GooFlow类的功能：<br>
+                只要按以下定义一组新接口方法的Map集：
+            </p>
+            <pre><code class="language-javascript">var myFunctions = {
+    'funcName1':function(arg1){ /*具体方法实现*/ },
+    'funcName2':function(arg1,arg2){ /*具体方法实现*/ },
+    'funcName3':function(){ /*具体方法实现*/ },
+                ……
+};</code></pre>
+            <p>然后在初始化GooFlow实例之前调用，那么接下来生成的GooFlow实例就可以调用这些新方法了。但是要注意：<span class="text-warning">如果定义的方法Map集中有方法名称与原有的方法重名，将会覆盖掉原方法的实现哦！</span></p>
+            <pre><code class="language-javascript">GooFlow.extend( myFunctions );
+var instance = GooFlow.init('selector', options);
+instance.funcName1(arg1);
+instance.funcName2(arg1,arg2);
+……</code></pre>
+            <blockquote><small>顺便说一下，这些自定义方法的内部实现在，同样可以通过<code>this</code>来访问GooFlow实例本身。</small></blockquote>
+        </div>
+
+        <div id="addIcon" class="container-fluid" data-title="新的节点类型图标">
+            <h2 class="text-primary">新的节点类型图标</h2>
+            <p>觉得GooFlow自带的矢量图标不够用？那就自行扩展吧！</p>
+            <p>不管你是使用Css sprite还是新的矢量字体图标，都能同时支持哦！</p>
+            <p>改造步骤：</p>
+            <ol>
+                <li>定义好你的新节点类型名称，如<code>'mylove'</code>。</li>
+                <li>在GooFlow.css或者其它设计器所在页面将会引入的css文件中，定义一个新样式类：
+                    <pre><code class="language-css">    .GooFlow .ico_mylove{ background:…… } /* Css sprite的写法 */
+    .GooFlow .ico_mylove:before{ content:'……' } /* 矢量字体图标的写法 */</code></pre>
+                </li>
+
+                <li>在页面的业务js文件中，当初始化GooFlow实例时，参数设置中的toolBtns数组就可以加上新节点类型名了。
+                    <pre><code class="language-javascript">var options = {
+    toolBtns:[
+        'start',
+        'end',
+        'task',
+        'mylove',
+    ],
+    haveTool:true,
+    ……
+};
+var instance = GooFlow.init('selector', options);</code></pre></li>
+                <li>浏览器打开相关页面，可看到设计器左侧工具栏上多出了自己定义的节点按钮；赶快点击新增一个新类型节点试试吧！</li>
+            </ol>
+            <blockquote><small>注意：如果你既要用Css sprite，又要用导出流程图片文件的方法，请务必确保css sprite方式定义的各节点图标全都只来自同一个背景图片文件！</small></blockquote>
+        </div>
+
+    </article>
+</div>

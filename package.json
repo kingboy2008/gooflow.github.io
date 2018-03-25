@@ -1,0 +1,32 @@
+{
+  "name": "GooFlow",
+  "version": "1.3.2",
+  "description": "Web端流程设计器",
+  "keywords": [
+    "GooFlow",
+    "jquery",
+    "在线流程设计器",
+    "webFlow",
+    "jquery",
+    "flowChart",
+    "flowDesign",
+    "process",
+    "workFlow",
+    "flowGraph",
+    "flowDiagram"
+  ],
+  "author": "foolegg126 (sdlddr)",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "clean": "gulp clean",
+    "start": "http-server -o"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "mocha": "^5.0.4"
+  }
+}

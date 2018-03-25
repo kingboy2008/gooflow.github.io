@@ -1,0 +1,78 @@
+html,body{height:100%}
+/*
+ * Override Bootstrap's default container.
+ */
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif";
+    font-weight: normal; background: #f1f1f1; color:#444;font-size:16px;position: relative
+}
+a {
+    color: #ff6600;
+}
+a:hover, a:focus {
+    color: #ff8800; text-decoration: none;
+}
+pre{font-size:14px}
+.indent28{text-indent:28px}
+.indent32{text-indent:32px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f18{font-size:18px}
+.bg-green{background-color:#84CA04}
+.bg-blue{background-color:#20A0FF}
+.bg-yellow{background-color:#ffd100}
+.bg-orange{background-color:#FF8800}
+.bg-red{background-color:#FF4444}
+.bg-purple{background-color:#AA66CC}
+.navbar-wrapper{z-index:9999}
+.navbar-inverse {
+    background-color: #343a40; border-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color:#252830
+}
+.navbar-nav>li>a{height:50px;}
+.navbar-brand{
+    padding:5px 15px;
+}
+.anchor{margin-top:-50px;margin-bottom:50px;display: block;}
+.jumbotron{
+    background-color:#fff;position:relative;
+    background-image:url(data:image/gif;base64,R0lGODlhDAAMAJEAAOrq6v////Hx8QAAACH5BAAHAP8ALAAAAAAMAAwAAAIWjI8hycvonomSPtvkwYlDPQniSApAAQA7);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    padding-top:80px;padding-bottom:30px;
+}
+.jumbotron p.description{
+    color:#777;text-indent: 36px;font-size:18px;
+}
+.jumbotron .page-header{
+    border-bottom:#20A0FF 3px solid;margin-top:20px;
+}
+.jumbotron .page-header h1{
+    color:#84CA04;
+}
+.jumbotron .page-header h1 small{
+    font-size:50%;color:#ccc;
+}
+.jumbotron .tips-small{
+    font-size:16px;color:#999; display:inline-block;
+}
+
+.jumbotron img.big-logo{
+    margin:10px auto 15px auto;height: auto; width: auto\9; width:100%;max-width:242px;
+}
+.panel{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.panel li{margin-bottom:8px}
+.text-primary{color:#20A0FF}
+.text-success{color:#84CA04}
+footer{
+    color:#aaa; text-align: center;font-size:14px
+}
+.ft-icon{width:100px;height:100px;overflow: hidden;color:#fff; line-height:100px;text-align: center;font-size:70px;}
+li.media{margin-top:15px !important;margin-bottom:25px;padding:0 20px}
+.media-body{font-size:14px}
+ul.row{padding-left:0}
+.fork-gitee{position:absolute;top:50px;right:0;}

@@ -1,0 +1,139 @@
+html,body{height:100%}
+header,nav{padding:0;margin:0}
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif";
+    font-weight: normal; color:#444;font-size:14px;position: relative
+}
+a { color: #3892D3; }
+a:hover, a:focus {  color: #20A0FF; text-decoration: none; }
+pre{font-size:14px}
+.indent28{text-indent:28px}
+.indent32{text-indent:32px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f18{font-size:18px}
+.f20{font-size:20px}
+.bg-green{background-color:#84CA04}
+.bg-blue{background-color:#20A0FF}
+.bg-yellow{background-color:#ffd100}
+.bg-orange{background-color:#FF8800}
+.bg-red{background-color:#FF4444}
+.bg-purple{background-color:#AA66CC}
+.text-primary{color:#20A0FF}
+.text-danger{color:#ff4444}
+.text-success{color:#84CA04}
+.text-warning{color:#ff6600}
+.text-gray{color:#bbb}
+.mgb15{margin-bottom:15px}
+.mgb20{margin-bottom:15px}
+/*base style end*/
+
+.logo{padding:4px 0 4px 8px;display:block;color:#ccc;background:#252830}
+.logo div{float:left;padding:10px 0 0 10px;}
+.left-panel{
+    position:fixed; top:0; left:0; bottom:0;font-size:16px;
+    height:100%;display:block;z-index:1; box-sizing: border-box;
+    background-color:#2b2f3e;
+    width:220px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+.left-panel .main-menu .menu-title {
+    display: block; padding:9px 10px 9px 15px; color:#9a9eaa;
+    transition: all .4s; -moz-transition: all .4s; -webkit-transition: all .4s; -o-transition: all .4s;
+}
+.left-panel .main-menu .menu-title i{ display:none;float:right;margin-top:3px;}
+.left-panel .main-menu .active>.menu-title i{display:block}
+.left-panel .main-menu .menu-title:hover, .left-panel .main-menu>li.active>a { background:#84CA04; color: #fff; }
+
+.left-panel .navigation{
+    padding:15px 0;
+}
+.left-panel .main-menu {
+    margin: 0; padding: 0; list-style: none;
+}
+
+.main-header{left:220px;background: #f5f5f5;}
+.main-header .breadcrumb{margin-bottom:0;margin-top:6px}
+.main-header .navbar-right{margin-right:0}
+
+
+.main-wraper{ position:fixed;top:50px;left:220px;bottom:0;right:0;}
+.main-frame{width:100%;height:100%;overflow:auto;position: relative}
+.main-container{padding:0 198px 20px 20px;overflow:hidden;}
+.main-container h3 small{color:#ff6600;font-size:65%;padding-left:30px;border-left:1px solid #ddd;margin-left:30px;}
+.main-container .container-fluid{margin-left:-15px;margin-right:-15px}
+
+.right-panel{
+    width:178px;position:fixed; top:70px; right:20px;
+    overflow:auto;display:block;z-index:1;
+}
+@media (max-width: 1199px){
+    .right-panel{width:168px;}
+    .main-container{padding-right:170px}
+}
+@media (max-width:400px){
+    .main-header .pull-right{display:none}
+}
+@media (max-width: 991px){
+    .main-header{left:0}
+    .main-wraper{left:0}
+    .main-container{padding:20px}
+}
+@media (max-width: 1199px) and (min-width: 992px){
+    .left-panel{width:160px;}
+    .main-header{left:160px;}
+    .main-wraper{left:160px;}
+}
+
+.sidenav{border-left:#ededed 1px solid}
+.sidenav li>a{padding:3px 0 3px 15px;color:#999;}
+.sidenav li>a:focus, .sidenav li>a:hover{
+    border-left:#20A0FF 1px solid;margin-left:-1px;
+    background-color: transparent;color:#20A0FF
+}
+.sidenav li.active>a,.sidenav li.active>a:hover,.sidenav li.active>a:focus{color:#20A0FF;padding-left:13px;margin-left:-1px;border-left:#20A0FF 3px solid;}
+.sidenav.nav .nav{display:none;padding-bottom:3px;}
+.sidenav.nav>.active>ul{display:block;}
+.sidenav.nav .nav li>a{padding:0 0 2px 25px;}
+.sidenav.nav .nav li.active>a{padding-left:23px;}
+
+.table>thead>tr>th{text-align:center}
+.page-header{position: relative;}
+
+.loading{
+    font-size:20px;display:block;width:20px;height:20px;line-height:20px;color:#ccc;
+    display:block;float:left;margin-top:13px;
+}
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear
+}
+
+@-webkit-keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+.end{color:#ddd;padding:10px;overflow:hidden;margin:-40px auto 0 auto;background:#fff;width:121px}
+.end:before{content: 'CHAPTER END'}
+.kbds{position: absolute;top:20px;right:15px;color:#aaa}
+kbd{background-color: #20A0FF}
