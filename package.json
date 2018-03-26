@@ -4,7 +4,7 @@
   "description": "Web端流程设计器",
   "keywords": [
     "GooFlow",
-    "jquery",
+    "javascript",
     "在线流程设计器",
     "webFlow",
     "jquery",
@@ -16,11 +16,8 @@
     "flowDiagram"
   ],
   "author": "foolegg126 (sdlddr)",
-  "license": "MIT",
+  "license": "CC BY 3.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp",
-    "clean": "gulp clean",
     "start": "http-server -o"
   },
   "main": "index.js",
