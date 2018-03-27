@@ -97,7 +97,7 @@ var g={
             fun.loadPage();
         };
     }
-    $.ajax('../assets/info.json',{
+    $.ajax('https://sdlddr.github.io/Gooflow/assets/info.json',{
 		dataType:'json',cache:true,
 		success:function(data){
 			$("#version").text("V"+data.version);
