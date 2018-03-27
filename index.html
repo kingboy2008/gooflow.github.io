@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -314,26 +314,19 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
                 <h4 class="modal-title" id="myModalLabel">关于我</h4>
             </div>
             <div class="modal-body">
-                <h4 class="text-success">GooFlow作品</h4>
+                <h4 class="text-success">GooFlow</h4>
                 <p class="f14 text-muted indent28">
-                    GooFlow的想法，是我从日常的OA系统web前端开发设计需求中产生中的，
-                    当时Web流程设计器，既易用又轻量又能兼容各种浏览器的很少，于是就用了自己设计一套轻量级、可移植性强、用户体验好、易上手的产品的想法。
-                    结果花了差不多一年的业余时间才出了个初成品，但大家看到后都一致表示很漂亮很想用，这是我决定要做下去的最初动力来源。
+                    GooFlow诞生于2013年初，至今已有多次重大更新，目的是至力于成为一套轻量级、可移植性强、用户体验好、易上手的产品。
+                    由于为作者本人单独开发，由于精力有限及其它各种原因，直到2017年初才发布了首个正式版，但至今一直保持不定时的版本发布。
+                    在此感谢所有早期试用者为GooFlow的主要功能完善作出的贡献。
                 </p>
                 <p class="f14 text-muted indent28">
-                    从2013年第一个alpha版本诞生以来，已经有多次重大更新了。
-                    由于为作者本人单独开发，精力有限，加之其它各种原因，期间好几次长时间中断了版本更迭。
-                    但本人最后还是坚持了下来，并于2017年初发布了首个正式版，且至今一直保持不定时的版本发布。
-                    在此感谢所有早期试用者，尽管当时功能还不是很完善，Bug也不少，但仍给予我的作品这么多的支持与鼓励，
-                    还提出了不少改进建议，甚至BUG修正、功能优化的实现。
-                </p>
-                <p class="f14 text-muted indent28">
-                    目前GooFlow项目已经放到GitHub与Gitee上了，大家可以在
+                    目前GooFlow项目已经放到GitHub与Gitee，大家可以在
                     <a href="https://github.com/sdlddr/Gooflow/issues" target="_blank">GitHub Issues</a>
                     上提出疑问和建议，一起技术交流，我将尽力及时回复，谢谢。
                 </p>
                 <hr>
-                <h4 class="text-success">我的联系方式</h4>
+                <h4 class="text-success">作者联系方式</h4>
                 <address style="margin-left:15px">
                     <blockquote class="f16">
                         微信 ： (+86) 18648945414<br>
@@ -348,26 +341,12 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
     </div>
 </div>
 
+
+</body>
+<script src="assets/js/common.js"></script>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="plugin/prism.js"></script>
-<script type="text/javascript">
-	$.ajax({
-		url:'https://sdlddr.github.io/Gooflow/assets/info.json', dataType:'json',
-		success:function(data){
-			$(".version").each(function(){
-				if(this.tagName==='A')
-					$(this).click(function(){
-						window.location.href='https://sdlddr.github.io/Gooflow/dist/GooFlow-'+data.version+'.zip';
-					});
-				else
-					$(this).text(data.version);
-			});
-			$(".publicDate").each(function(){
-				$(this).text(data.publicDate);
-			})
-		}
-	});
-</script>
-</body>
+<script src="assets/js/index.js"></script>
 </html>
