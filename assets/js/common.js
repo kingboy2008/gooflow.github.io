@@ -15,13 +15,14 @@ var lang={
 	},
 	get: function (){
 		var userLang='zh';
-		console.log($.cookie("userLang"));
 		if($.cookie("userLang")){
 			userLang = $.cookie("userLang");
+			if(userLang!=='zh'){
+				userLang = 'en';
+			}
 		}else{
 			userLang = (navigator.language) ? navigator.language : navigator.userLanguage;
 			userLang = userLang.split("-")[0];
-			console.log('userLang',userLang);
 			if(userLang!=='zh'){
 				userLang = 'en';
 			}
@@ -38,7 +39,8 @@ var lang={
 		if(reload)	window.location.reload();
 	},
 	init:function(){
+
 		this.text = lang.get();
-		lang.switch(this.text, this.text==='zh'?'中文':'En');
+		$("#langSwitch").html((this.text==='zh'?'中文':'En') + this.htmlCaret);
 	}
 };

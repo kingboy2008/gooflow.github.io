@@ -1,0 +1,321 @@
+<header id="navbar-wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img alt="GooFlow" src="assets/img/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="nav_menu">
+                <ul class="nav navbar-nav">
+                    <li class="menuItem active"><a href="#home">Home</a></li>
+                    <li class="menuItem"><a href="#features">Features</a></li>
+                    <li class="menuItem"><a href="#demo">Examples</a></li>
+                    <li class="menuItem"><a href="#guide">Guide</a></li>
+                    <li class="menuItem"><a href="#history">History</a></li>
+                    <li class="menuItem"><a href="#copyright">Authorization</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://github.com/sdlddr/Gooflow" title="Open In GitHub"><i class="iconfont">&#xe613;</i></a></li>
+                    <li><a href="https://gitee.com/foolegg126/gooflow" title="Open In Gitee"><i class="iconfont">&#xe612;</i></a></li>
+                    <li><a href="" data-toggle="modal" data-target="#myModal" title="About Me" id="aboutMe"><i class="iconfont">&#xe677;</i></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="langSwitch" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:lang.switch('zh','中文',true)">中文</a></li>
+                            <li><a href="javascript:lang.switch('en','En',true)">En</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<article class="jumbotron" id="home">
+    <a href='https://gitee.com/foolegg126/gooflow' class="fork-gitee">
+        <img src='https://gitee.com/foolegg126/gooflow/widgets/widget_1.svg' alt='Fork me on Gitee'>
+    </a>
+    <div class="container">
+        <section class="col-sm-12 col-md-8">
+            <div class="page-header">
+                <h1><b>GooFlow </b><small>在线流程设计器</small></h1>
+            </div>
+            <p class="description">
+                这是一个用来在WEB端构建流程图的JQuery插件，在线流程设计器。可设计各种流程图、逻辑流图，数据流图，或是应用系统中需要走流程的功能实现。优秀的用户体验使得操作界面很容易上手，无论开者或用户都可轻松使用。并且兼容主流浏览器(ie8--ie edge，chrome，firefox)。
+            </p>
+            <p>
+                <a class="btn btn-primary btn-lg version" href="javascript:void(0)" role="button"><i class="glyphicon glyphicon-save" aria-hidden="true"></i> 下载 GooFlow</a>&nbsp;
+                &nbsp;&nbsp;
+                <a class="btn btn-info btn-lg" href="docs/" role="button"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> 查看 API文档</a>
+                &nbsp;&nbsp;
+                <abbr class="tips-small"></abbr>
+            </p>
+        </section>
+        <section class="col-sm-12 col-md-4 text-center">
+            <img class="hidden-xs hidden-sm big-logo" src="assets/img/logo_big.png"/>
+            <div style="width:242px;margin:0 auto;">
+                <div style='float:left;width:50%'>
+                    <a href="https://github.com/sdlddr/Gooflow/stargazers"><img src="https://img.shields.io/github/stars/sdlddr/Gooflow.svg?style=flat-square&logo=github&label=Stars" title="Github Stars"></a>
+                </div>
+                <div style='float:left;width:50%'>
+                    <a href="https://github.com/sdlddr/Gooflow/fork"><img src="https://img.shields.io/github/forks/sdlddr/Gooflow.svg?style=flat-square&logo=github&label=Fork" title="Github Fork"></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</article>
+<article class="container">
+    <section class="panel">
+        <div id="features" class="anchor"></div>
+        <div class="panel-body">
+            <h3 class="text-primary text-center">Features</h3><hr/>
+            <ul class="row">
+                <li class="media col-xs-12 col-sm-6 col-md-4">
+                    <div class="media-left"><i class="media-object bg-blue ft-icon iconfont">&#xe611;</i></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">跨浏览器</h4>
+                        <span class="text-muted">完美兼容IE9-IE11、Edge、FireFox、Chrome等主流内核浏览器，主要功能可支持IE8。</span>
+                    </div>
+                </li>
+                <li class="media col-xs-12 col-sm-6 col-md-4">
+                    <div class="media-left"><i class="media-object bg-green ft-icon iconfont">&#xe632;</i></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">强大的通用性</h4>
+                        <span class="text-muted">纯前端组件，很容易应用到各领域的工作流引擎系统或其它需要定义流程业务的系统中。</span>
+                    </div>
+                </li>
+                <li class="media col-xs-12 col-sm-6 col-md-4">
+                    <div class="media-left"><i class="media-object bg-yellow ft-icon iconfont">&#xe631;</i></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">简洁良好的用户体验</h4>
+                        <span class="text-muted">如桌面绘图应用般简单易上手的优雅设计体验；用简单易懂的JSON格式描述流程图。</span>
+                    </div>
+                </li>
+                <li class="media col-xs-12 col-sm-6 col-md-4">
+                    <div class="media-left"><i class="media-object bg-orange ft-icon iconfont">&#xe610;</i></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">小巧轻量的体积</h4>
+                        <span class="text-muted">主要功能文件压缩后不到70KB；加上功能扩展包文件不到100KB。</span>
+                    </div>
+                </li>
+                <li class="media col-xs-12 col-sm-6 col-md-4">
+                    <div class="media-left"><i class="media-object bg-red ft-icon iconfont">&#xe669;</i></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">样式自定义</h4>
+                        <span class="text-muted">开放的颜色配置，灵活的节点图标类型样式设定；开发者也可直接修改Css文件。</span>
+                    </div>
+                </li>
+                <li class="media col-xs-12 col-sm-6 col-md-4">
+                    <div class="media-left"><i class="media-object bg-purple ft-icon iconfont">&#xe6ac;</i></div>
+                    <div class="media-body">
+                        <h4 class="media-heading">丰富的功能及API接口</h4>
+                        <span class="text-muted">该组件提供大量的操作流程图方法接口和各种事件钩子，很容易二次开发出一套IDE系统应用。</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="panel">
+        <div id="demo" class="anchor"></div>
+        <div class="panel-body">
+            <h3 class="text-primary text-center">Examples</h3><hr/>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-ms-12 col-md-8">
+                        <h4>GooFlow设计器界面样例</h4>
+                        <p><img src="assets/img/aaa.png" class="img-responsive center-block"/><br/></p>
+                    </div>
+                    <div class="col-ms-12 col-md-4">
+                        <h4>功能试用预览</h4>
+                        <ul>
+                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_base.html" target="_blank">基本功能使用</a></li>
+                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_readonly.html" target="_blank">只读查看模式</a></li>
+                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_ide.html" target="_blank">系统中IDE式应用场景</a></li>
+                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_export.html" target="_blank">高级——导出图片与打印</a></li>
+                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_amd.html" target="_blank">AMD开发模式下调用</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="panel">
+        <div id="guide" class="anchor"></div>
+        <div class="panel-body">
+            <h3 class="text-primary text-center">Guide To Start</h3><hr/>
+            <h4>一、Node.js环境下的安装：</h4>
+            <p>checkout 本项目后，在项目所在目录先运行： <code>npm install</code></p>
+            <p>再运行： <code>npm run build</code></p>
+            <p>即可得到运行DEMO所需要的GooFlow发布版文件。</p><br/>
+            <h4>二、传统方式的使用方法</h4>
+            <p>先在页头引入Css文件，在body末尾引入jquery和GooFloW主要功能文件;</p>
+            <pre><code class="language-markup">&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="./dist/GooFlow.min.css"/>
+&lt;/head>
+&lt;body&gt;
+    &lt;div id="demo">&lt;/div>
+    ……
+    &lt;script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.min.js"&gt;&lt;/script&gt;
+    &lt;!-- 可选，将流程图导出为图片文件的扩展包 GooFlow.export.js --&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.export.min.js"&gt;&lt;/script&gt;
+    &lt;!-- 可选，将流程图输出打印或另存为PDF的扩展包 GooFlow.print.js--&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.print.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+            然后在业务js中调用方法；
+            <pre><code class="language-javascript">/** main.js **/
+	var options = {
+		toolBtns:["start round mix","end round","task","node","chat","state","plug","join","fork","complex mix"],
+		haveHead:true,
+		headLabel:true,
+		headBtns:["new","open","save","undo","redo","reload","print"],//如果haveHead=true，则定义HEAD区的按钮
+		haveTool:true,
+		haveDashed:true,
+		haveGroup:true,
+		useOperStack:true
+	};
+	var demo;
+	$(document).ready(function(){
+		demo = GooFlow.init("#demo",options);
+        // demo = $.createGooFlow("#demo",options); //另一种初始化方法
+        demo.setNodeRemarks(remark); //remarks为左侧工具栏按钮的title提示定义
+		demo.loadData(jsondata); //jsondata为表达流程图详细的JSON数据
+	});</code></pre><br>
+            <h4>三、AMD模块化开发下的使用方法：</h4>
+            以<span class="text-danger">RequireJs</span>为例，先在RequireJs于项目的统一配置文件中加入如下设置，需要用到<span class="text-danger">require-css</span><span class="text-muted">(css.min.js)</span>插件；
+            <pre><code class="language-javascript">/** require.config.js **/
+requirejs.config({
+    map: {
+		'*': {
+			'css': 'https://cdn.bootcss.com/require-css/0.1.10/css.min.js' // https://github.com/guybedford/require-css, RequireJs's plugin
+		}
+	},
+    paths: {
+        jquery: 'https://cdn.bootcss.com/jquery/1.12.4/jquery.min',
+        GooFlow: './dist/GooFlow.min',
+        'GooFlow.export': './dist/GooFlow.export',  //可选，将流程图导出为图片文件的扩展包
+        'GooFlow.print': './dist/GooFlow.print',    //可选，将流程图输出打印或另存为PDF的扩展包
+    },
+    //// ……
+    shim: {
+        GooFlow: {
+            deps:['css!./dist/GooFlow.min.css','jquery']
+        }
+    },
+});</code></pre>
+            <p>在将会异步引入main.js入口业务文件的html页面中,body末尾加上这一段;</p>
+            <pre><code class="language-markup">&lt;body&gt;
+    &lt;div id="demo">&lt;/div>
+    ……
+    &lt;script data-main="main.js" src="../lib/requireJs/require.js">&lt;/script>
+	&lt;script src="../js/require.config.js">&lt;/script>
+&lt;/body&gt;</code></pre>
+            然后在具体的业务js文件中作包引入并初始化；
+            <pre><code class="language-javascript">/** main.js **/
+require(['jquery','GooFlow'], function ( $, GooFlow ) {
+    // 初始化的代码
+    var property = { …… };
+    var demo = GooFlow.init("#demo",options);
+    demo.setNodeRemarks(remark); //remarks为左侧工具栏按钮的title提示定义
+    demo.loadData(jsondata);     //jsondata为表达流程图详细的JSON数据
+});</code></pre>
+            如果想使用其它扩展包提供的功能，请务必保证在载入GooFlow.js后再载入相应的扩展包，以保证相应的功能正常；
+            <pre><code class="language-javascript">/** main.js 扩展功能包 **/
+require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
+    require(['GooFlow.export','GooFlow.print'], function (){
+        // 初始化的代码
+        var options = { …… };
+        var demo = GooFlow.init("#demo",options);
+        demo.setNodeRemarks(remark);         //remarks为左侧工具栏按钮的title提示定义
+        demo.setHeadToolsRemarks(headBtns);  //headBtns为顶部标题栏按钮的title提示设置
+        demo.loadData(jsondata);             //jsondata为表达流程图详细的JSON数据
+        demo.onBtnSaveClick=function(){
+            demo.exportDiagram('myFile');//流程图导出图片功能
+        }
+        demo.onPrintClick=function(){
+			demo.print();//打印流程图或另存为PDF功能
+        }
+    });
+});</code></pre><br>
+            <h4>了解更多的使用说明，请参考 <a href="docs/">API文档</a>。</h4>
+        </div>
+    </section>
+    <section class="panel">
+        <div id="history" class="anchor"></div>
+        <div class="panel-body">
+            <h3 class="text-primary text-center">Updated History</h3><hr/>
+            <ul class="f14 text-muted">
+                <li><b class="f18 text-primary">1.3.2 :</b><br> 优化了代码结构和用户体验；加强内聚性，简化了流程另存为图片功能和打印功能的内部实现，摆脱了1.1至1.2版本中对第三方插件的依赖，导出结果更清晰，并能向后兼容到IE9；各部分的按钮都可以通过内置接口方法进行配置；节点数据新增”areaId”可选属性:表示其属于哪一个区域组(泳道)。总体还加入了对amd、cmd开发模式规范的支持。</li>
+                <li><b class="f18 text-primary">1.3 :</b><br> 修正一些影响用户体验和使用的BUG，增加灵活的对工作区所有操作按钮注释配置功能。</li>
+                <li><b class="f18 text-primary">1.2.1 :</b><br> 改善对IE8的支持；优化手动调整元素大小的精确度；增加对流程图打印预览或另存为PDF的功能。</li>
+                <li><b class="f18 text-primary">1.2 :</b><br> 重大更新版本! 增加了对节点、连线、泳道块的右键事件和双击事件方法设定（可return false以阻止浏览器默认事件发生）；增加虚线的绘制功能方法：应众多用户的要求增加了重要的流程图缩放功能接口！可缩放范围是从原始大小的50%至400%。（仅提供方法接口，具体操作缩放的页面组件元素用户另行选择绑定第三方的）</li>
+                <li><b class="f18 text-primary">1.1 :</b><br> 进一步修正了BUG；增加了导出工作区内流程图为图片并让用户下载的功能，目前仅能支持IE10以上、IE edge、Chrome、FireFox、Safari浏览器，该功能需求载入新的GooFlow.export.js扩展包。</li>
+                <li><b class="f18 text-primary">1.0.2 :</b><br> 修正了当某节点原来为marked，选中再取消后marked标红样式消失的问题。</li>
+                <li><b class="f18 text-primary">1.0 :</b><br> 初始正式版本，相对于以前的试用版，进一步修正了BUG，可自定义颜色项更多，并且做到了不再有一张图片，所有图标均匀为矢量字体。</li>
+            </ul>
+        </div>
+    </section>
+    <section class="panel">
+        <div id="copyright" class="anchor"></div>
+        <div class="panel-body">
+            <h3 class="text-primary text-center">Order Authorization</h3><hr/>
+            <p class="indent32">当前托管项目中所放版本仅为试用版，如要使用正式版，需要联系作者本人。</p>
+            <p class="indent32">本组件可免费用于非商业软件项目开发；如果要使用在以营利为目的软件开发项目中，请向作者本人购买商业使用授权，谢谢。</p>
+            <p class="indent32">（如果逃避购买授权，擅自窃取用作谋利，即属严重侵权行为，与盗窃无异。产生的一切任何后果责任由侵权者自负。请各位只想免费吃白饭的伸手党做好向作者本人及自己的公司、客户负全责的觉悟。）</p>
+            <p class="indent32 text-muted">
+                商业授权费用为 <b class="text-primary">3500 RMB</b>，目前支持支付宝、微信支付；
+                购买一个授权只对应一个项目产品（若项目1期购买的授权，2期及以后的可继续使用；同一个产品，可以在一个授权下，出售不同的订制化版本给不同客户）；
+                如果您购买了3次授权，则将直接获得今后的新产品均可免费使用该组件的权利。
+            </p>
+            <p class="indent32 text-muted">更多咨询，请点击页面右上角的 <a href="javascript:document.getElementById('aboutMe').click()">“关于我”</a>
+                ，通过弹出信息框中提供的几种联系方式联系作者本人。</p>
+        </div>
+    </section>
+</article>
+<footer>
+    <p>Copyright ©2018 GooFlow官网,foolegg@126.com(sdlddr)</p>
+    <p>本项目源码受 MIT开源协议保护，文档受 CC BY 3.0 开源协议保护。</p>
+</footer>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">关于我</h4>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-success">GooFlow</h4>
+                <p class="f14 text-muted indent28">
+                    GooFlow诞生于2013年初，至今已有多次重大更新，目的是至力于成为一套跨浏览器、轻量级、可移植性强、用户体验好、易上手的产品。
+                    由于为作者本人单独开发，由于精力有限及其它各种原因，直到2017年初才发布了首个正式版，但至今一直保持不定时的版本发布。
+                    在此感谢所有早期试用者为GooFlow的主要功能完善作出的贡献。
+                </p>
+                <p class="f14 text-muted indent28">
+                    目前GooFlow项目已经放到GitHub与Gitee，大家可以在
+                    <a href="https://github.com/sdlddr/Gooflow/issues" target="_blank">GitHub Issues</a>
+                    上提出疑问和建议，一起技术交流，我将尽力及时回复。
+                </p>
+                <hr>
+                <h4 class="text-success">作者联系方式</h4>
+                <address style="margin-left:15px">
+                    <blockquote class="f16">
+                        微信 ： (+86) 18648945414<br>
+                        QQ ： <a href="tencent://message/?uin=115247126&Site=GooFlow官网&Menu=yes">115247126</a><br>
+                        Email ： <a href="mailto:foolegg@126.com">foolegg@126.com</a><br>
+                        GitHub ： <a href="https://github.com/sdlddr" target="_blank">sdlddr</a><br>
+                        Gitee ： <a href="https://gitee.com/foolegg126" target="_blank">foolegg126</a>
+                    </blockquote>
+                </address>
+            </div>
+        </div>
+    </div>
+</div>

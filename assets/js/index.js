@@ -1,21 +1,20 @@
 var g_info={};
+
 (function($) {
+	function getInfo(){
+		$.ajax({
+			url: 'https://sdlddr.github.io/Gooflow/assets/info.json', dataType: 'json',
+			success: function (data) {
+				g_info=data;
+				$(".tips-small").html('V'+g_info.version+'&nbsp;&nbsp;|&nbsp;&nbsp;'+g_info.publicDate+(lang.text==='zh'?' 发布':' released'))
+			}
+		});
+	}
 	lang.init();
-	$.ajax({
-		url: 'https://sdlddr.github.io/Gooflow/assets/info.json', dataType: 'json',
-		success: function (data) {
-			g_info=data
-			$(".version").each(function () {
-				if (this.tagName === 'A')
-					$(this).click(function () {
-						window.location.href = 'https://sdlddr.github.io/Gooflow/dist/GooFlow-' + g_info.version + '.zip';
-					});
-				else
-					$(this).text(g_info.version);
-			});
-			$(".publicDate").each(function () {
-				$(this).text(g_info.publicDate);
-			})
-		}
+	$("body").load("i18n/"+lang.text+".html",function(){
+		getInfo();
+		lang.switch(lang.text, lang.text==='zh'?'中文':'En');
+		$("body").scrollspy({target: '#navbar-wrapper'});
+		Prism.highlightAllUnder($("#guide").parent()[0], false);
 	});
 })($);
