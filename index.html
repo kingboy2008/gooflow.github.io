@@ -8,12 +8,12 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="description" content="WEB端构建流程图的JQuery插件，在线流程设计器。">
+    <meta name="description" content="Web端构建流程图的JQuery工具组件，一个跨浏览器、简单易上手的在线流程设计器。可用于流程引擎设计，或其它需要设计流程式业务订制的各领域系统。\n This is a cross-browser, easy-to-use process designer of JQuery tool component for building flowcharts in web-site. It can be used for process engine design, or other areas of the system that need to design flow-based business customization.">
     <meta name="author" content="foolegg@126.com, sdlddr">
     <meta name="generator" content="GooFlow v1.3.2, Web-WorkFlow Designer.">
     <meta name="baidu-site-verification" content="SCa6loDvQd" />
-    <meta name="keywords" content="GooFlow 流程图 码云 Github jquery 在线流程设计器 webFlow jquery flowChart flowDesign process workFlow flowGraph flowDiagram"/>
-    <title>GooFlow - 在线流程设计器 &middot; 简单易用+良好体验</title>
+    <meta name="keywords" content="GooFlow 流程图 在线流程设计器 flowDesign webFlow flowChart process workFlow flowGraph flowDiagram jquery 码云 Github "/>
+    <title>GooFlow - 在线流程设计器&middot;简单易用优秀体验 - A Process Designer For Easy To Use And Good Experience</title>
     <link href="assets/img/favicon.png" rel="icon" type="image/png">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,9 +50,16 @@
                     <li class="menuItem"><a href="#copyright">授权</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://github.com/sdlddr/Gooflow" title="Project In GitHub"><i class="iconfont">&#xe613;</i></a></li>
-                    <li><a href="https://gitee.com/foolegg126/gooflow" title="Project In Gitee"><i class="iconfont">&#xe612;</i></a></li>
+                    <li><a href="https://github.com/sdlddr/Gooflow" title="Open In GitHub"><i class="iconfont">&#xe613;</i></a></li>
+                    <li><a href="https://gitee.com/foolegg126/gooflow" title="Open In Gitee"><i class="iconfont">&#xe612;</i></a></li>
                     <li><a href="" data-toggle="modal" data-target="#myModal" title="About Me" id="aboutMe"><i class="iconfont">&#xe677;</i></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="langSwitch" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:lang.switch('zh','中文')">中文</a></li>
+                            <li><a href="javascript:lang.switch('en','En')">En</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -292,7 +299,7 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
             <p class="indent32">本组件可免费用于非商业软件项目开发；如果要使用在以营利为目的软件开发项目中，请向作者本人购买商业使用授权，谢谢。</p>
             <p class="indent32">（如果逃避购买授权，擅自窃取用作谋利，即属严重侵权行为，与盗窃无异。产生的一切任何后果责任由侵权者自负。请各位只想免费吃白饭的伸手党做好向作者本人及自己的公司、客户负全责的觉悟。）</p>
             <p class="indent32 text-muted">
-                商业授权费用为3500元，支持支付宝、微信支付；
+                商业授权费用为 <b class="text-primary">3500 RMB</b>，目前支持支付宝、微信支付；
                 购买一个授权只对应一个项目产品（若项目1期购买的授权，2期及以后的可继续使用；同一个产品，可以在一个授权下，出售不同的订制化版本给不同客户）；
                 如果您购买了3次授权，则将直接获得今后的新产品均可免费使用该组件的权利。
             </p>
@@ -302,7 +309,7 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
     </section>
 </article>
 <footer>
-    <p>Copyright ©2018 GooFlow官网, foolegg@126.com(sdlddr)</p>
+    <p>Copyright ©2018 GooFlow官网,foolegg@126.com(sdlddr)</p>
     <p>本项目源码受 MIT开源协议保护，文档受 CC BY 3.0 开源协议保护。</p>
 </footer>
 <!-- Modal -->
@@ -316,14 +323,14 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
             <div class="modal-body">
                 <h4 class="text-success">GooFlow</h4>
                 <p class="f14 text-muted indent28">
-                    GooFlow诞生于2013年初，至今已有多次重大更新，目的是至力于成为一套轻量级、可移植性强、用户体验好、易上手的产品。
+                    GooFlow诞生于2013年初，至今已有多次重大更新，目的是至力于成为一套跨浏览器、轻量级、可移植性强、用户体验好、易上手的产品。
                     由于为作者本人单独开发，由于精力有限及其它各种原因，直到2017年初才发布了首个正式版，但至今一直保持不定时的版本发布。
                     在此感谢所有早期试用者为GooFlow的主要功能完善作出的贡献。
                 </p>
                 <p class="f14 text-muted indent28">
                     目前GooFlow项目已经放到GitHub与Gitee，大家可以在
                     <a href="https://github.com/sdlddr/Gooflow/issues" target="_blank">GitHub Issues</a>
-                    上提出疑问和建议，一起技术交流，我将尽力及时回复，谢谢。
+                    上提出疑问和建议，一起技术交流，我将尽力及时回复。
                 </p>
                 <hr>
                 <h4 class="text-success">作者联系方式</h4>

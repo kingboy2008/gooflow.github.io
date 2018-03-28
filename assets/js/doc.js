@@ -36,9 +36,9 @@ var fun={
         return g.hashDef['#'+hash]? hash:'start';
     },
     breadcrumb:function(names){
-        var bread = $(".breadcrumb").html('<li><a href="index.html#category">文档目录</a></li> ');
+        var bread = $(".breadcrumb").html('<li><a href="index.html#directory">'+lang.docHome[lang.text]+'</a></li> ');
         for(var i=0;i<names.length;++i){
-            if (g.hash !== 'category') {
+            if (g.hash !== 'directory') {
                 bread.append('<li class="active">' + names[i].title + '</li> ');
             }
         }
@@ -47,14 +47,14 @@ var fun={
 		$(".loading").show();
 		var frame = $("#frame");
 		var height = frame.height();
-        fun.showInfo(frame,'载入中，请稍候……');
+        fun.showInfo(frame,lang.loading[lang.text]);
         $(".main-menu").children(".active").removeClass("active");
         $(".main-menu").find("a[href='#"+g.hash+"']").parent().addClass("active");
-		$.ajax(g.hash+'.html', {
+		$.ajax(lang.text+"/"+g.hash+'.html', {
             success:function (data) {
             	frame.html(data);
                 var mf = $('.main-frame');
-                fun.renderPageNav(mf,g.hash!=='category');
+                fun.renderPageNav(mf,g.hash!=='directory');
                 var rp = $(".right-panel");
                 var h = rp.height(), fh = height - 40;
                 if (h > fh) h.css(height, fh + 'px');
@@ -77,20 +77,17 @@ var fun={
             },
             timeout:30000,
 			error:function(){
-                fun.showInfo(frame,'载入失败，请稍候再试！');
+                fun.showInfo(frame,lang.loadError[lang.text]);
             }
         });
 	},
-	switchLang:function(lang,text){
-		$("#langSwitch").html(text+' <span class="caret"></span>');
-		//todo：wait for english version!
-	}
 };
 var g={
 	hash:'aaaa',
-	hashDef:{'#category':true}
+	hashDef:{'#directory':true}
 };
 (function($) {
+	lang.init();
     if ("onhashchange" in window) {
         window.onhashchange = function(ev) {
             g.hash=fun.getHash();
@@ -103,7 +100,7 @@ var g={
 			$("#version").text("V"+data.version);
 		}
 	});
-    $.ajax('../assets/docChapter.json',{
+    $.ajax(lang.text+'/docChapter.json',{
     	dataType:'json',cache:true,
 		success:function(data){
     		var html='';

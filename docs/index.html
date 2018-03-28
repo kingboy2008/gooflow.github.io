@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
-    <meta name="description" content="WEB端构建流程图的JQuery插件，在线流程设计器。">
+    <meta name="description" content="GooFlow在线流程设计器的API使用文档。">
     <meta name="author" content="foolegg@126.com, sdlddr">
-    <meta name="generator" content="GooFlow v1.3.2, Web-WorkFlow Designer.">
-    <meta name="keywords" content="GooFlow 文档 document API文档 中文文档 Github 码云 jquery 在线流程设计器"/>
-    <title>GooFlow - API文档</title>
+    <meta name="generator" content="GooFlow API Document, WorkFlow Designer In Web.">
+    <meta name="keywords" content="GooFlow API Document API文档 中文文档 Github 码云 jquery 在线流程设计器 Web-site WorkFlow Designer"/>
+    <title>GooFlow - API文档 - Document</title>
     <link href="../assets/img/favicon.png" rel="icon" type="image/png">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -45,14 +45,14 @@
         </div>
         <div class="collapse navbar-collapse" id="nav_menu">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../" title="项目主页"><i class="glyphicon glyphicon-home"></i></a></li>
-                <li><a href="https://github.com/sdlddr/Gooflow" title="前往GitHub"><i class="iconfont">&#xe613;</i></a></li>
-                <li><a href="https://gitee.com/foolegg126/gooflow" title="前往Gitee"><i class="iconfont">&#xe612;</i></a></li>
+                <li><a href="../" title="Repository Home"><i class="glyphicon glyphicon-home"></i></a></li>
+                <li><a href="https://github.com/sdlddr/Gooflow" title="Open In GitHub"><i class="iconfont">&#xe613;</i></a></li>
+                <li><a href="https://gitee.com/foolegg126/gooflow" title="Open In Gitee"><i class="iconfont">&#xe612;</i></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="langSwitch" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中文 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" id="langSwitch" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:fun.switchLang('zh-cn','中文')">中文</a></li>
-                        <li><a href="javascript:fun.switchLang('en','En')">En</a></li>
+                        <li><a href="javascript:lang.switch('zh','中文',true)">中文</a></li>
+                        <li><a href="javascript:lang.switch('en','En',true)">En</a></li>
                     </ul>
                 </li>
             </ul>
@@ -61,8 +61,10 @@
 <article class="main-wraper" id="frame"></article>
 
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../plugin/prism.js"></script>
+<script src="../assets/js/common.js"></script>
 <script src="../assets/js/doc.js"></script>
 </body>
 </html>
