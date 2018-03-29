@@ -1,9 +1,13 @@
 var lang={
 	text:'zh',
 	htmlCaret: ' <span class="caret"></span>',
+	title: {
+		zh:'在线流程设计器&middot;简单易用优秀体验',
+		en:'A Process Designer For Easy To Use And Good Experience'
+	},
 	docHome:{
 		zh:'文档目录',
-		en:'Document Directory'
+		en:'Directory'
 	},
 	loading:{
 		zh:'载入中，请稍候……',
@@ -26,12 +30,12 @@ var lang={
 			if(userLang!=='zh'){
 				userLang = 'en';
 			}
-			$.cookie("userLang",userLang, { expires : 7 });
+			$.cookie("userLang",userLang, { expires : 7, path:'/'});
 		}
 		return userLang;
 	},
 	set: function(lang){
-		$.cookie("userLang",lang, { expires : 7 });
+		$.cookie("userLang",lang, { expires : 7, path:'/'});
 	},
 	switch: function (lang,text,reload){
 		$("#langSwitch").html(text + this.htmlCaret);

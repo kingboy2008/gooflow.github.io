@@ -14,6 +14,7 @@ var g_info={};
 	$("body").load("i18n/"+lang.text+".html",function(){
 		getInfo();
 		lang.switch(lang.text, lang.text==='zh'?'中文':'En');
+		$("title").html("GooFlow - "+lang.title[lang.text]);
 		$("body").scrollspy({target: '#navbar-wrapper'});
 		Prism.highlightAllUnder($("#guide").parent()[0], false);
 	});

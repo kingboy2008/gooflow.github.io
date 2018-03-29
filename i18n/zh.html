@@ -153,9 +153,9 @@
             <h4>一、Node.js环境下的安装：</h4>
             <p>checkout 本项目后，在项目所在目录先运行： <code>npm install</code></p>
             <p>再运行： <code>npm run build</code></p>
-            <p>即可得到运行DEMO所需要的GooFlow发布版文件。</p><br/>
+            <p>即可得到运行demo所需要的GooFlow发布版文件。</p><br/>
             <h4>二、传统方式的使用方法</h4>
-            <p>先在页头引入Css文件，在body末尾引入jquery和GooFloW主要功能文件;</p>
+            <p>先在页头引入Css文件，在body末尾引入jquery和GooFlow主要功能文件;</p>
             <pre><code class="language-markup">&lt;head&gt;
     &lt;link rel="stylesheet" type="text/css" href="./dist/GooFlow.min.css"/>
 &lt;/head>
@@ -215,8 +215,8 @@ requirejs.config({
             <pre><code class="language-markup">&lt;body&gt;
     &lt;div id="demo">&lt;/div>
     ……
-    &lt;script data-main="main.js" src="../lib/requireJs/require.js">&lt;/script>
-	&lt;script src="../js/require.config.js">&lt;/script>
+    &lt;script data-main="main.js" src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js">&lt;/script>
+	&lt;script src="../assets/js/require.config.js">&lt;/script>
 &lt;/body&gt;</code></pre>
             然后在具体的业务js文件中作包引入并初始化；
             <pre><code class="language-javascript">/** main.js **/
@@ -276,7 +276,7 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
                 如果您购买了3次授权，则将直接获得今后的新产品均可免费使用该组件的权利。
             </p>
             <p class="indent32 text-muted">更多咨询，请点击页面右上角的 <a href="javascript:document.getElementById('aboutMe').click()">“关于我”</a>
-                ，通过弹出信息框中提供的几种联系方式联系作者本人。</p>
+                ，以联系作者本人。</p>
         </div>
     </section>
 </article>

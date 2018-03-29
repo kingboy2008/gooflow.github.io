@@ -102,7 +102,7 @@
                     <div class="media-left"><i class="media-object bg-orange ft-icon iconfont">&#xe610;</i></div>
                     <div class="media-body">
                         <h4 class="media-heading">Lightweight</h4>
-                        <span class="text-muted">The main function file is less than 70KB after compression, and the function expansion package file is less than 100KB.</span>
+                        <span class="text-muted">The main file is less than 70KB after compressed, additional extension package are less than 100KB.</span>
                     </div>
                 </li>
                 <li class="media col-xs-12 col-sm-6 col-md-4">
@@ -139,7 +139,7 @@
                             <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_readonly.html" target="_blank">Read-only viewing mode</a></li>
                             <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_ide.html" target="_blank">IDE application scenario in the system</a></li>
                             <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_export.html" target="_blank">Advanced - export pictures and print</a></li>
-                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_amd.html" target="_blank"Called in AMD development mode</a></li>
+                            <li><a href="https://sdlddr.github.io/Gooflow/examples/demo_amd.html" target="_blank">Called in AMD development mode</a></li>
                         </ul>
                     </div>
                 </div>
@@ -150,12 +150,12 @@
         <div id="guide" class="anchor"></div>
         <div class="panel-body">
             <h3 class="text-primary text-center">Guide To Start</h3><hr/>
-            <h4>一、Node.js环境下的安装：</h4>
-            <p>checkout 本项目后，在项目所在目录先运行： <code>npm install</code></p>
-            <p>再运行： <code>npm run build</code></p>
-            <p>即可得到运行DEMO所需要的GooFlow发布版文件。</p><br/>
-            <h4>二、传统方式的使用方法</h4>
-            <p>先在页头引入Css文件，在body末尾引入jquery和GooFloW主要功能文件;</p>
+            <h4>Step 1: Install it in Node.js environment</h4>
+            <p>Checkout the repository, and run install command in the repository directory： <code>npm install</code></p>
+            <p>Then run build command： <code>npm run build</code></p>
+            <p>You can get GooFlow release files needed to run demoes.</p><br/>
+            <h4>Step 2: Use it (with traditional methods)</h4>
+            <p>Firstly introduce the Css file at the beginning of the page, and introduce the central files of jquery and GooFlow at the end of the body.</p>
             <pre><code class="language-markup">&lt;head&gt;
     &lt;link rel="stylesheet" type="text/css" href="./dist/GooFlow.min.css"/>
 &lt;/head>
@@ -164,13 +164,13 @@
     ……
     &lt;script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
     &lt;script type="text/javascript" src="./dist/GooFlow.min.js"&gt;&lt;/script&gt;
-    &lt;!-- 可选，将流程图导出为图片文件的扩展包 GooFlow.export.js --&gt;
+    &lt;!-- Optional, a extension file of exporting the flowchart into a picture file.  -- GooFlow.export.min.js --&gt;
     &lt;script type="text/javascript" src="./dist/GooFlow.export.min.js"&gt;&lt;/script&gt;
-    &lt;!-- 可选，将流程图输出打印或另存为PDF的扩展包 GooFlow.print.js--&gt;
+    &lt;!-- Optional, a extension file of print the flowchart or save flowchart as a PDF file.  -- GooFlow.print.min.js --&gt;
     &lt;script type="text/javascript" src="./dist/GooFlow.print.min.js"&gt;&lt;/script&gt;
     &lt;script type="text/javascript" src="./main.js"&gt;&lt;/script&gt;
 &lt;/body&gt;</code></pre>
-            然后在业务js中调用方法；
+            Then call GooFlow methods in the business js file.
             <pre><code class="language-javascript">/** main.js **/
 	var options = {
 		toolBtns:["start round mix","end round","task","node","chat","state","plug","join","fork","complex mix"],
@@ -185,12 +185,12 @@
 	var demo;
 	$(document).ready(function(){
 		demo = GooFlow.init("#demo",options);
-        // demo = $.createGooFlow("#demo",options); //另一种初始化方法
-        demo.setNodeRemarks(remark); //remarks为左侧工具栏按钮的title提示定义
-		demo.loadData(jsondata); //jsondata为表达流程图详细的JSON数据
+        // demo = $.createGooFlow("#demo",options); //another constructor method
+        demo.setNodeRemarks(remark); //remarks is a title prompt definition for the left toolbar buttons
+		demo.loadData(jsondata); //jsondata is a json data for expressing the detail of flowcharts
 	});</code></pre><br>
-            <h4>三、AMD模块化开发下的使用方法：</h4>
-            以<span class="text-danger">RequireJs</span>为例，先在RequireJs于项目的统一配置文件中加入如下设置，需要用到<span class="text-danger">require-css</span><span class="text-muted">(css.min.js)</span>插件；
+            <h4>Step 3: Use it (in AMD modular)</h4>
+            Take <span class="text-danger">RequireJs</span>as an example, first add the following settings to the RequireJs in the repository's unified configuration file, you need to use the <span class="text-danger">require-css</span><span class="text-muted">(css.min.js)</span>plugin.
             <pre><code class="language-javascript">/** require.config.js **/
 requirejs.config({
     map: {
@@ -201,8 +201,8 @@ requirejs.config({
     paths: {
         jquery: 'https://cdn.bootcss.com/jquery/1.12.4/jquery.min',
         GooFlow: './dist/GooFlow.min',
-        'GooFlow.export': './dist/GooFlow.export',  //可选，将流程图导出为图片文件的扩展包
-        'GooFlow.print': './dist/GooFlow.print',    //可选，将流程图输出打印或另存为PDF的扩展包
+        'GooFlow.export': './dist/GooFlow.export',  // Optional, a extension file of exporting the flowchart into a picture file.
+        'GooFlow.print': './dist/GooFlow.print',    // Optional, a extension file of print the flowchart or save flowchart as a PDF file.
     },
     //// ……
     shim: {
@@ -211,41 +211,41 @@ requirejs.config({
         }
     },
 });</code></pre>
-            <p>在将会异步引入main.js入口业务文件的html页面中,body末尾加上这一段;</p>
+            <p>In the html file that will asynchronously import the main.js entry business file, add this segment to the body's end;</p>
             <pre><code class="language-markup">&lt;body&gt;
     &lt;div id="demo">&lt;/div>
     ……
     &lt;script data-main="main.js" src="../lib/requireJs/require.js">&lt;/script>
-	&lt;script src="../js/require.config.js">&lt;/script>
+	&lt;script src="../assets/js/require.config.js">&lt;/script>
 &lt;/body&gt;</code></pre>
-            然后在具体的业务js文件中作包引入并初始化；
+            Then in the business js file, import packages and make initialization.
             <pre><code class="language-javascript">/** main.js **/
 require(['jquery','GooFlow'], function ( $, GooFlow ) {
-    // 初始化的代码
+    // code for init
     var property = { …… };
     var demo = GooFlow.init("#demo",options);
-    demo.setNodeRemarks(remark); //remarks为左侧工具栏按钮的title提示定义
-    demo.loadData(jsondata);     //jsondata为表达流程图详细的JSON数据
+    demo.setNodeRemarks(remark); //remarks is a title prompt definition for the left toolbar buttons
+    demo.loadData(jsondata);     //jsondata is a json data for expressing the detail of flowcharts
 });</code></pre>
-            如果想使用其它扩展包提供的功能，请务必保证在载入GooFlow.js后再载入相应的扩展包，以保证相应的功能正常；
-            <pre><code class="language-javascript">/** main.js 扩展功能包 **/
+            If you want to use the functions provided by other extension packages, please be sure to load the corresponding extension packages after loading GooFlow.js to ensure that the corresponding function is enable.
+            <pre><code class="language-javascript">/** main.js using extension packages **/
 require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
     require(['GooFlow.export','GooFlow.print'], function (){
-        // 初始化的代码
+        // code for init
         var options = { …… };
         var demo = GooFlow.init("#demo",options);
-        demo.setNodeRemarks(remark);         //remarks为左侧工具栏按钮的title提示定义
-        demo.setHeadToolsRemarks(headBtns);  //headBtns为顶部标题栏按钮的title提示设置
-        demo.loadData(jsondata);             //jsondata为表达流程图详细的JSON数据
+        demo.setNodeRemarks(remark);         //remarks is a title prompt definition for the left toolbar buttons
+        demo.setHeadToolsRemarks(headBtns);  //headBtns is a title prompt definition for the header bar's buttons
+        demo.loadData(jsondata);             //jsondata is a json data for expressing the detail of flowcharts
         demo.onBtnSaveClick=function(){
-            demo.exportDiagram('myFile');//流程图导出图片功能
+            demo.exportDiagram('myFile');//the function of exporting a png file
         }
         demo.onPrintClick=function(){
-			demo.print();//打印流程图或另存为PDF功能
+			demo.print();//the function of printing or save flowchart as a PDF file
         }
     });
 });</code></pre><br>
-            <h4>了解更多的使用说明，请参考 <a href="docs/">API文档</a>。</h4>
+            <h4>To learn more，please refer to <a href="docs/">API Document</a>.</h4>
         </div>
     </section>
     <section class="panel">
@@ -253,13 +253,13 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
         <div class="panel-body">
             <h3 class="text-primary text-center">Updated History</h3><hr/>
             <ul class="f14 text-muted">
-                <li><b class="f18 text-primary">1.3.2 :</b><br> 优化了代码结构和用户体验；加强内聚性，简化了流程另存为图片功能和打印功能的内部实现，摆脱了1.1至1.2版本中对第三方插件的依赖，导出结果更清晰，并能向后兼容到IE9；各部分的按钮都可以通过内置接口方法进行配置；节点数据新增”areaId”可选属性:表示其属于哪一个区域组(泳道)。总体还加入了对amd、cmd开发模式规范的支持。</li>
-                <li><b class="f18 text-primary">1.3 :</b><br> 修正一些影响用户体验和使用的BUG，增加灵活的对工作区所有操作按钮注释配置功能。</li>
-                <li><b class="f18 text-primary">1.2.1 :</b><br> 改善对IE8的支持；优化手动调整元素大小的精确度；增加对流程图打印预览或另存为PDF的功能。</li>
-                <li><b class="f18 text-primary">1.2 :</b><br> 重大更新版本! 增加了对节点、连线、泳道块的右键事件和双击事件方法设定（可return false以阻止浏览器默认事件发生）；增加虚线的绘制功能方法：应众多用户的要求增加了重要的流程图缩放功能接口！可缩放范围是从原始大小的50%至400%。（仅提供方法接口，具体操作缩放的页面组件元素用户另行选择绑定第三方的）</li>
-                <li><b class="f18 text-primary">1.1 :</b><br> 进一步修正了BUG；增加了导出工作区内流程图为图片并让用户下载的功能，目前仅能支持IE10以上、IE edge、Chrome、FireFox、Safari浏览器，该功能需求载入新的GooFlow.export.js扩展包。</li>
-                <li><b class="f18 text-primary">1.0.2 :</b><br> 修正了当某节点原来为marked，选中再取消后marked标红样式消失的问题。</li>
-                <li><b class="f18 text-primary">1.0 :</b><br> 初始正式版本，相对于以前的试用版，进一步修正了BUG，可自定义颜色项更多，并且做到了不再有一张图片，所有图标均匀为矢量字体。</li>
+                <li><b class="f18 text-primary">1.3.2 :</b><br> Optimized the code structure and user experience; Strengthen cohesion, simplify the internal implementation of the process save as picture function and print function, got rid of the dependence on third-party plugins from version 1.1 to 1.2, and exports results more clearly. And could be backwards compatible to IE9; each part of the button could be configured through the built-in interface method; node data added "areaId" optional attribute: indicates which area group (lane) it belongs to. The overall also added support for amd, cmd development model specification.</li>
+                <li><b class="f18 text-primary">1.3 :</b><br> Fixed some bugs that affect the user experience and usage, and add flexible annotation configuration functions for all operation buttons in the workspace.</li>
+                <li><b class="f18 text-primary">1.2.1 :</b><br> Improved support for IE8; optimize the accuracy of manually resized elements; add functionality to print previews or save as PDFs.</li>
+                <li><b class="f18 text-primary">1.2 :</b><br> Major update version! Added method for right-click events and double-click events for nodes, connections, and lane blocks (return false to prevent browser default events from occurring); Add dashed line drawing function method: should be requested by many users Added important flowchart zoom function interface! The scalable range is from 50% to 400% of the original size. (Only provide method interface, you can chooses to bind the third-party's operation element)</li>
+                <li><b class="f18 text-primary">1.1 :</b><br> BUG has been further amended; the function of exporting the flow chart in the work area into a picture and allowing the user to download has been added. Currently only IE10, IE edge, Chrome, FireFox, Safari browsers can be supported, and this function needs to load new GooFlow. .export.js extension package.</li>
+                <li><b class="f18 text-primary">1.0.2 :</b><br> Fixed the problem that when a node was originally marked, the marked red mode disappeared after the selection and cancellation.</li>
+                <li><b class="f18 text-primary">1.0 :</b><br> The initial official version. Compared with the previous trial version, the BUG has been further revised, more customizable color items are available, and there is no longer a single picture. All icons are evenly shaped as vector fonts.</li>
             </ul>
         </div>
     </section>
@@ -267,22 +267,20 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
         <div id="copyright" class="anchor"></div>
         <div class="panel-body">
             <h3 class="text-primary text-center">Order Authorization</h3><hr/>
-            <p class="indent32">当前托管项目中所放版本仅为试用版，如要使用正式版，需要联系作者本人。</p>
-            <p class="indent32">本组件可免费用于非商业软件项目开发；如果要使用在以营利为目的软件开发项目中，请向作者本人购买商业使用授权，谢谢。</p>
-            <p class="indent32">（如果逃避购买授权，擅自窃取用作谋利，即属严重侵权行为，与盗窃无异。产生的一切任何后果责任由侵权者自负。请各位只想免费吃白饭的伸手党做好向作者本人及自己的公司、客户负全责的觉悟。）</p>
+            <p class="indent32">The version placed in the current hosting project is only a trial version including some ads and miner. If you want to use the official version, you need to contact the author.</p>
+            <p class="indent32">Thank for your attention to GooFlow. The component can be used free of charge for non-commercial software project development; if you want to use it for profit-oriented software development projects, please purchase the commercial use authorization from the author himself.</p>
             <p class="indent32 text-muted">
-                商业授权费用为 <b class="text-primary">3500 RMB</b>，目前支持支付宝、微信支付；
-                购买一个授权只对应一个项目产品（若项目1期购买的授权，2期及以后的可继续使用；同一个产品，可以在一个授权下，出售不同的订制化版本给不同客户）；
-                如果您购买了3次授权，则将直接获得今后的新产品均可免费使用该组件的权利。
+                The commercial license fee is <b class="text-primary">3,500 RMB</b>.
+                Currently, it supports Alipay and Wechat payment. The purchase of a license corresponds to only one item of product (if the license for the 1st period of the project is purchased, it can be used continuously in the second and subsequent periods; the same product can be under one license. Different customized versions are sold to different customers.) If you purchase 3 licenses, you will have direct access to this component for future new products.
             </p>
-            <p class="indent32 text-muted">更多咨询，请点击页面右上角的 <a href="javascript:document.getElementById('aboutMe').click()">“关于我”</a>
-                ，通过弹出信息框中提供的几种联系方式联系作者本人。</p>
+            <p class="indent32 text-muted">To learn more，please click <a href="javascript:document.getElementById('aboutMe').click()">"About Me"</a> in page of top-right to
+                contact me author.</p>
         </div>
     </section>
 </article>
 <footer>
-    <p>Copyright ©2018 GooFlow官网,foolegg@126.com(sdlddr)</p>
-    <p>本项目源码受 MIT开源协议保护，文档受 CC BY 3.0 开源协议保护。</p>
+    <p>Copyright ©2018 GooFlow official website, foolegg@126.com(sdlddr)</p>
+    <p>The repository's source code is protected by the MIT license; The document is protected by the CC BY 3.0 license.</p>
 </footer>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -290,25 +288,23 @@ require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">关于我</h4>
+                <h4 class="modal-title" id="myModalLabel">About Me</h4>
             </div>
             <div class="modal-body">
                 <h4 class="text-success">GooFlow</h4>
                 <p class="f14 text-muted indent28">
-                    GooFlow诞生于2013年初，至今已有多次重大更新，目的是至力于成为一套跨浏览器、轻量级、可移植性强、用户体验好、易上手的产品。
-                    由于为作者本人单独开发，由于精力有限及其它各种原因，直到2017年初才发布了首个正式版，但至今一直保持不定时的版本发布。
-                    在此感谢所有早期试用者为GooFlow的主要功能完善作出的贡献。
+                    GooFlow was born in early 2013 and has undergone major updates so far, aiming to become a cross-browser, lightweight, portable, user-friendly, and easy-to-use product. Because of the independent development for the author himself, due to limited energy and various other reasons, it was not until the beginning of 2017 that the first official version was released, but it has been released from time to time. We would like to thank all early adopters for their contributions to the improvement of GooFlow's main features.
                 </p>
                 <p class="f14 text-muted indent28">
-                    目前GooFlow项目已经放到GitHub与Gitee，大家可以在
+                    At present, the GooFlow project has been put on GitHub and Gitee. Everyone can raise questions and suggestions on
                     <a href="https://github.com/sdlddr/Gooflow/issues" target="_blank">GitHub Issues</a>
-                    上提出疑问和建议，一起技术交流，我将尽力及时回复。
+                    or technical exchanges, I will try my best to respond in a timely manner.
                 </p>
                 <hr>
                 <h4 class="text-success">Contact Information</h4>
                 <address style="margin-left:15px">
                     <blockquote class="f16">
-                        微信 ： (+86) 18648945414<br>
+                        Weixin ： (+86) 18648945414<br>
                         QQ ： <a href="tencent://message/?uin=115247126&Site=GooFlow官网&Menu=yes">115247126</a><br>
                         Email ： <a href="mailto:foolegg@126.com">foolegg@126.com</a><br>
                         GitHub ： <a href="https://github.com/sdlddr" target="_blank">sdlddr</a><br>
