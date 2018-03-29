@@ -1,0 +1,139 @@
+<div class="main-frame" data-title="Quick Start">
+    <article class="main-container">
+        <div class="page-header"><h1>GooFlow Document <small id="myVersion"></small></h1></div>
+        <p class="text-muted f16">The content of this site is online document, remember collect it!</p>
+        <div id="overview" class="container-fluid" data-title="Overview">
+            <div class="row mgb15">
+                <div class="col-md-8 col-ms-12">
+                    <h2 class="text-primary">Overview</h2>
+                    <p class="indent28 f16">
+                        GooFlow is a web-based process designer that is easy to use, easy to use, and beautiful in interface. It is based on Jquery development and inherits the experience of operating experience like PhotoShop. It can describe a process in a specific Json format and present it to users. It provides rich operating functions for users to view or edit instantly, and it can be easily customized to expand into an online IDE by providing rich interfaces. Believe that both developers and end users will love GooFlow.
+                    </p>
+                </div>
+                <div class="col-md-4 hidden-xs hidden-sm text-center"><img style="width:170px;margin-top:40px" src="../../assets/img/logo_big.png"></div>
+            </div>
+        </div>
+        <div id="install" class="container-fluid" data-title="Quick Installation">
+            <h2 class="text-primary">Quick Installation</h2>
+            <p>Make sure your machine is properly installed<code>node.js</code> and <code>npm</code>.</p>
+            <p>Firstly checkout the repository from GitHub or Gitee to your local, and you can run the installation command:</p>
+            <pre>$ npm install</pre>
+            <p>Then run the build command:</p>
+            <pre>$ npm run build</pre>
+            <p>This will generate the latest GooFlow archive file in the dist directory. Finally start the project comes with the http-server program, open the native static Web service:</p>
+            <pre>$ npm run start</pre>
+            <p>The browser will automatically open the project home page, from the above instance link can open to browse the current several demonstration examples.</p>
+        </div>
+        <div id="simpleEg" class="container-fluid" data-title="First Instance">
+            <h2 class="text-primary">First Instance</h2>
+            <p>Let us begin the first simplest example.</p>
+            <p>Introduces jquery, GooFlow style files and core library files in demo.html.</p>
+            <pre><code class="language-markup">&lt;!-- demo.html --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="./dist/GooFlow.min.css"/>
+&lt;/head>
+&lt;body&gt;
+    &lt;div id="demo">&lt;/div>
+    ……
+    &lt;script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.export.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.print.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./demo.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+            <pre><code class="language-javascript">//// demo.js
+    var options = {
+        toolBtns:["start round mix","end round","task","node","chat","state","plug","join","fork","complex mix"],
+        haveHead:true,
+        headLabel:true,
+        headBtns:["new","open","save","undo","redo","reload"],// define header's buttons when haveHead=true
+        haveTool:true,
+        haveGroup:true,
+        useOperStack:true
+    };
+    var demo = GooFlow.init("#demo",options);</code></pre>
+            <p>Open demo.html and you'll see a designer page for a blank drawing area! Experience the thrill of painting flowcharts!</p>
+            <div style="max-width:800px;" class="center-block"><img src="../../assets/img/init.png" class="img-responsive center-block"></div>
+        </div>
+        <div id="amdEg" class="container-fluid" data-title="AMD Instance">
+            <h2 class="text-primary">AMD Instance</h2>
+            <p>Of course, you can also load library files in AMD mode, but the initialization method is the same:</p>
+            <pre><code class="language-javascript">/** require.config.js **/
+requirejs.config({
+    map: {
+		'*': {
+			'css': 'https://cdn.bootcss.com/require-css/0.1.10/css.min.js' // https://github.com/guybedford/require-css, RequireJs's plugin
+		}
+	},
+    paths: {
+        jquery: 'https://cdn.bootcss.com/jquery/1.12.4/jquery.min',
+        GooFlow: './dist/GooFlow.min',
+        'GooFlow.export': './dist/GooFlow.export',  // Optional, a extension file of exporting the flowchart into a picture file.
+        'GooFlow.print': './dist/GooFlow.print',    // Optional, a extension file of print the flowchart or save flowchart as a PDF file.
+    },
+    //// ……
+    shim: {
+        GooFlow: {
+            deps:['css!./dist/GooFlow.min.css','jquery']
+        }
+    },
+});</code></pre>
+            <pre><code class="language-markup">&lt;body&gt;
+    &lt;div id="demo">&lt;/div>
+    ……
+    &lt;script data-main="main.js" src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js">&lt;/script>
+	&lt;script src="../assets/js/require.config.js">&lt;/script>
+&lt;/body&gt;</code></pre>
+            <pre><code class="language-javascript">/** main.js using extension packages **/
+require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
+    require(['GooFlow.export','GooFlow.print'], function (){
+        // 初始化的代码
+        var options = { …… };
+        var demo = GooFlow.init("#demo",options);
+        demo.setNodeRemarks(remark);         //remarks is a title prompt definition for the left toolbar buttons
+        demo.setHeadToolsRemarks(headBtns);  //headBtns is a title prompt definition for the header bar's buttons
+        demo.loadData(jsondata);             //jsondata is a json data for expressing the detail of flowcharts
+        demo.onBtnSaveClick=function(){
+            demo.exportDiagram('myFile');//the function of exporting a png file
+        }
+        demo.onPrintClick=function(){
+			demo.print();//the function of printing or save flowchart as a PDF file
+        }
+    });
+});</code></pre>
+        </div>
+        <div id="uiDesign" class="container-fluid" data-title="User Interface">
+            <h2 class="text-primary">User Interface</h2>
+            <p>as the picture shows:</p>
+            <div><img src="../../assets/img/aaa.png" class="img-responsive center-block"></div><br>
+            <p class="indent28"><b class="text-warning">Workspace</b>, its width and height is initially the size without the scroll bar.
+                When the mouse slides to the right/bottom side, a half-tone layer appears. Just click on it to manually expand the workspace.
+                The horizontal X-axis direction is<span class="text-warning">from left to right</span>, and the vertical Y-axis direction is <span class="text-warning">from top to bottom</span>, which are the same as the CSS definition.
+                When loading a drawn json flowchart data, the width and height of the workspace will also adaptively load the width and height of the flowchart and automatically expand.</p>
+            <p class="indent28"><b class="text-warning">The drawing toolbar</b> is on the left of the drawing area, from top to bottom:
+                <span class="text-warning">selection pointer, connection line, start node, end node, task node, automatic node, decision node, status node, extension additional node, branch node, aggregate node Point, composite sub-process node</span>.
+                The last one is not a node, but a switch for node connection editing and grouping lane editing two work states.</p>
+            <p class="indent28"><b class="text-warning">The header's bar</b> is the place where the flowchart titles are displayed and where some function buttons are placed. These buttons can be customized by the user in addition to the system.</p>
+            <p class="indent28"><b class="text-warning">If you do not set the left toolbar when it is initialized</b>, the editing function is turned off and the component becomes a flowchart viewer/tracker.</p>
+        </div>
+        <div id="elDesign" class="container-fluid" data-title="Charts's Elements">
+            <h2 class="text-primary">Charts's Elements</h2>
+            <table class="table table-bordered">
+                <tr style="background:#f9f9f9"><th class="text-center">Node selected</th><th class="text-center">Line selected</th><th class="text-center">Lane selected</th></tr>
+                <tr>
+                    <td class="text-center"><img src="../../assets/img/node.png" class="img-responsive center-block"></td>
+                    <td class="text-center"><img src="../../assets/img/line.png" class="img-responsive center-block"></td>
+                    <td class="text-center"><img src="../../assets/img/area.png" class="img-responsive center-block"></td>
+                </tr>
+            </table>
+            <p>In combination with the complete screenshot in the last section and the selected element style table above, you can find:</p>
+            <ul>
+                <li><b class="text-warning">Nodes</b> defaults to a light blue rounded rectangle; if a <code>.item_mix</code> class is added, it well be green；if a <code>.item_round</code>class is added, it well become a circle.</li>
+                <li><b class="text-warning">Nodes</b> are renamed, double-click the text, drag, resize, add and delete as default functions, and they can customize right-click events.</li>
+                <li><b class="text-warning">Lines</b> have two styles which are a solid line and a dotted line.There are three types of line: a straight line, a middle line that can be dragged up and down, and a middle line that can be dragged left and right. Double-click the line to directly edit the text description of the line. Manually change the start or end of the connection.</li>
+                <li><b class="text-warning">Grouping lanes</b>, the switches in the lower left corner are required to be edited after being pressed. There are four random colors. Click the circle icon in the upper left corner to change the color. Double-click the text to directly edit, or drag and resize as the node.</li>
+            </ul>
+        </div>
+    </article>
+</div>
+<script>$("#myVersion").text($("#version").text())</script>

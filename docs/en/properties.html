@@ -1,0 +1,162 @@
+<div class="main-frame" data-title="Properties">
+    <article class="main-container">
+        <div class="page-header"><h1>Properties</h1></div>
+
+        <div id="basicProp" class="container-fluid" data-title="基础属性">
+            <h2 class="text-primary">基础属性</h2>
+            <div id="id" class="container-fluid" data-title="$id">
+                <h3><span class="text-gray">this.</span>$id <small>类型：String</small></h3>
+                <p class="indent28">被渲染为设计器的DOM对象的id；该属性是不能为空的，需要被渲染的设计器上具有id属性。</p>
+            </div>
+            <div id="bgDiv" class="container-fluid" data-title="$bgDiv">
+                <h3><span class="text-gray">this.</span>$bgDiv <small>类型：Jquery Object</small></h3>
+                <p class="indent28">设计器最外层框架的Jquery对象。</p>
+            </div>
+            <div id="tool" class="container-fluid" data-title="$tool">
+                <h3><span class="text-gray">this.</span>$tool <small>类型：Jquery Object</small></h3>
+                <p class="indent28">设计器左侧工具栏的Jquery对象，仅初始化传参<code>options.haveTool=true</code>时有效；否则该属性为null。</p>
+            </div>
+            <div id="head" class="container-fluid" data-title="$head">
+                <h3><span class="text-gray">this.</span>$head <small>类型：Jquery Object</small></h3>
+                <p class="indent28">设计器上方顶部栏的Jquery对象，包括标题框和顶部按钮组；仅初始化传参<code>options.haveHead=true</code>时有效；否则该属性为null。</p>
+            </div>
+            <div id="workArea" class="container-fluid" data-title="$workArea">
+                <h3><span class="text-gray">this.</span>$workArea <small>类型：Jquery Object</small></h3>
+                <p class="indent28">装载结点/线条/分组泳道的绘图工作区，Jquery对象。</p>
+            </div>
+            <div id="draw" class="container-fluid" data-title="$draw">
+                <h3><span class="text-gray">this.</span>$draw <small>类型：Dom</small></h3>
+                <p class="indent28">画矢量线条的Dom容器，处于工作区中。</p>
+            </div>
+            <div id="group" class="container-fluid" data-title="$group">
+                <h3><span class="text-gray">this.</span>$group <small>类型：Jquery Object</small></h3>
+                <p class="indent28">仅用来装载分组泳道DOM元素的Jquery对象容器，处于工作区中。仅初始化传参<code>options.haveGroup=true</code>时下有效；否则该属性为null。</p>
+            </div>
+            <div id="workExtendStep" class="container-fluid" data-title="$workExtendStep">
+                <h3><span class="text-gray">this.</span>$workExtendStep <small>类型：Number</small></h3>
+                <p class="indent28">在手动扩展绘图工作区的可用区域时，一次扩展宽/高后增加多少像素，默认200。</p>
+            </div>
+            <div id="ghost" class="container-fluid" data-title="$ghost">
+                <h3><span class="text-gray">this.</span>$ghost <small>类型：Jquery Object</small></h3>
+                <p class="indent28">专门用在移动、调整大小等元素操作时，给用户操作的半透明浮动区。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+            </div>
+            <div id="mpFrom" class="container-fluid" data-title="$mpFrom">
+                <h3><span class="text-gray">this.</span>$mpFrom <small>类型：Jquery Object</small></h3>
+                <p class="indent28">编辑模式下选中线以后，出现在起点的小框，用来移动以变更要连接的起始结点。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+            </div>
+            <div id="mpTo" class="container-fluid" data-title="$mpTo">
+                <h3><span class="text-gray">this.</span>$mpTo <small>类型：Jquery Object</small></h3>
+                <p class="indent28">编辑模式下选中线以后，出现在终点箭头处的小框，用来移动以变更要连接的到达结点。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+            </div>
+            <div id="textArea" class="container-fluid" data-title="$textArea">
+                <h3><span class="text-gray">this.</span>$textArea <small>类型：Jquery Object</small></h3>
+                <p class="indent28">编辑模式下双击元素后出现的浮动文本域，用来写重命名方法<code>setName</code>所需的新名称传参。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+            </div>
+            <div id="lineMove" class="container-fluid" data-title="$lineMove">
+                <h3><span class="text-gray">this.</span>$lineMove <small>类型：Jquery Object</small></h3>
+                <p class="indent28">操作移动折线的中段时用到的浮动Div。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+            </div>
+            <div id="lineOper" class="container-fluid" data-title="$lineOper">
+                <h3><span class="text-gray">this.</span>$lineOper <small>类型：Jquery Object</small></h3>
+                <p class="indent28">编辑模式下选定一条连线后出现的浮动操作栏，有改变线的类型和删除线等按钮。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+            </div>
+        </div>
+
+        <div id="conditionProp" class="container-fluid" data-title="业务操作属性">
+            <h2 class="text-primary">业务操作属性</h2>
+            <div id="nowType" class="container-fluid" data-title="$nowType">
+                <h3><span class="text-gray">this.</span>$nowType <small>类型：String</small></h3>
+                <p class="indent28">当前要绘制的对象类型，开始时为<code>"cursor"</code>：即不绘制任何元素，只是作为鼠标指针进行元素选定。<br>
+                其它的取值还有：<code>"direct"</code>实线连线、<code>"dashed"</code>虚线连线、<code>"group"</code>分组泳道、<code>……</code>各种类型的节点。</p>
+            </div>
+            <div id="focus" class="container-fluid" data-title="$focus">
+                <h3><span class="text-gray">this.</span>$focus <small>类型：String</small></h3>
+                <p class="indent28">当前被选定的结点/转换线ID，如果没选中或者工作区被清空则为空字串。</p>
+            </div>
+            <div id="editable" class="container-fluid" data-title="$editable">
+                <h3><span class="text-gray">this.</span>$editable <small>类型：Boolean</small></h3>
+                <p class="indent28">当前工作区是否可编辑，即是编辑模式还是仅浏览模式。</p>
+            </div>
+            <div id="nodeDom" class="container-fluid" data-title="$nodeDom">
+                <h3><span class="text-gray">this.</span>$nodeDom <small>类型：JsonMap</small></h3>
+                <p class="indent28">流程图中所有展示节点的Jquery对象Map集；以<code>节点id</code>为key，工作区中节点元素的<code>Jquery对象</code>为value。</p>
+            </div>
+            <div id="lineDom" class="container-fluid" data-title="$lineDom">
+                <h3><span class="text-gray">this.</span>$lineDom <small>类型：JsonMap</small></h3>
+                <p class="indent28">流程图中所有展示连线的Jquery对象Map集；以<code>连线id</code>为key，工作区中连线元素的<code>Dom对象</code>为value。</p>
+            </div>
+            <div id="areaDom" class="container-fluid" data-title="$areaDom">
+                <h3><span class="text-gray">this.</span>$areaDom <small>类型：JsonMap</small></h3>
+                <p class="indent28">流程图中所有展示分组泳道的Jquery对象Map集；以<code>分组泳道id</code>为key，工作区中分组泳道元素的<code>Jquery对象</code>为value。</p>
+            </div>
+            <div id="scale" class="container-fluid" data-title="$scale">
+                <h3><span class="text-gray">this.</span>$scale <small>类型：Number</small></h3>
+                <p class="indent28">工作区内流程图当前相对于原始大小的缩放比例，默认为1（100%），范围是<code>0.5~4</code>。</p>
+            </div>
+            <div id="headBtnEvents" class="container-fluid" data-title="$headBtnEvents">
+                <h3><span class="text-gray">this.</span>$headBtnEvents <small>类型：JsonMap</small></h3>
+                <p class="indent28">用户对头部栏另行自定义类型按钮的事件绑定map集合，以<code>按钮类型名</code>为key，对应的<code>function类型变量</code>为value。</p>
+            </div>
+            <div id="undoStack" class="container-fluid" data-title="$undoStack">
+                <h3><span class="text-gray">this.</span>$undoStack <small>类型：Array[Json Object]</small></h3>
+                <p class="indent28">“撤销操作”事务栈；仅当初始化传参<code>options.haveTool=true</code>且<code>options.useOperStack=true</code>时该属性才存在。</p>
+            </div>
+            <div id="redoStack" class="container-fluid" data-title="$redoStack">
+                <h3><span class="text-gray">this.</span>$redoStack <small>类型：Array[Json Object]</small></h3>
+                <p class="indent28">“重做操作”事务栈；仅当初始化传参<code>options.haveTool=true</code>且<code>options.useOperStack=true</code>时该属性才存在。</p>
+            </div>
+            <div id="isUndo" class="container-fluid" data-title="$isUndo">
+                <h3><span class="text-gray">this.</span>$isUndo <small>类型：Number</small></h3>
+                <p class="indent28">事务操作标志位，仅供设计器运作时内部调用。</p>
+            </div>
+        </div>
+
+        <div id="advancedProp" class="container-fluid" data-title="存储数据属性">
+            <h2 class="text-primary">存储数据属性</h2>
+            <div id="title" class="container-fluid" data-title="$title">
+                <h3><span class="text-gray">this.</span>$title <small>类型：String</small></h3>
+                <p class="indent28">被载入的流程图名称；如果初始化时设定有有顶部栏和标题框，则显示于标题框中。</p>
+            </div>
+            <div id="nodeData" class="container-fluid" data-title="$nodeData">
+                <h3><span class="text-gray">this.</span>$nodeData <small>类型：JsonMap</small></h3>
+                <p class="indent28">载入的流程图中所有节点数据Map集；以<code>节点id</code>为key，<code>NodeItem</code>类型结构的数据为value。
+                    <br>详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“NodeItem”</span>介绍。</p>
+            </div>
+            <div id="nodeCount" class="container-fluid" data-title="$nodeCount">
+                <h3><span class="text-gray">this.</span>$nodeCount <small>类型：Number</small></h3>
+                <p class="indent28">载入的流程图中节点的数量，初始为0。</p>
+            </div>
+            <div id="lineData" class="container-fluid" data-title="$lineData">
+                <h3><span class="text-gray">this.</span>$lineData <small>类型：JsonMap</small></h3>
+                <p class="indent28">载入的流程图中所有连线数据Map集；以<code>连线id</code>为key，<code>LineItem</code>类型结构的数据为value。
+                    <br>详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“LineItem”</span>介绍。</p>
+            </div>
+            <div id="lineCount" class="container-fluid" data-title="$lineCount">
+                <h3><span class="text-gray">this.</span>$lineCount <small>类型：Number</small></h3>
+                <p class="indent28">载入的流程图中连线的数量，初始为0。</p>
+            </div>
+            <div id="areaData" class="container-fluid" data-title="$areaData">
+                <h3><span class="text-gray">this.</span>$areaData <small>类型：JsonMap</small></h3>
+                <p class="indent28">载入的流程图中所有分组泳道数据Map集；以<code>分组泳道id</code>为key，<code>AreaItem</code>类型结构的数据为value。
+                    <br>详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“AreaItem”</span>介绍。</p>
+            </div>
+            <div id="areaCount" class="container-fluid" data-title="$areaCount">
+                <h3><span class="text-gray">this.</span>$areaCount <small>类型：Number</small></h3>
+                <p class="indent28">载入的流程图中分组泳道的数量，初始为0。</p>
+            </div>
+            <div id="max" class="container-fluid" data-title="$max">
+                <h3><span class="text-gray">this.</span>$max <small>类型：Number</small></h3>
+                <p class="indent28">计算默认元素名称中，后缀序列号的SEQUENCE，默认值为1；<br>
+                    初始值来自构造方法中options传参的initNum属性，或者载入流程图JSON数据中的initNum属性；<br>
+                    当有流程图中有元素被手动新增时，该值会自加1。</p>
+            </div>
+            <div id="deletedItem" class="container-fluid" data-title="$deletedItem">
+                <h3><span class="text-gray">this.</span>$deletedItem <small>类型：JsonMap( {id: String )</small></h3>
+                <p class="indent28">在流程图的编辑操作中被删除掉的元素id-map集合；<br>以<code>元素id</code>为Key，元素类别名为value(共有<code>node'</code>、<code>'line'</code>、<code>'area'</code>三种取值)。</p>
+            </div>
+        </div>
+
+
+
+    </article>
+</div>

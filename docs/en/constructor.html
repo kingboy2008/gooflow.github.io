@@ -1,0 +1,54 @@
+<div class="main-frame" data-title="Constructors">
+    <article class="main-container">
+        <div class="page-header"><h1>Constructors</h1></div>
+        <div id="function" class="container-fluid" data-title="Methods">
+            <h2 class="text-primary">Methods</h2>
+            <p>There are three constructor calls, their params are the same, and their return value is also the same.</p>
+            <pre><code class="language-javascript">    var demo = GooFlow.init(selector, options);    //Factory mode
+    var demo = $.createGooFlow(selector, options); //according to jquery extension method
+    var demo = new GooFlow(selector, options);     // native definition of class object method</code></pre>
+            <p>Personally, it is recommended to use the first (factory mode), compatible with the modular front-end development mode:</p>
+            <blockquote class="bg-info">
+                GooFlow.init('selector', [options])
+            </blockquote>
+        </div>
+        <div id="params" class="container-fluid" data-title="Params">
+            <h2 class="text-primary">Parameters</h2>
+            <h3>selector <small>String</small></h3>
+            The Dom container selector to be rendered as a designer, in the same format as the jQuery selector, requires an id attribute.
+            <h3>options <small>Json Object</small></h3>
+            Detailed initialization parameter options.
+            <table class="table table-striped table-bordered">
+                <thead><tr>
+                    <th class="text-center">properties</th><th class="text-center">type</th><th class="text-center">default</th><th class="text-center">description</th>
+                </tr></thead>
+                <tbody class="text-center">
+                <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">The width of the designer, in pixels. The default is the adaptive width of the original Dom window.</td></tr>
+                <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">The height of the designer, in pixels. The default is the adaptive height of the original Dom window.</td></tr>
+                <tr><td class="text-primary f16">initNum</td><td>Number</td><td class="text-gray">1</td><td class="text-muted text-left">Calculate the start Sequence of the default element name's suffix.</td></tr>
+                <tr><td class="text-primary f16">haveHead</td><td>Boolean</td><td class="text-gray">false</td><td class="text-muted text-left">Whether to display the title and the top bar of the top button.</td></tr>
+                <tr><td class="text-primary f16">initLabelText</td><td>String</td><td class="text-gray">newFlow_1</td><td class="text-muted text-left">When initializing the title of the content, only if <code>haveHead==true</code> valid.</td></tr>
+                <tr><td class="text-primary f16">haveTool</td><td>Boolean</td><td class="text-gray">false</td><td class="text-muted text-left">Whether the toolbar on the left is needed or not, this determines whether the edit mode or the read-only mode is completed after the rendering is completed.</td></tr>
+                <tr><td class="text-primary f16">haveDashed</td><td>Boolean</td><td class="text-gray">false</td><td class="text-muted text-left">The need to draw a dotted line function only if <code>haveTool==true</code> valid.</td></tr>
+                <tr><td class="text-primary f16">useOperStack</td><td>Boolean</td><td class="text-gray">false</td><td class="text-muted text-left">Do you want to use the sequence of operations in the transaction management area of business, the election <code>true</code >will open the revocation of undo and redo redo function, the setting is only valid when <code>edit mode</code>. </td></tr>
+                <tr><td class="text-primary f16">toolBtns</td><td>Array</td><td class="text-gray">[String]</td><td class="text-muted text-left">Left toolbar, in addition to the basic node / connection button icons, what type of node names only if <code>haveTool==true</code> valid.<br>
+                    Specific wording such as: <code>["task","node","chat","state","plug"]</code>. <br>
+                    Each unit in the array is the name of these node types, which can be included in the system, or can be a custom type. At this time, you need to define its CSS style class <code>'.ico_'+your customized name</code>.<br>
+                    Defining the node type during initialization <code>Original type+" round"</code> allows the node to be circular; defining the node type <code>Original type+" mix"</code> allows the node to become the color of the composite node.In a word,  the myType of <code>Original type+" myType"</code> can be a special style class written by itself.</td></tr>
+                <tr><td class="text-primary f16">headBtns</td><td>Array</td><td class="text-gray">[String]</td><td class="text-muted text-left">The top bar of buttons from left to right are buttons which type name only if <code>haveHead==true</code> valid.<br>
+                    Such as: <code>["new","open","save","undo","redo","reload","print"]</code>;<br>In addition to the two buttons used to cancel the \ redo operation, the other buttons when the method events need to customize. <br>
+                    Users can also customize the button type, then you need to define the CSS style class: <code>'.ico_'+customized classname</code></td></tr>
+                <tr><td class="text-primary f16">haveGroup</td><td>Boolean</td><td class="text-gray">false</td><td class="text-muted text-left">Whether there is node switch editing and grouping lane edit two kinds of work area state switch. That is, whether there is a function to display or edit a group of lanes.</td></tr>
+                <tr><td class="text-primary f16">colors</td><td>Json</td><td class="text-gray">(default)</td><td class="text-muted text-left">The color configuration of each element in the designer can overrides the same name of attribute's values in <code>GooFlow.color</code>.<br>Its internal definition is described in the <code>GooFlow.color</code> of section <a href="#structures">"Data Definition"</a>.</td></tr>
+                <tr><td class="text-primary f16">headBtnEvents</td><td>JsonMap</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">On the header bar separate custom type button event binding map set, key for the button type name, value for the method definition.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="returns" class="container-fluid" data-title="Return">
+            <h2 class="text-primary">Return</h2>
+            <h3>return <small>GooFlow Object</small></h3>
+            <p>An object of the GooFlow class, through which the rich interface can be invoked, even directly inside the element. For an introduction to this class object, see these chapters:
+                <a href="#properties">"Properties"</a>, <a href="#methods">"Methods"</a> and <a href="#events">"Event Hook"</a>.</p>
+        </div>
+    </article>
+</div>

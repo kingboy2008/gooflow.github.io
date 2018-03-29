@@ -1,7 +1,7 @@
 var fun={
 	renderPageNav:function(obj,kbd){
 		var html = '<aside class="right-panel hidden-xs hidden-sm"><ul class="nav sidenav">';
-		if(kbd)obj.find(".page-header").append('<div class="kbds hidden-xs">请通过 <kbd><kbd>ctrl</kbd> + <kbd>F</kbd></kbd> 进行页内检索</div>');
+		if(kbd)obj.find(".page-header").append(lang.ctrlF[lang.text]);
 		obj.children("article").append('<hr><div class="end"></div>')
 			.children(".container-fluid").each(function(){
 			var This=$(this);
@@ -57,7 +57,7 @@ var fun={
                 fun.renderPageNav(mf,g.hash!=='directory');
                 var rp = $(".right-panel");
                 var h = rp.height(), fh = height - 40;
-                if (h > fh) h.css(height, fh + 'px');
+                if (h > fh) rp.css("height", fh + 'px');
 
                 //处理导航路径的显示
                 fun.breadcrumb([{title:mf.data("title")}]);

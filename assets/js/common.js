@@ -1,6 +1,10 @@
 var lang={
 	text:'zh',
 	htmlCaret: ' <span class="caret"></span>',
+	ctrlF:{
+		zh:'<div class="kbds hidden-xs">请通过 <kbd><kbd>ctrl</kbd> + <kbd>F</kbd></kbd> 进行页内检索</div>',
+		en:'<div class="kbds hidden-xs">press <kbd><kbd>ctrl</kbd> + <kbd>F</kbd></kbd> to find in pages</div>'
+	},
 	title: {
 		zh:'在线流程设计器&middot;简单易用优秀体验',
 		en:'A Process Designer For Easy To Use And Good Experience'

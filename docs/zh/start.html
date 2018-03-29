@@ -1,6 +1,6 @@
 <div class="main-frame" data-title="快速入门">
     <article class="main-container">
-        <div class="page-header"><h1>GooFlow 使用文档 <small id="myVersion">v1.3.x</small></h1></div>
+        <div class="page-header"><h1>GooFlow 使用文档 <small id="myVersion"></small></h1></div>
         <p class="text-muted f16">本站内容为在线文档，各位记得收藏本站哦！</p>
         <div id="overview" class="container-fluid" data-title="概述">
             <div class="row mgb15">
@@ -39,6 +39,8 @@
     ……
     &lt;script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
     &lt;script type="text/javascript" src="./dist/GooFlow.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.export.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="./dist/GooFlow.print.min.js"&gt;&lt;/script&gt;
     &lt;script type="text/javascript" src="./demo.js"&gt;&lt;/script&gt;
 &lt;/body&gt;</code></pre>
             <pre><code class="language-javascript">//// demo.js
@@ -55,14 +57,61 @@
             <p>打开demo.html，就可以看到一个空白绘图区的设计器页了！体验一下绘画流程图时行云流水的快感。</p>
             <div style="max-width:800px;" class="center-block"><img src="../../assets/img/init.png" class="img-responsive center-block"></div>
         </div>
-        <div id="uiDesign" class="container-fluid" data-title="界面设计">
-            <h2 class="text-primary">界面设计</h2>
+        <div id="amdEg" class="container-fluid" data-title="AMD加载实例">
+            <h2 class="text-primary">AMD加载实例</h2>
+            <p>当然，你也可以AMD模式载入库文件，但初始化方式是一致的：</p>
+            <pre><code class="language-javascript">/** require.config.js **/
+requirejs.config({
+    map: {
+		'*': {
+			'css': 'https://cdn.bootcss.com/require-css/0.1.10/css.min.js' // https://github.com/guybedford/require-css, RequireJs's plugin
+		}
+	},
+    paths: {
+        jquery: 'https://cdn.bootcss.com/jquery/1.12.4/jquery.min',
+        GooFlow: './dist/GooFlow.min',
+        'GooFlow.export': './dist/GooFlow.export',  //可选，将流程图导出为图片文件的扩展包
+        'GooFlow.print': './dist/GooFlow.print',    //可选，将流程图输出打印或另存为PDF的扩展包
+    },
+    //// ……
+    shim: {
+        GooFlow: {
+            deps:['css!./dist/GooFlow.min.css','jquery']
+        }
+    },
+});</code></pre>
+            <pre><code class="language-markup">&lt;body&gt;
+    &lt;div id="demo">&lt;/div>
+    ……
+    &lt;script data-main="main.js" src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js">&lt;/script>
+	&lt;script src="../assets/js/require.config.js">&lt;/script>
+&lt;/body&gt;</code></pre>
+            <pre><code class="language-javascript">/** main.js 扩展功能包 **/
+require(['jquery', 'GooFlow'], function ( $, GooFlow ) {
+    require(['GooFlow.export','GooFlow.print'], function (){
+        // 初始化的代码
+        var options = { …… };
+        var demo = GooFlow.init("#demo",options);
+        demo.setNodeRemarks(remark);         //remarks为左侧工具栏按钮的title提示定义
+        demo.setHeadToolsRemarks(headBtns);  //headBtns为顶部标题栏按钮的title提示设置
+        demo.loadData(jsondata);             //jsondata为表达流程图详细的JSON数据
+        demo.onBtnSaveClick=function(){
+            demo.exportDiagram('myFile');//流程图导出图片功能
+        }
+        demo.onPrintClick=function(){
+			demo.print();//打印流程图或另存为PDF功能
+        }
+    });
+});</code></pre>
+        </div>
+        <div id="uiDesign" class="container-fluid" data-title="用户界面">
+            <h2 class="text-primary">用户界面</h2>
             <p>如图所示：</p>
             <div><img src="../../assets/img/aaa.png" class="img-responsive center-block"></div><br>
             <p class="indent28"><b class="text-warning">工作区</b> 宽度高度初始为无滚动条时的大小，鼠标滑到最右/最下边时出现半透层，只要对其点击便可手工扩展工作区。
                 水平X轴方向<span class="text-warning">由左至右</span>，竖直Y轴方向<span class="text-warning">由上至下</span>，与CSS样式中的顶距top和左距left是一样的。
                 当载入一个已绘制好的JSON流程图数据时，工作区宽高也会自适应载入流程图的宽高大小，自动扩展。</p>
-            <p class="indent28"><b class="text-warning">绘制工具栏</b> 在绘图区左边是，从上至下依次为：
+            <p class="indent28"><b class="text-warning">绘制工具栏</b> 在绘图区左边，从上至下依次为：
                 <span class="text-warning">选择指针、连接线、开始节点、结束节点、任务节点、自动节点、决策节点、状态节点、扩展附加节点、分支结点、聚合结点、复合子流程结点</span>
                 ；最后一个不是节点，而是节点连线编辑与分组泳道编辑两种工作区状态的切换开关，当切换至分组泳道编辑后，只能操作分组泳道块，节点与连线都被锁定；反之即然。</p>
             <p class="indent28"><b class="text-warning">顶部操作栏</b> 是展示流程图标题和放置一些功能按钮的地方，这些按钮除了系统自带外，还可由用户自定义。</p>
