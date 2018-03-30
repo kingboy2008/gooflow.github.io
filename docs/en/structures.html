@@ -2,11 +2,11 @@
     <article class="main-container">
         <div class="page-header"><h1>Data Definition</h1></div>
 
-        <div id="staticObject" class="container-fluid" data-title="全局静态配置项">
-            <h2 class="text-primary">全局静态配置项</h2>
+        <div id="staticObject" class="container-fluid" data-title="Global Configuration">
+            <h2 class="text-primary">Global Configuration</h2>
             <p>这些配置需要在初始化一个GooFlow实例前就设置好。</p>
             <div id="colors" class="container-fluid" data-title="colors">
-                <h3><span class="text-gray">GooFlow.</span>colors <small>类型：Json Object</small></h3>
+                <h3><span class="text-gray">GooFlow.</span>colors <small>Type: Json Object</small></h3>
                 <p>GooFlow中默认的、可配置的各主要元素的颜色。</p>
                 <table class="table table-striped table-bordered">
                     <thead><tr>
@@ -25,7 +25,7 @@
                 </table>
             </div>
             <div id="remarks" class="container-fluid" data-title="remarks">
-                <h3><span class="text-gray">GooFlow.</span>remarks <small>类型：Json Object</small></h3>
+                <h3><span class="text-gray">GooFlow.</span>remarks <small>Type: Json Object</small></h3>
                 <p>设计器中各种操作按钮默认的、可配置文字注释说明（通过原生dom的title属性展示）；<br>
                     如果不作任何设置，则设计器所有按钮上将不会有任何文字提示。</p>
                 <table class="table table-striped table-bordered">
@@ -44,11 +44,11 @@
             </div>
         </div>
 
-        <div id="dataObject" class="container-fluid" data-title="特殊结构">
-            <h2 class="text-primary">特殊结构</h2>
+        <div id="dataObject" class="container-fluid" data-title="Special Structure">
+            <h2 class="text-primary">Special Structure</h2>
             <p>GooFlow实例内部定义了一些特殊的单元结构，在进入<span class="text-warning">“内部属性”章节</span>前有必要先行了解。</p>
             <div id="NodeItem" class="container-fluid" data-title="NodeItem">
-                <h3>NodeItem <small>类型：Json Object</small></h3>
+                <h3>NodeItem <small>Type: Json Object</small></h3>
                 <p>描述单个节点信息的Json结构体。</p>
                 <table class="table table-striped table-bordered">
                     <thead><tr>
@@ -71,7 +71,7 @@
                 这些自定义属性，用户需在设计器提供的各种事件钩子中对其操作。</p>
             </div>
             <div id="LineItem" class="container-fluid" data-title="LineItem">
-                <h3>LineItem <small>类型：Json Object</small></h3>
+                <h3>LineItem <small>Type: Json Object</small></h3>
                 <p>描述单条连线信息的Json结构体。</p>
                 <table class="table table-striped table-bordered">
                     <thead><tr>
@@ -93,11 +93,11 @@
                     这些自定义属性，用户需在设计器提供的各种事件钩子中对其操作。</p>
             </div>
             <div id="AreaItem" class="container-fluid" data-title="AreaItem">
-                <h3>AreaItem <small>类型：Json Object</small></h3>
+                <h3>AreaItem <small>Type: Json Object</small></h3>
                 <p>描述分组泳信息的Json结构体。</p>
                 <table class="table table-striped table-bordered">
                     <thead><tr>
-                        <th>属性</th><th>类型</th><th>默认值</th><th>描述</th>
+                        <th>Property</th><th>Type</th><th>Default</th><th>Description</th>
                     </tr></thead>
                     <tbody class="text-center">
                     <tr><td class="text-primary f16">name</td><td>String</td><td class="text-gray">('area_'+序列号)</td><td class="text-muted text-left">分组泳道的显示名称。</td></tr>
@@ -111,7 +111,7 @@
                 </table>
             </div>
             <div id="FlowChart" class="container-fluid" data-title="FlowChart">
-                <h3>FlowChart <small>类型：Json Object</small></h3>
+                <h3>FlowChart <small>Type: Json Object</small></h3>
                 <p>设计器中完整的流程图详细描述结构体。</p>
                 <table class="table table-striped table-bordered">
                     <thead><tr>
@@ -133,16 +133,16 @@
             </div>
         </div>
 
-        <div id="someKeyword" class="container-fluid" data-title="敏感关键字">
-            <h2 class="text-primary">敏感关键字</h2>
-            <div id="defNodeType" class="container-fluid" data-title="节点定义类型">
-                <h3>节点定义类型</h3>
-                <p>用户可自定义新类型，也可覆盖原生自带类型的css样式。但切不可用以下关键字命名新节点类型：</p>
+        <div id="someKeyword" class="container-fluid" data-title="Sensitive Keywords">
+            <h2 class="text-primary">Sensitive Keywords</h2>
+            <div id="defNodeType" class="container-fluid" data-title="Node Definition">
+                <h3>Node Definition</h3>
+                <p>用户可自定义新类型，也可覆盖原生自带类型的css样式。但切不可用以下关键字命名新节点Type: </p>
                 <p class="f16"><code>'cursor'</code>、<code>'direct'</code>、<code>'dashed'</code></p>
                 <p>这几个关键字在工具栏中分别表示：<b>指针按钮</b>、<b>实线连线按钮</b>、<b>虚线连线按钮</b>。</p>
             </div>
-            <div id="defToolTip" class="container-fluid" data-title="工具栏文字说明">
-                <h3>工具栏文字说明</h3>
+            <div id="defToolTip" class="container-fluid" data-title="Toolbar Description">
+                <h3>Toolbar Description</h3>
                 <p>文字说明定义用的JsonMap结构是以<code>{'按钮类型名':'文字说明'}</code>的方式来构建的；除了节点类型按钮外，其它几个按钮的说明文字定义就需要用通过几个关键字的key进行设定了。如下：</p>
                 <pre><code class="language-javascript">GooFlow.remarks.toolBtns = {
     cursor:"选择指针的关键字",
@@ -152,9 +152,9 @@
     ……
 };</code></pre>
             </div>
-            <div id="defToolBtn" class="container-fluid" data-title="顶部栏按钮">
-                <h3>顶部栏按钮</h3>
-                <p>顶部栏按钮已经自带了如下的类型：</p>
+            <div id="defToolBtn" class="container-fluid" data-title="Head Bar Description">
+                <h3>Head Bar Description</h3>
+                <p>顶部栏按钮已经自带了如下的Type: </p>
                 <p class="f16"><code>"new","open","save","undo","redo","reload","print"</code></p>
                 <p>其中<code>undo</code>是撤销操作按钮，<code>undo</code>是重做操作按钮；这两个按钮有特殊功能，不能自定义事件。<br>
                     其它按钮都有专门的事件钩子，请参见下文中的<a href="#events">“事件定义钩子”章节。</a></p>
