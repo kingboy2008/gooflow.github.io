@@ -34,12 +34,12 @@ var lang={
 			if(userLang!=='zh'){
 				userLang = 'en';
 			}
-			$.cookie("userLang",userLang, { expires : 7, path:'/'});
+			$.cookie("userLang",userLang, { expires : 7 });
 		}
 		return userLang;
 	},
 	set: function(lang){
-		$.cookie("userLang",lang, { expires : 7, path:'/'});
+		$.cookie("userLang",lang, { expires : 7 });
 	},
 	switch: function (lang,text,reload){
 		$("#langSwitch").html(text + this.htmlCaret);
