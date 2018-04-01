@@ -421,6 +421,49 @@
                     </tbody>
                 </table>
             </div>
+            <div id="exportBpmnXML" class="container-fluid" data-title="exportBpmnXML">
+                <h3><span class="text-gray">this.</span>exportBpmnXML() <small>返回值：String</small></h3>
+                <p class="indent28">把流程图中的数据以Bpmn2.0格式的XML字符串输出。注意：<br><span class="text-danger">
+                    要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
+                <p class="f16">传参：<code>( nodeMaps )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">定义了流程图中节点的各种定义类型需转换成的XML标签名。<br>
+                        <code>key</code>是节点在Json中的类型，<code>value</code>是节点在XML中的标签名。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="loadBpmnXML" class="container-fluid" data-title="loadBpmnXML">
+                <h3><span class="text-gray">this.</span>loadBpmnXML() <small>返回值：void</small></h3>
+                <p class="indent28">载入Bpmn2.0规范的XML文件格式的流程图数据。注意：<br><span class="text-danger">
+                    要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
+                <p class="f16">传参：<code>( xmlDoc, nodesMap )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">xmlDoc</td><td>String</td><td class="text-muted text-left">被载入的Bpmn2.0规范的XML格式的流程图数据。</td></tr>
+                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">定义了流程图中节点的各种定义类型需转换成的XML标签名。<br>
+                        <code>key</code>是节点在XML中的标签名，<code>value</code>是节点在Json中的类型。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="loadBpmnXMLAjax" class="container-fluid" data-title="loadBpmnXMLAjax">
+                <h3><span class="text-gray">this.</span>loadBpmnXMLAjax() <small>返回值：void</small></h3>
+                <p class="indent28">用Ajax方式，远程读取Bpmn2.0规范的XML文件格式的流程图数据。注意：<br><span class="text-danger">
+                    要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
+                <p class="f16">传参：<code>( param, nodesMap )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">param</td><td>Json Object</td><td class="text-muted text-left">Ajax的参数，与Jquery中$.ajax()方法的settings传参一样，但dataType始终默认为"xml"。后端返回的结果需为Bpmn2.0规范的XML格式。</td></tr>
+                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">定义了流程图中节点的各种定义类型需转换成的XML标签名。<br>
+                        <code>key</code>是节点在XML中的标签名，<code>value</code>是节点在Json中的类型。</td></tr>
+                    </tbody>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
 
         <div id="transMethods" class="container-fluid" data-title="事务控制接口">

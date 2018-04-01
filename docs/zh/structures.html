@@ -46,7 +46,7 @@
 
         <div id="dataObject" class="container-fluid" data-title="特殊结构">
             <h2 class="text-primary">特殊结构</h2>
-            <p>GooFlow实例内部定义了一些特殊的单元结构，在进入<span class="text-warning">“内部属性”章节</span>前有必要先行了解。</p>
+            <p>GooFlow实例内部定义了一些特殊的单元结构，在进入<span class="text-warning">“内部属性”</span>章节前有必要先行了解。</p>
             <div id="NodeItem" class="container-fluid" data-title="NodeItem">
                 <h3>NodeItem <small>类型：Json Object</small></h3>
                 <p>描述单个节点信息的Json结构体。</p>
@@ -65,6 +65,7 @@
                     <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">节点是否已被标注。</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下节点是否被用户编辑过。</td></tr>
                     <tr><td class="text-primary f16">areaId</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">该节点所属分组泳道的id，当为<code>undefined</code>时表示不属于任何分组。</td></tr>
+                    <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">除数组以外的任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
                     </tbody>
                 </table>
                 <p class="indent28">得利于Json结构的可扩展性，除了上述指定属性外，用户对节点单元可任意自定义任何类型的、其它名称的属性，数量不限，以满足实际业务的需要。
@@ -87,6 +88,7 @@
                     <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">连线是否已被标注。</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下连线是否被用户编辑过。</td></tr>
                     <tr><td class="text-primary f16">dashed</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">是否为虚线样式，当为<code>undefined</code>时表示默认实线。</td></tr>
+                    <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">除数组以外的任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
                     </tbody>
                 </table>
                 <p class="indent28">得利于Json结构的可扩展性，除了上述指定属性外，用户对连线单元可任意自定义任何类型的、其它名称的属性，数量不限，以满足实际业务的需要。
@@ -107,6 +109,21 @@
                     <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-gray">100</td><td class="text-muted text-left">分组泳道高度，单位像素；仅非圆形节点时有效。</td></tr>
                     <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(4种随机值)</td><td class="text-muted text-left">分组区的颜色,有<code>"red","yellow","blue","green"</code>四种。</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下分组泳道是否被用户编辑过。</td></tr>
+                    <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">除数组以外的任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="Extra" class="container-fluid" data-title="Extra">
+                <h3>Extra <small>类型：Json Object</small></h3>
+                <p>流程图数据中附加信息的Json结构体，不参与流程图的构成，</p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr>
+                        <th>属性</th><th>类型</th><th>默认值</th><th>描述</th>
+                    </tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">流程图的id，对应于流程定义Key。多应用于Bpmn2.0流程引擎。</td></tr>
+                    <tr><td class="text-primary f16">targetNamespace</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">流程定义的目标命名空间。多应用于Bpmn2.0流程引擎。</td></tr>
+                    <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">除数组以外的任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -129,6 +146,7 @@
                     <tr><td class="text-primary f16">deletedItem</td><td>Map[id:String]</td><td class="text-gray">(undefined)</td>
                         <td class="text-muted text-left">在流程图的编辑操作中被删除掉的元素id-map集合；<br>以<code>元素id</code>为Key，元素类别名为value(共有<code>node'</code>、<code>'line'</code>、<code>'area'</code>三种取值)。
                             <br><span class="text-warning">注意：由<code>this.exportAlter()</code>方法返回的FlowChart对象中不会有该属性。</span></td></tr>
+                    <tr><td class="text-primary f16">extra</td><td>Extra</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">可选属性：<code>Extra</code>结构的数据，流程图中的附加信息，多应用于Bpmn2.0规范的流程引擎。</td></tr>
                 </table>
             </div>
         </div>
