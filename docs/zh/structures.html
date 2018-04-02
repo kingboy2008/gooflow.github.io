@@ -134,10 +134,10 @@
                     <tr><td class="text-primary f16">title</td><td>String</td><td class="text-gray">newFlow_1</td><td class="text-muted text-left">该组流程图数据集的名称，常显示于顶部栏的左边。
                         <br><span class="text-warning">注意：由<code>this.exportAlter()</code>方法返回的FlowChart对象中不会有该属性。</span></td></tr>
                     <tr><td class="text-primary f16">nodes</td><td>Map[id:NodeItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有节点的map式数据集；<code>key</code>为节点id，<code>value</code>则是<code>NodeItem</code>结构的数据。</td></tr>
-                    <tr><td class="text-primary f16">lines</td><td>Map[id:LineItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有连线的map式数据集；<code>key</code>为节点id，<code>value</code>则是<code>LineItem</code>结构的数据。</td></tr>
-                    <tr><td class="text-primary f16">areas</td><td>Map[id:AreaItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有分组泳道的map式数据集；<code>key</code>为节点id，<code>value</code>则是<code>AreaItem</code>结构的数据。</td></tr>
+                    <tr><td class="text-primary f16">lines</td><td>Map[id:LineItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有连线的map式数据集；<code>key</code>为连线id，<code>value</code>则是<code>LineItem</code>结构的数据。</td></tr>
+                    <tr><td class="text-primary f16">areas</td><td>Map[id:AreaItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有分组泳道的map式数据集；<code>key</code>为泳道id，<code>value</code>则是<code>AreaItem</code>结构的数据。</td></tr>
                     <tr><td class="text-primary f16">initNum</td><td>Number</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">可选属性：由于绘制的新单元的ID都是按一定序列号及规则自动生成的，为了防止新载入的数据的name与编辑时新加入的name值有重复,将给设计器对象对于新生成单元的ID序列一个新的起始序列号。
-                        <br>该属性一般只在从后台读取流程图数据至前端展示时才用到</td></tr>
+                        <br>该属性一般只在从后台读取流程图数据至前端展示时才用到。</td></tr>
                     </tbody>
                     <tr><td class="text-primary f16">deletedItem</td><td>Map[id:String]</td><td class="text-gray">(undefined)</td>
                         <td class="text-muted text-left">在流程图的编辑操作中被删除掉的元素id-map集合；<br>以<code>元素id</code>为Key，元素类别名为value(共有<code>node'</code>、<code>'line'</code>、<code>'area'</code>三种取值)。

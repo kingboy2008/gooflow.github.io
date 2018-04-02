@@ -1,279 +1,284 @@
 <div class="main-frame" data-title="Methods">
     <article class="main-container">
         <div class="page-header"><h1>Methods</h1></div>
-        <div id="basicMethod" class="container-fluid" data-title="设计器操作接口">
-            <h2 class="text-primary">设计器操作接口</h2>
-            <p>这些接口仅用来对设计器实例进行操作体验调整、模拟手工操作工作区里的流程图。</p>
+        <div id="basicMethod" class="container-fluid" data-title="Designer Operation">
+            <h2 class="text-primary">Designer Operation</h2>
+            <p>These interfaces are only used to make operational experience adjustments to designer instances and to simulate flowcharts in the manual work area.</p>
             <div id="setNodeRemarks" class="container-fluid" data-title="setNodeRemarks">
                 <h3><span class="text-gray">this.</span>setNodeRemarks() <small>Return: void</small></h3>
-                <p class="indent28">当初始化后存在左侧工具栏时，设定左侧工具栏中每一种节点或按钮的说明文字。</p>
+                <p class="indent28">When there is a left-side toolbar after initialization, set the caption text for each node or button in the left-side toolbar.</p>
                 <p class="f16">Parameters: <code>( remarks )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
                     <tr><td class="text-primary f16">remarks</td><td>JsonMap</td>
-                        <td class="text-muted text-left">key为按钮类型名，value为用户自定义文字说明，详见<code>GooFlow.remarks.toolBtn</code>。</td></tr>
+                        <td class="text-muted text-left">Key is the button type name, value is the user-defined text description, see details <code>GooFlow.remarks.toolBtn</code>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="setHeadToolsRemarks" class="container-fluid" data-title="setHeadToolsRemarks">
                 <h3><span class="text-gray">this.</span>setHeadToolsRemarks() <small>Return: void</small></h3>
-                <p class="indent28">当初始化后存在顶部栏时，设定顶部栏中每个按钮的说明文字。</p>
+                <p class="indent28">When there is a top bar after initialization, set the caption text for each button in the head bar.</p>
                 <p class="f16">Parameters: <code>( remarks )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
                     <tr><td class="text-primary f16">remarks</td><td>JsonMap</td>
-                        <td class="text-muted text-left">key为按钮类型名，value为用户自定义文字说明，详见<code>GooFlow.remarks.headBtn</code>。</td></tr>
+                        <td class="text-muted text-left">Key is the button type name, value is the user-defined text description, see details <code>GooFlow.remarks.headBtn</code>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="setExtWorkRemarks" class="container-fluid" data-title="setExtWorkRemarks">
                 <h3><span class="text-gray">this.</span>setExtWorkRemarks() <small>Return: void</small></h3>
-                <p class="indent28">设定扩展工作区宽高的长条按钮的说明文字。</p>
+                <p class="indent28">Set the description text for the bar button that expands the width of the workspace.</p>
                 <p class="f16">Parameters: <code>( remarks )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
                     <tr><td class="text-primary f16">remarks</td><td>JsonMap</td>
-                        <td class="text-muted text-left">有两个String型属性：<code>extendRight</code>的值为工作区向右扩展的说明文字，属性<code>extendBottom</code>的值为工作区向下扩展的说明文字。</td></tr>
+                        <td class="text-muted text-left">There are two String attributes: <code>extendRight</code> is the description text extended to the right of the workspace,
+                            <code>extendBottom</code> is the description text that extends downwards from the workspace.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="switchToolBtn" class="container-fluid" data-title="switchToolBtn">
                 <h3><span class="text-gray">this.</span>switchToolBtn() <small>Return: void</small></h3>
-                <p class="indent28">当初始化后存在左侧工具栏时，切换选择工具栏中指定的按钮。</p>
+                <p class="indent28">When the left toolbar is present after initialization, switch the button specified in the selection toolbar.</p>
                 <p class="f16">Parameters: <code>( type )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">表示切换成哪种类型的按钮。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">Indicates which type of button to switch to</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="focusItem" class="container-fluid" data-title="focusItem">
                 <h3><span class="text-gray">this.</span>focusItem() <small>Return: void</small></h3>
-                <p class="indent28">选定某个节点/连线。</p>
+                <p class="indent28">Select a node/connection.</p>
                 <p class="f16">Parameters: <code>( id, bool )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要选中元素的id。</td></tr>
-                    <tr><td class="text-primary f16">bool</td><td>Boolean</td><td class="text-muted text-left">是否要触发选中事件钩子函数，多用在程序内部调用。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The id of the element to select.</td></tr>
+                    <tr><td class="text-primary f16">bool</td><td>Boolean</td><td class="text-muted text-left">Whether to trigger the selected event hook function is used internally in the program.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="blurItem" class="container-fluid" data-title="blurItem">
                 <h3><span class="text-gray">this.</span>blurItem() <small>Return: void</small></h3>
-                <p class="indent28">取消所有节点/连线被选定的状态。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Cancels the selected state of all nodes/connections.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
             <div id="reinitSize" class="container-fluid" data-title="reinitSize">
                 <h3><span class="text-gray">this.</span>reinitSize() <small>Return: void</small></h3>
-                <p class="indent28">重构整个流程图设计器的宽高，在浏览器窗口大小改变或者父容器宽高改变时，执行这个方法能让设计器重新适应新的宽高显示。</p>
+                <p class="indent28">Reconstruct the width and height of the entire flowchart designer.
+                    When the browser window size changes or the parent container width changes,
+                    executing this method will allow the designer to re-adapt to the new width and height display.</p>
                 <p class="f16">Parameters: <code>( width, height )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">设计器新的宽度，单位像素。</td></tr>
-                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">设计器新的高度，单位像素。</td></tr>
+                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">The designer's new width, in pixels.</td></tr>
+                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">The designer's new height, in pixels.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="resetScale" class="container-fluid" data-title="resetScale">
                 <h3><span class="text-gray">this.</span>resetScale() <small>Return: void</small></h3>
-                <p class="indent28">重设整个工作区内容的显示缩放比例（相对于初始时的100%大小），从50%至400%。</p>
+                <p class="indent28">Reset the display scaling of the entire workspace content (relative to the initial 100% size) from 50% to 400%.</p>
                 <p class="f16">Parameters: <code>( scale )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">scale</td><td>Float</td><td class="text-muted text-left">相对于原来的100%大小，流程图显示缩放比例。取值<code>0.5~4</code>(50%至4倍大小)。</td></tr>
+                    <tr><td class="text-primary f16">scale</td><td>Float</td><td class="text-muted text-left">Relative to the original 100% size, the flow chart shows the scaling. Value <code>0.5~4</code>(50% to 4 times the size).</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="destrory" class="container-fluid" data-title="destrory">
                 <h3><span class="text-gray">this.</span>destrory() <small>Return: void</small></h3>
-                <p class="indent28">设计器实例销毁自己。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Designer instance destroys itself.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
 
             <div id="bindHeadBtnEvent" class="container-fluid" data-title="bindHeadBtnEvent">
                 <h3><span class="text-gray">this.</span>bindHeadBtnEvent() <small>Return: void</small></h3>
-                <p class="indent28">对头部栏自定义按钮的事件绑定，可用来对另行加入的头部按钮自定义功能；但无法覆盖系统自带按钮类型的事件钩子定义。</p>
+                <p class="indent28">The event binding for the custom button of the header bar can be used to customize the function of the separately added head button;
+                    however, the event hook definition of the system's own button type cannot be overridden.</p>
                 <p class="f16">Parameters: <code>( funcJson )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">funcJson</td><td>JsonMap</td><td class="text-muted text-left">对头部栏另行自定义类型按钮的事件绑定map集合,key为按钮类型名，value为方法实现定义</td></tr>
+                    <tr><td class="text-primary f16">funcJson</td><td>JsonMap</td><td class="text-muted text-left">On the head bar separate custom type button event binding map set, key is the button type name, value is the method implementation definition.</td></tr>
                     </tbody>
                 </table>
             </div>
 
             <div id="setTitle" class="container-fluid" data-title="setTitle">
                 <h3><span class="text-gray">this.</span>setTitle() <small>Return: void</small></h3>
-                <p class="indent28">设置当前已载入的流程图的新名称。</p>
+                <p class="indent28">Sets the new name of the currently loaded flowchart.</p>
                 <p class="f16">Parameters: <code>( text )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">text</td><td>String</td><td class="text-muted text-left">流程图的新名称。</td></tr>
+                    <tr><td class="text-primary f16">text</td><td>String</td><td class="text-muted text-left">The new name of the flowchart.</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div id="dataMethods" class="container-fluid" data-title="数据操作接口">
-            <h2 class="text-primary">数据操作接口</h2>
+        <div id="dataMethods" class="container-fluid" data-title="Data Operation">
+            <h2 class="text-primary">Data Operation</h2>
             <div id="setName" class="container-fluid" data-title="setName">
                 <h3><span class="text-gray">this.</span>setName() <small>Return: void</small></h3>
-                <p class="indent28">设置当前已载入的流程图中，某个节点/连线/分组泳道的显示名称。</p>
+                <p class="indent28">Sets the display name of a node/connection/group lane in the currently loaded flowchart.</p>
                 <p class="f16">Parameters: <code>( id, name, type )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作的元素的id。</td></tr>
-                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-muted text-left">要设置的新名称。</td></tr>
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">要操作的元素的类型；有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The id of the element to operate on.</td></tr>
+                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-muted text-left">The new name to set.</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">The type of element to be operated; there are three values: <code>'node'</code>nodes, <code>'line'</code>lines and <code>'area'</code>lanes.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="transNewId" class="container-fluid" data-title="transNewId">
                 <h3><span class="text-gray">this.</span>transNewId() <small>Return: void</small></h3>
-                <p class="indent28">变更元素的id,一般用于快速保存后,将后台返回新元素的id更新到页面中。</p>
+                <p class="indent28">The id of the changed element, which is generally used for fast saving, updates the id of the new element returned in the background to the page.</p>
                 <p class="f16">Parameters: <code>( oldId, newId, type )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">oldId</td><td>String</td><td class="text-muted text-left">要操作的元素的id。</td></tr>
-                    <tr><td class="text-primary f16">newId</td><td>String</td><td class="text-muted text-left">要设置的新id值。</td></tr>
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">要操作的元素的类型；有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。。</td></tr>
+                    <tr><td class="text-primary f16">oldId</td><td>String</td><td class="text-muted text-left">The id of the element to operate on.</td></tr>
+                    <tr><td class="text-primary f16">newId</td><td>String</td><td class="text-muted text-left">The new id value to set.</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">The type of element to be operated; there are three values: <code>'node'</code>nodes, <code>'line'</code>lines and <code>'area'</code>lanes.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="markItem" class="container-fluid" data-title="markItem">
                 <h3><span class="text-gray">this.</span>markItem() <small>Return: void</small></h3>
-                <p class="indent28">用醒目的颜色(已经自带)标注/取消标注一个节点或转换线，常用于显示重点或跟踪流程的进度。该功能在只读模式下时非常有实际应用意义。
-                    <br>如果要自定义标注时的颜色，请修改<span class="text-warning">GooFlow.colors.mark</span>。</p>
+                <p class="indent28">Mark / unmark a node or transition line with eye-catching colors (already included). It is often used to show emphasis or track the progress of the process. This function is very practical in read-only mode.
+                    <br>If you want to customize the colors of the labels, modify<span class="text-warning">GooFlow.colors.mark</span>。</p>
                 <p class="f16">Parameters: <code>( id, type, mark )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要标注的元素id。</td></tr>
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">要标注的元素种类，有节点<code>'node'</code>、连线<code>'line'</code>两种。</td></tr>
-                    <tr><td class="text-primary f16">mark</td><td>Boolean</td><td class="text-muted text-left">true表示标注；false表示取消标注。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The element id to label.</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">The types of elements to be marked are <code>'node'</code> and <code>'line'</code>.</td></tr>
+                    <tr><td class="text-primary f16">mark</td><td>Boolean</td><td class="text-muted text-left">True indicates annotation; false indicates cancellation.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="addNode" class="container-fluid" data-title="addNode">
                 <h3><span class="text-gray">this.</span>addNode() <small>Return: void</small></h3>
-                <p class="indent28">增加一个节点。</p>
+                <p class="indent28">Add a node.</p>
                 <p class="f16">Parameters: <code>( id, data )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">新增节点的id。</td></tr>
-                    <tr><td class="text-primary f16">data</td><td>NodeItem</td><td class="text-muted text-left">新增节点的详细数据信息。详见<a href="#structures">“数据结构定义”</a>章节中的<code>NodeItem</code>类型。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The id of the added node.</td></tr>
+                    <tr><td class="text-primary f16">data</td><td>NodeItem</td><td class="text-muted text-left">The detailed information of the added node. See the <code>NodeItem</code> of the chapter <a href="#structures">"Data Definition"</a>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="moveNode" class="container-fluid" data-title="moveNode">
                 <h3><span class="text-gray">this.</span>moveNode() <small>Return: void</small></h3>
-                <p class="indent28">移动一个节点到一个新的位置。</p>
+                <p class="indent28">Move a node to a new location.</p>
                 <p class="f16">Parameters: <code>( id, left, top )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作节点的id。</td></tr>
-                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-muted text-left">节点新位置相对于工作区的左边距；单位像素。</td></tr>
-                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-muted text-left">节点新位置相对于工作区的上边距；单位像素。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the node's id.</td></tr>
+                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-muted text-left">The new position of the node relative to the left margin of the workspace, in pixels.</td></tr>
+                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-muted text-left">The new position of the node relative to the top margin of the workspace, in pixels.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="resizeNode" class="container-fluid" data-title="resizeNode">
                 <h3><span class="text-gray">this.</span>resizeNode() <small>Return: void</small></h3>
-                <p class="indent28">重新设置节点的尺寸；但是带有<code>' round'</code>类型的节点（即圆形节点）不支持该方法。</p>
+                <p class="indent28">Resets the size of the node; but a node with a type <code>' round'</code>(ie, a circular node) does not support this method.</p>
                 <p class="f16">Parameters: <code>( id, width, height )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作节点的id。</td></tr>
-                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">节点的新宽度，单位像素；最小<code>104px</code>。</td></tr>
-                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">节点新高度，单位像素；最小<code>26px</code>。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the node's id.</td></tr>
+                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">The new width of the node, in pixels; minimum<code>104px</code>。</td></tr>
+                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">New height of node, in pixels; minimum<code>26px</code>。</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="delNode" class="container-fluid" data-title="delNode">
                 <h3><span class="text-gray">this.</span>delNode() <small>Return: void</small></h3>
-                <p class="indent28">删除一个节点。</p>
+                <p class="indent28">Delete a node.。</p>
                 <p class="f16">Parameters: <code>( id )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要删除节点的id。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To delete the node's id.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="addLine" class="container-fluid" data-title="addLine">
                 <h3><span class="text-gray">this.</span>addLine() <small>Return: void</small></h3>
-                <p class="indent28">增加一条连线。</p>
+                <p class="indent28">Add a line.</p>
                 <p class="f16">Parameters: <code>( id, data )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">新增连线的id。</td></tr>
-                    <tr><td class="text-primary f16">data</td><td>LineItem</td><td class="text-muted text-left">新增连线的详细数据信息。详见<a href="#structures">“数据结构定义”</a>章节中的<code>LineItem</code>类型。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The id of the added line.</td></tr>
+                    <tr><td class="text-primary f16">data</td><td>LineItem</td><td class="text-muted text-left">The detailed information of the added line. See the <code>LineItem</code> of the chapter <a href="#structures">"Data Definition"</a>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="setLineType" class="container-fluid" data-title="setLineType">
                 <h3><span class="text-gray">this.</span>setLineType() <small>Return: void</small></h3>
-                <p class="indent28">重新设置连线的类型。</p>
+                <p class="indent28">Reset the type of line.</p>
                 <p class="f16">Parameters: <code>( id, newType, M )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作连线的id。</td></tr>
-                    <tr><td class="text-primary f16">newType</td><td>String</td><td class="text-muted text-left">连线的新类型。取值有三种：<code>'sl'</code>直线；<code>'lr'</code>中段可左右移动的折线'；<code>'tb'</code>中段可上下移动的折线有直线。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the line id.</td></tr>
+                    <tr><td class="text-primary f16">newType</td><td>String</td><td class="text-muted text-left">The new type of connection. There are three types of values: <code>'sl'</code>straight lines, <code>'lr'</code>fold lines that move left and right in the <code>'tb'</code>that middle line can move up and down in the middle.</td></tr>
                     <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-muted text-left">
-                        一种抽象值，单位为像素。<br>当<code>type='lr'</code>时为必填项，表示中段线相对于工作区的X坐标值；<br>
-                        当<code>type='tb'</code>时为必填项，表示中段线相对于工作区的Y坐标值。<br>当<code>type='sl'</code>时无任何意义。</td></tr>
+                        An abstract value in pixels. <br>When <code>type='lr'</code> it is required, the middle line indicates the X-coordinate values with respect to a work area.<br>
+                        When <code>type='tb'</code> it is required, the middle line indicates the Y-coordinate values with respect to the work area.<br>
+                        When <code>type='sl'</code> it is no significance.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="setLineM" class="container-fluid" data-title="setLineM">
                 <h3><span class="text-gray">this.</span>setLineM() <small>Return: void</small></h3>
-                <p class="indent28">设置折线中段的X坐标值（可左右移动时）或Y坐标值（可上下移动时）；直线不支持此方法。</p>
+                <p class="indent28">Sets the X coordinate of the midline of the polyline (when moving left or right) or Y coordinate (when moving up and down); the straight line does not support this method.</p>
                 <p class="f16">Parameters: <code>( id, M )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作连线的id。</td></tr>
-                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-muted text-left">新的M值。当<code>type='lr'</code>时表示中段线相对于工作区的X坐标值；
-                        当<code>type='tb'</code>时表示中段线相对于工作区的Y坐标值。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the line id.</td></tr>
+                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-muted text-left">The new M value. When <code>type='lr'</code>the time line in the middle represents the X coordinate value with respect to the work area;
+                        when <code>type='tb'</code> expressed with respect to the middle line Y-coordinate value of the operating time zone.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="moveLinePoints" class="container-fluid" data-title="moveLinePoints">
                 <h3><span class="text-gray">this.</span>moveLinePoints() <small>Return: void</small></h3>
-                <p class="indent28">变更连线两个端点所连的节点。</p>
+                <p class="indent28">Change the node to which the two endpoints of the connection are connected.</p>
                 <p class="f16">Parameters: <code>( id, newStart, newEnd )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作连线的id。</td></tr>
-                    <tr><td class="text-primary f16">newStart</td><td>String</td><td class="text-muted text-left">新的起始节点的id；如果为<code>null</code>则表示原端点不变。</td></tr>
-                    <tr><td class="text-primary f16">newEnd</td><td>String</td><td class="text-muted text-left">新的目标节点的id；如果为<code>null</code>则表示原端点不变。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the line id.</td></tr>
+                    <tr><td class="text-primary f16">newStart</td><td>String</td><td class="text-muted text-left">The new starting node's id; if it is <code>null</code> then the original endpoint is unchanged.</td></tr>
+                    <tr><td class="text-primary f16">newEnd</td><td>String</td><td class="text-muted text-left">The new target node's id; if it is <code>null</code> then the original endpoint is unchanged.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="delLine" class="container-fluid" data-title="delLine">
                 <h3><span class="text-gray">this.</span>delLine() <small>Return: void</small></h3>
-                <p class="indent28">删除一条连线。</p>
+                <p class="indent28">Delete a line.</p>
                 <p class="f16">Parameters: <code>( id )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要删除连线的id。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To delete the id of the connection.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -284,194 +289,202 @@
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">新增分组泳道的id。</td></tr>
-                    <tr><td class="text-primary f16">data</td><td>AreaItem</td><td class="text-muted text-left">新增分组泳道的详细数据信息。详见<a href="#structures">“数据结构定义”</a>章节中的<code>AreaItem</code>类型。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The id of the added lane.</td></tr>
+                    <tr><td class="text-primary f16">data</td><td>AreaItem</td><td class="text-muted text-left">The detailed information of the added lane. See the <code>AreaItem</code> of the chapter <a href="#structures">"Data Definition"</a>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="moveArea" class="container-fluid" data-title="moveArea">
                 <h3><span class="text-gray">this.</span>moveArea() <small>Return: void</small></h3>
-                <p class="indent28">移动一块分组泳道到一个新的位置。</p>
+                <p class="indent28">Move lane to a new location.</p>
                 <p class="f16">Parameters: <code>( id, left, top )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作分组泳道的id。</td></tr>
-                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-muted text-left">分组泳道新位置相对于工作区的左边距；单位像素。</td></tr>
-                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-muted text-left">分组泳道新位置相对于工作区的上边距；单位像素。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the id of lane.</td></tr>
+                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-muted text-left">The left margin of the new position of the lane relative to the work area, in pixels.</td></tr>
+                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-muted text-left">The top margin of the new position of the lane relative to the work area, in pixels.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="resizeArea" class="container-fluid" data-title="resizeArea">
                 <h3><span class="text-gray">this.</span>resizeArea() <small>Return: void</small></h3>
-                <p class="indent28">重新设置分组泳道的尺寸。</p>
+                <p class="indent28">Reset the size of the lane.</p>
                 <p class="f16">Parameters: <code>( id, width, height )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作分组泳道的id。</td></tr>
-                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">分组泳道的新宽度，单位像素；最小<code>200px</code>。</td></tr>
-                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">分组泳道新高度，单位像素；最小<code>100px</code>。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the id of lane.</td></tr>
+                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-muted text-left">The new width of the lane, in pixels; minimum<code>200px</code>。</td></tr>
+                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-muted text-left">The new height of the lane, in pixels; minimum<code>100px</code>。</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="setAreaColor" class="container-fluid" data-title="setAreaColor">
                 <h3><span class="text-gray">this.</span>setAreaColor() <small>Return: void</small></h3>
-                <p class="indent28">设置分组泳道的颜色。</p>
+                <p class="indent28">Set the color of grouped lanes.</p>
                 <p class="f16">Parameters: <code>( id, color )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要操作分组泳道的id。</td></tr>
-                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-muted text-left">分组泳道的新颜色；取值：<code>'red'</code>、<code>'yellow'</code>、<code>'blue'</code>、<code>'green'</code>一共4种。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the id of lane.</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-muted text-left">The new value of lane's color: <code>'red'</code>, <code>'yellow'</code>, <code>'blue'</code> and <code>'green'</code>; a total of four kinds.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="delArea" class="container-fluid" data-title="delArea">
                 <h3><span class="text-gray">this.</span>delArea() <small>Return: void</small></h3>
-                <p class="indent28">删除一块分组泳道。</p>
+                <p class="indent28">Delete a group of lanes.</p>
                 <p class="f16">Parameters: <code>( id )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要删除分组泳道的id。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">To operate the id of lane.</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div id="ioMethods" class="container-fluid" data-title="数据I/O接口">
-            <h2 class="text-primary">数据I/O接口</h2>
+        <div id="ioMethods" class="container-fluid" data-title="I/O Of Data">
+            <h2 class="text-primary">I/O Of Data</h2>
             <div id="getItemInfo" class="container-fluid" data-title="getItemInfo">
                 <h3><span class="text-gray">this.</span>getItemInfo() <small>Return: JsonMap</small></h3>
-                <p class="indent28">根据id和类型，返回相应的流程图元素单元数据。</p>
-                <p class="indent28">返回的Map，根据入参type类型的不同，有<code>NodeItem</code>节点、<code>LineItem</code>连线、<code>AreaItem</code>分组泳道三种。</p>
+                <p class="indent28">According to id and type, return corresponding flow element element data.</p>
+                <p class="indent28">The returned Map has three types: <code>NodeItem</code> nodes, <code>LineItem</code> lines and <code>AreaItem</code> lanes.</p>
                 <p class="f16">Parameters: <code>( id, type )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id</td></tr>
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">The id of the element</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">The types of elements include <code>'node'</code>, <code>'line'</code> and <code>'area'</code>(lane).</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="loadData" class="container-fluid" data-title="loadData">
                 <h3><span class="text-gray">this.</span>loadData() <small>Return: void</small></h3>
-                <p class="indent28">载入一组JsonMap格式的流程图数据。</p>
+                <p class="indent28">Load a set of flowchart data in JsonMap format.</p>
                 <p class="f16">Parameters: <code>( jsonData )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">jsonData</td><td>FlowChart</td><td class="text-muted text-left">要载入的整张流程图数据。详见<a href="#structures">“数据结构定义”</a>章节中的<code>FlowChart</code>类型。</td></tr>
+                    <tr><td class="text-primary f16">jsonData</td><td>FlowChart</td><td class="text-muted text-left">The entire flowchart data to load.
+                        See the chapter <a href="#structures">"Data Definition"</a> for details <code>FlowChart</code>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="loadDataAjax" class="container-fluid" data-title="loadDataAjax">
                 <h3><span class="text-gray">this.</span>loadDataAjax() <small>Return: void</small></h3>
-                <p class="indent28">用Ajax方式，远程读取一组JsonMap格式的流程图数据；需要后台异步返回JsonMap格式的结果,其内容格式与<span class="text-warning">loadData</span>方法的传参一样。</p>
+                <p class="indent28">Using Ajax, remotely read a set of JsonMap format flowchart data; need to asynchronously return the results of the JsonMap format in the background,
+                    and its content format is the same as that of the <span class="text-warning">loadData</span>method.</p>
                 <p class="f16">Parameters: <code>( param )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">param</td><td>Json Object</td><td class="text-muted text-left">Ajax的参数，与Jquery中$.ajax()方法的settings传参一样，但dataType始终默认为"json"。后端返回的结果格式，详见<a href="#structures">“数据结构定义”</a>章节中的<code>FlowChart</code>类型。</td></tr>
+                    <tr><td class="text-primary f16">param</td><td>Json Object</td><td class="text-muted text-left">
+                        The Ajax parameters are the same as the settings of the $.ajax() method in Jquery,
+                        but the dataType always defaults to "json". Format results returned by the backend. See the chapter <a href="#structures">"Data Definition"</a> for details <code>FlowChart</code>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="exportData" class="container-fluid" data-title="exportData">
                 <h3><span class="text-gray">this.</span>exportData() <small>Return: FlowChart</small></h3>
-                <p class="indent28">把画好的流程图结果导出到一个本函数返回的变量中（其实也可以直接访问GooFlow实例的$nodeData,$lineData,$areaData这三个JsonMap属性）；
-                    关于返回数据的结构体，详见<a href="#structures">“数据结构定义”</a>章节中的<code>FlowChart</code>类型。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Export the result of the drawn flowchart to a variable returned by this function (In fact, you can directly access the three JsonMap properties of the GooFlow instance: $nodeData, $lineData, $areaData).
+                    For the structure of the returned data, see the <code>FlowChart</code> of the chapter <a href="#structures">"Data Definition"</a>.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
             <div id="exportAlter" class="container-fluid" data-title="exportAlter">
                 <h3><span class="text-gray">this.</span>exportAlter() <small>Return: FlowChart</small></h3>
-                <p class="indent28">只把本次编辑的流程图中作了变更(包括增删改)的元素导出到一个变量中,以方便用户每次编辑载入的流程图后只获取变更过的数据；
-                    关于返回数据的结构体，除了没有title属性外，其余均详见<a href="#structures">“数据结构定义”</a>章节中的<code>FlowChart</code>类型。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Only the elements that have been changed (including addition, deletion, and modification) in the flow chart of this edit are exported to a variable, so that the user can only obtain the changed data after each editing of the loaded flow chart; the structure of the returned data ,
+                    In addition to the absence of the title attribute, all others are described in the <code>FlowChart</code> of the chapter <a href="#structures">"Data Definition"</a>.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
             <div id="clearData" class="container-fluid" data-title="clearData">
                 <h3><span class="text-gray">this.</span>clearData() <small>Return: void</small></h3>
-                <p class="indent28">清空工作区及已载入的流程图数据。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Empty workspace and loaded flowchart data.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
 
             <div id="exportDiagram" class="container-fluid" data-title="exportDiagram">
                 <h3><span class="text-gray">this.</span>exportDiagram() <small>Return: void</small></h3>
-                <p class="indent28">专门负责导出流程图文件并让用户下载的扩展包方法；注意：<br><span class="text-danger">
-                    1、当使用css sprite方式定义节点图标时，各节点图标只支持全都只来自同一个背景图片文件！<br>
-                    2、要调用该方法，需扩展引入GooFlow.export.js文件</span></p>
+                <p class="indent28">Dedicated to export the flowchart file and let the user download the expansion pack method; Note:<br>
+                    <span class="text-danger">
+                    1, when using the css sprite way to define the node icon, each node icon only supports all from the same background image file!<br>
+                    2, to call this method, need to introduce the introduction of GooFlow.export.js file.
+                    </span>
+                </p>
                 <p class="f16">Parameters: <code>( filename )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">filename</td><td>String</td><td class="text-muted text-left">用户下载导出图片时初始的文件名。</td></tr>
+                    <tr><td class="text-primary f16">filename</td><td>String</td><td class="text-muted text-left">The initial file name when the user downloads the exported picture.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="print" class="container-fluid" data-title="print">
                 <h3><span class="text-gray">this.</span>print() <small>Return: void</small></h3>
-                <p class="indent28">打印流程图或将流程图另存为PDF的扩展包方法；注意：<br><span class="text-danger">
-                    1、不支持IE8及以更早的IE浏览器。<br>
-                    2、要调用该方法，需扩展引入GooFlow.print.js文件</span></p>
+                <p class="indent28">The data in the flowchart is output as an XML string in the Bpmn2.0 format. Note:<br><span class="text-danger">
+                    1. IE8 and earlier IE browsers are not supported.<br>
+                    2, to call this method, need to introduce the introduction of GooFlow.print.js file.
+                </span></p>
                 <p class="f16">Parameters: <code>( scale )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">scale</td><td>Float</td><td class="text-muted text-left">流程图输出打印时的缩放比例，取值<code>0.5~4</code>(50%至4倍大小)；不填时默认为1。</td></tr>
+                    <tr><td class="text-primary f16">scale</td><td>Float</td><td class="text-muted text-left">The output scaling of the flowchart output, the value <code>0.5~4</code>(50% to 4 times the size); default is 1 when not filling.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="exportBpmnXML" class="container-fluid" data-title="exportBpmnXML">
                 <h3><span class="text-gray">this.</span>exportBpmnXML() <small>Return: String</small></h3>
-                <p class="indent28">把流程图中的数据以Bpmn2.0格式的XML字符串输出。注意：<br><span class="text-danger">
-                    要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
+                <p class="indent28">The data in the flowchart is output as an XML string in the Bpmn2.0 format. Note: <br><span class="text-danger">
+                    To call this method, you need to extend the introduction of the GooFlow.xml.js file.</span></p>
                 <p class="f16">Parameters: <code>( nodeMaps )</code></p>
                 <table class="table table-striped table-bordered">
-                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">定义了流程图中节点的各种定义类型需转换成的XML标签名。<br>
-                        <code>key</code>是节点在Json中的类型，<code>value</code>是节点在XML中的标签名。</td></tr>
+                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">Defines the XML tag names to be converted into the various definition types of the nodes in the flowchart.<br>
+                        <code>key</code> is the type of node in Json, <code>value</code> is the node's tag name in XML.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="exportDataFile" class="container-fluid" data-title="exportDataFile">
                 <h3><span class="text-gray">this.</span>exportDataFile() <small>Return: void</small></h3>
-                <p class="indent28">把流程图中的数据以json格式文件或Bpmn2.0的XML格式文件导出并让用户下载。注意：<br><span class="text-danger">
-                    要调用该方法，需扩展引入GooFlow.xml.js文件和GooFlow.export.js文件</span></p>
+                <p class="indent28">The data in the flowchart is exported as a json format file or a Bpmn 2.0 XML format file and downloaded for users. Note: <br><span class="text-danger">
+                    To call this method, you need to extend the introduction of the GooFlow.xml.js file and the GooFlow.export.js file.</span></p>
                 <p class="f16">Parameters: <code>( filename, fileType )</code></p>
                 <table class="table table-striped table-bordered">
-                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">filename</td><td>String</td><td class="text-muted text-left">用户下载导出文件时初始的文件名。</td></tr>
-                    <tr><td class="text-primary f16">fileType</td><td>String</td><td class="text-muted text-left">用户下载导出文件的类型，目前仅支持<code>'json'</code>、<code>'xml'</code>两种格式。</td></tr>
+                    <tr><td class="text-primary f16">filename</td><td>String</td><td class="text-muted text-left">The initial file name when the user downloads the exported file.</td></tr>
+                    <tr><td class="text-primary f16">fileType</td><td>String</td><td class="text-muted text-left">Users download the export file type, currently support only two types: <code>'json'</code> and <code>'xml'</code>.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="loadBpmnXML" class="container-fluid" data-title="loadBpmnXML">
                 <h3><span class="text-gray">this.</span>loadBpmnXML() <small>Return: void</small></h3>
-                <p class="indent28">载入Bpmn2.0规范的XML文件格式的流程图数据。注意：<br><span class="text-danger">
-                    要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
+                <p class="indent28">Load the flowchart data of the XML file format of the Bpmn 2.0 specification. Note: <br><span class="text-danger">
+                    To call this method, you need to extend the introduction of the GooFlow.xml.js file.</span></p>
                 <p class="f16">Parameters: <code>( xmlDoc, nodesMap )</code></p>
                 <table class="table table-striped table-bordered">
-                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">xmlDoc</td><td>String</td><td class="text-muted text-left">被载入的Bpmn2.0规范的XML格式的流程图数据。</td></tr>
-                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">定义了流程图中节点的各种定义类型需转换成的XML标签名。<br>
-                        <code>key</code>是节点在XML中的标签名，<code>value</code>是节点在Json中的类型。</td></tr>
+                    <tr><td class="text-primary f16">xmlDoc</td><td>String</td><td class="text-muted text-left">Flowchart data in the XML format of the Bpmn 2.0 specification loaded.</td></tr>
+                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">Defines the XML tag names to be converted into the various definition types of the nodes in the flowchart. <br>
+                        <code>key</code> is the tag name of the node in XML, and <code>value</code>is the type of node in Json.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="loadBpmnXMLAjax" class="container-fluid" data-title="loadBpmnXMLAjax">
                 <h3><span class="text-gray">this.</span>loadBpmnXMLAjax() <small>Return: void</small></h3>
-                <p class="indent28">用Ajax方式，远程读取Bpmn2.0规范的XML文件格式的流程图数据。注意：<br><span class="text-danger">
-                    要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
+                <p class="indent28">Using Ajax, remotely read the flowchart data of the Bpmn 2.0 specification XML file format. Note: <br><span class="text-danger">
+                    To call this method, you need to extend the introduction of the GooFlow.xml.js file</span></p>
                 <p class="f16">Parameters: <code>( param, nodesMap )</code></p>
                 <table class="table table-striped table-bordered">
-                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">param</td><td>Json Object</td><td class="text-muted text-left">Ajax的参数，与Jquery中$.ajax()方法的settings传参一样，但dataType始终默认为"xml"。后端返回的结果需为Bpmn2.0规范的XML格式。</td></tr>
-                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">定义了流程图中节点的各种定义类型需转换成的XML标签名。<br>
-                        <code>key</code>是节点在XML中的标签名，<code>value</code>是节点在Json中的类型。</td></tr>
+                    <tr><td class="text-primary f16">param</td><td>Json Object</td><td class="text-muted text-left">The Ajax parameters are the same as the settings of the $.ajax() method in Jquery, but the dataType always defaults to "xml". The result returned by the back end needs to be in the XML format of the Bpmn 2.0 specification.</td></tr>
+                    <tr><td class="text-primary f16">nodeMaps</td><td>Json Object</td><td class="text-muted text-left">Defines the XML tag names to be converted into the various definition types of the nodes in the flowchart. <br>
+                        <code>key</code> is the tag name of the node in XML, and <code>value</code>is the type of node in Json.</td></tr>
                     </tbody>
                     </tbody>
                 </table>
@@ -479,69 +492,69 @@
 
         </div>
 
-        <div id="transMethods" class="container-fluid" data-title="事务控制接口">
-            <h2 class="text-primary">事务控制接口</h2>
-            <p>以下均是在初始化的参数<code>options.useOperStack=true</code>时,才存在的方法接口。</p>
+        <div id="transMethods" class="container-fluid" data-title="Transaction Control">
+            <h2 class="text-primary">Transaction Control</h2>
+            <p>The following are <code>options.useOperStack=true</code> method interfaces that exist only when the parameters are initialized.</p>
             <div id="pushOper" class="container-fluid" data-title="pushOper">
                 <h3><span class="text-gray">this.</span>pushOper() <small>Return: void</small></h3>
-                <p class="indent28">仅供内部方法调用的方法:把对工作区内的数据单元编辑操作(增/删/改/重命名/移动/标注等)加入整条管理栈中,进行撤销/重做的控制；管理栈最多能放50条历史操作记录。</p>
+                <p class="indent28">Methods for internal method invocation only: Add data unit edit operations (add/delete/modify/rename/move/callouts, etc.) in the work area to the entire management stack for undo/redo control; manage stacks Up to 50 history operations records can be placed.</p>
                 <p class="f16">Parameters: <code>( funcName, paras )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">funcName</td><td>String</td><td class="text-muted text-left">被push入管理栈的操作方法名</td></tr>
-                    <tr><td class="text-primary f16">paras</td><td>Array[]</td><td class="text-muted text-left">被push入管理栈的操作方法的传参，从前至后依次放入一个数组中。</td></tr>
+                    <tr><td class="text-primary f16">funcName</td><td>String</td><td class="text-muted text-left">The name of the operation method that was pushed into the management stack.</td></tr>
+                    <tr><td class="text-primary f16">paras</td><td>Array[]</td><td class="text-muted text-left">The parameters passed into the operation method of the management stack are put into an array from front to back.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="pushExternalOper" class="container-fluid" data-title="pushExternalOper">
                 <h3><span class="text-gray">this.</span>pushExternalOper() <small>Return: void</small></h3>
-                <p class="indent28">外部的方法加入到GooFlow实例的事务操作堆栈中，在过后的undo/redo操作中可以进行控制，一般用于对流程图以外的附加信息进行编辑的事务撤销/重做控制；<br>
-                <span class="text-warning">提示：提示:为了让外部方法能够被 undo/redo，需要在编写这些外部方法实现时，加入对该方法执行后效果回退的另一个执行方法的pushExternalOper。</span></p>
+                <p class="indent28">The method was added to the external transaction GooFlow operand stack instance, after the undo / redo operation can be controlled, it is generally used for the additional information other than the transaction flowchart of editing undo / redo control;<br>
+                <span class="text-warning">Note: In order for an external method can By undo/redo, you need to add pushExternalOper to the execution method that implements the external method.</span></p>
                 <p class="f16">Parameters: <code>( func, jsonPara )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">func</td><td>Function</td><td class="text-muted text-left">被push入管理栈的外部执行方法对象。</td></tr>
-                    <tr><td class="text-primary f16">jsonPara</td><td>Json Object</td><td class="text-muted text-left">为外部方法仅有的一个面向字面的JSON传参或者数据,由JSON对象或数组带入所有要传的信息。</td></tr>
+                    <tr><td class="text-primary f16">func</td><td>Function</td><td class="text-muted text-left">Execution method objects that are pushed into the management stack.</td></tr>
+                    <tr><td class="text-primary f16">jsonPara</td><td>Json Object</td><td class="text-muted text-left">This is the only literally-oriented JSON argument or data for an external method. It is a JSON object or array that brings in all the information to be passed.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="undo" class="container-fluid" data-title="undo">
                 <h3><span class="text-gray">this.</span>undo() <small>Return: void</small></h3>
-                <p class="indent28">撤销最近一次操作。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Undo the last operation.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
             <div id="redo" class="container-fluid" data-title="redo">
                 <h3><span class="text-gray">this.</span>redo() <small>Return: void</small></h3>
-                <p class="indent28">重做最近一次被撤销的操作。</p>
-                <p class="f16">Parameters: <span class="text-gray">(无)</span></p>
+                <p class="indent28">Redo the last revoked operation.</p>
+                <p class="f16">Parameters: <span class="text-gray">(none)</span></p>
             </div>
         </div>
 
-        <div id="staticMethods" class="container-fluid" data-title="类静态方法接口">
-            <h2 class="text-primary">类静态方法接口</h2>
-            <p>这些静态方法都属于公用方法，但都需要在初始化一个GooFlow实例之前调用。</p>
+        <div id="staticMethods" class="container-fluid" data-title="Static Method">
+            <h2 class="text-primary">Static Method</h2>
+            <p>These static methods are all public methods, but they all need to be called before initializing a GooFlow instance.</p>
             <div id="extend" class="container-fluid" data-title="extend">
                 <h3><span class="text-gray">GooFlow.</span>extend() <small>Return: void</small></h3>
-                <p class="indent28">给用户自行扩展(或重写)GooFlow对象功能接口的扩展用接口，很适合用在CMD、AMD开发模式上；这些扩展方法能在实现中通过对this的调用，就能访问GooFlow实例本身内部各种属性和接口了。</p>
+                <p class="indent28">Extension interface for the user to extend (or overwrite) the GooFlow object function interface is very suitable for use in the CMD, AMD development mode; these extension methods can access the internal of the GooFlow instance itself through the call to this in the implementation. Kinds of attributes and interfaces.</p>
                 <p class="f16">Parameters: <code>( funcJson )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">funcJson</td><td>JsonMap</td><td class="text-muted text-left">要扩展出的方法接口定义map集合,key为方法接口名，value为方法实现定义。</td></tr>
+                    <tr><td class="text-primary f16">funcJson</td><td>JsonMap</td><td class="text-muted text-left">To expand the method interface defines the map collection, key is the method interface name, and value is the method implementation definition.</td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="setColors" class="container-fluid" data-title="setColors">
                 <h3><span class="text-gray">GooFlow.</span>setColors() <small>Return: void</small></h3>
-                <p class="indent28">覆盖设定GooFlow默认的颜色定义。</p>
+                <p class="indent28">Override Sets the default color definition for GooFlow.</p>
                 <p class="f16">Parameters: <code>( json )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>Name</th><th>Type / Format</th><th>Description</th></tr></thead>
                     <tbody class="text-center">
                     <tr><td class="text-primary f16">json</td><td>JsonMap</td>
-                        <td class="text-muted text-left">样式颜色定义Map集，详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">GooFlow.colors</span>。</td></tr>
+                        <td class="text-muted text-left">The map set of style color defines. For details, see <span class="text-warning">GooFlow.colors</span> of the chapter <a href="#structures">"Data Definition"</a>.</td></tr>
                     </tbody>
                 </table>
             </div>

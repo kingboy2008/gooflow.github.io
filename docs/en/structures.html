@@ -77,15 +77,15 @@
                         <th>Property</th><th>Type</th><th>Default</th><th>Description</th>
                     </tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">连线的显示名称，未定义时连线上无文字。</td></tr>
-                    <tr><td class="text-primary f16">from</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">必填项，连线的起始节点id。</td></tr>
-                    <tr><td class="text-primary f16">to</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">必填项，连线的目标节点id。</td></tr>
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-gray">sl</td><td class="text-muted text-left">连线类型，取值有三种：<code>'sl'</code>直线；<code>'lr'</code>中段可左右移动的折线'；<code>'tb'</code>中段可上下移动的折线。</td></tr>
-                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">一种抽象值，单位为像素。<br>当<code>type='lr'</code>时为必填项，表示中段线相对于工作区的X坐标值；<br>
-                        当<code>type='tb'</code>时为必填项，表示中段线相对于工作区的Y坐标值。<br>当<code>type='sl'</code>时无任何意义。</td></tr>
-                    <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">连线是否已被标注。</td></tr>
-                    <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下连线是否被用户编辑过。</td></tr>
-                    <tr><td class="text-primary f16">dashed</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">是否为虚线样式，当为<code>undefined</code>时表示默认实线。</td></tr>
+                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">The display name of the line. When there is no definition, there is no text on the line.</td></tr>
+                    <tr><td class="text-primary f16">from</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">Required, the starting node id of the line.</td></tr>
+                    <tr><td class="text-primary f16">to</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">Required, the target id of the line.</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-gray">sl</td><td class="text-muted text-left">There are three types of line types: <code>'sl'</code>straight lines, <code>'lr'</code> folding lines that can be moved left and right in the <code>'tb'</code> middle section, and folding lines that can move up and down in the middle section.</td></tr>
+                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">An abstract value in pixels.<br>When <code>type='lr'</code>the time is required, the middle line indicates the X-coordinate values with respect to a work area; <br>
+                        if <code>type='tb'</code> time is required, the middle line indicates the Y-coordinate values with respect to the work area. <br>When <code>type='sl'</code> the absence of any significance.</td></tr>
+                    <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the line has been marked.</td></tr>
+                    <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the line was edited by the user in edit mode.</td></tr>
+                    <tr><td class="text-primary f16">dashed</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the dash pattern, as is <code>undefined</code>when the solid line represents the default.</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Any type and any number of custom attributes are added by the user as needed.</td></tr>
                     </tbody>
                 </table>
@@ -98,13 +98,13 @@
                         <th>Property</th><th>Type</th><th>Default</th><th>Description</th>
                     </tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-gray">('area_'+序列号)</td><td class="text-muted text-left">分组泳道的显示名称。</td></tr>
-                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-gray">0</td><td class="text-muted text-left">分组泳道相对于工作区的左边距，单位像素。</td></tr>
-                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-gray">0</td><td class="text-muted text-left">分组泳道相对于工作区的顶距，单位像素。</td></tr>
-                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-gray">200</td><td class="text-muted text-left">分组泳道宽度，单位像素；仅非圆形节点时有效。</td></tr>
-                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-gray">100</td><td class="text-muted text-left">分组泳道高度，单位像素；仅非圆形节点时有效。</td></tr>
-                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(4种随机值)</td><td class="text-muted text-left">分组区的颜色,有<code>"red","yellow","blue","green"</code>四种。</td></tr>
-                    <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下分组泳道是否被用户编辑过。</td></tr>
+                    <tr><td class="text-primary f16">name</td><td>String</td><td class="text-gray">('area_'+sequence)</td><td class="text-muted text-left">The display name of the lane.</td></tr>
+                    <tr><td class="text-primary f16">left</td><td>Number</td><td class="text-gray">0</td><td class="text-muted text-left">The left edge of the lane relative to the workspace, in pixels.</td></tr>
+                    <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-gray">0</td><td class="text-muted text-left">The top distance of lane relative to the work area, in pixels.</td></tr>
+                    <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-gray">200</td><td class="text-muted text-left">Group lane width, in pixels; valid only when non-circular nodes.</td></tr>
+                    <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-gray">100</td><td class="text-muted text-left">Group lane height, in pixels; valid only for non-circular nodes.</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(4 random values)</td><td class="text-muted text-left">There are <code>"red","yellow","blue","green"</code> four colors on the lane.</td></tr>
+                    <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the lanes were edited by the user in edit mode.</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Any type and any number of custom attributes are added by the user as needed.</td></tr>
                     </tbody>
                 </table>
@@ -117,9 +117,9 @@
                         <th>Property</th><th>Type</th><th>Default</th><th>Description</th>
                     </tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">流程图的id，对应于流程定义Key。多应用于Bpmn2.0流程引擎。</td></tr>
-                    <tr><td class="text-primary f16">targetNamespace</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">流程定义的目标命名空间。多应用于Bpmn2.0流程引擎。</td></tr>
-                    <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">除数组以外的任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">The id of the flowchart corresponds to the process definition key. Mostly used in Bpmn2.0 process engine.</td></tr>
+                    <tr><td class="text-primary f16">targetNamespace</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">The target namespace for the process definition. Mostly used in Bpmn2.0 process engine.</td></tr>
+                    <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Any type and any number of custom attributes are added by the user as needed.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -131,18 +131,19 @@
                         <th>Property</th><th>Type</th><th>Default</th><th>Description</th>
                     </tr></thead>
                     <tbody class="text-center">
-                    <tr><td class="text-primary f16">title</td><td>String</td><td class="text-gray">newFlow_1</td><td class="text-muted text-left">该组流程图数据集的名称，常显示于顶部栏的左边。
-                        <br><span class="text-warning">注意：由<code>this.exportAlter()</code>方法返回的FlowChart对象中不会有该属性。</span></td></tr>
-                    <tr><td class="text-primary f16">nodes</td><td>Map[id:NodeItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有节点的map式数据集；<code>key</code>为节点id，<code>value</code>则是<code>NodeItem</code>结构的数据。</td></tr>
-                    <tr><td class="text-primary f16">lines</td><td>Map[id:LineItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有连线的map式数据集；<code>key</code>为节点id，<code>value</code>则是<code>LineItem</code>结构的数据。</td></tr>
-                    <tr><td class="text-primary f16">areas</td><td>Map[id:AreaItem]</td><td class="text-gray">(空的{})</td><td class="text-muted text-left">流程图中所有分组泳道的map式数据集；<code>key</code>为节点id，<code>value</code>则是<code>AreaItem</code>结构的数据。</td></tr>
-                    <tr><td class="text-primary f16">initNum</td><td>Number</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">可选属性：由于绘制的新单元的ID都是按一定序列号及规则自动生成的，为了防止新载入的数据的name与编辑时新加入的name值有重复,将给设计器对象对于新生成单元的ID序列一个新的起始序列号。
-                        <br>该属性一般只在从后台读取流程图数据至前端展示时才用到</td></tr>
+                    <tr><td class="text-primary f16">title</td><td>String</td><td class="text-gray">newFlow_1</td><td class="text-muted text-left">The name of the set of flowchart datasets is often displayed on the left side of the head bar.
+                        <br><span class="text-warning">Note: This property will not be available in the FlowChart object returned by the method <code>this.exportAlter()</code>.</span></td></tr>
+                    <tr><td class="text-primary f16">nodes</td><td>Map[id:NodeItem]</td><td class="text-gray">(empty{})</td><td class="text-muted text-left">The map data set of all nodes in the flowchart; <code>key</code>for the node id, <code>value</code> is the data of the structure <code>NodeItem</code>.</td></tr>
+                    <tr><td class="text-primary f16">lines</td><td>Map[id:LineItem]</td><td class="text-gray">(empty{})</td><td class="text-muted text-left">The map data set of all lines in the flowchart; <code>key</code>for the line id, <code>value</code> is the data of the structure <code>LineItem</code>.</td></tr>
+                    <tr><td class="text-primary f16">areas</td><td>Map[id:AreaItem]</td><td class="text-gray">(empty{})</td><td class="text-muted text-left">The map data set of all lanes in the flowchart; <code>key</code>for the lane id, <code>value</code> is the data of the structure <code>AreaItem</code>.</td></tr>
+                    <tr><td class="text-primary f16">initNum</td><td>Number</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Optional attributes: Because the IDs of the new cells are automatically generated by a certain serial number and rules, in order to prevent the name of the newly loaded data from being duplicated with the newly added name value at the time of editing, the designer object will be given new Generate a new starting sequence number for the unit's ID sequence.
+                        <br>This property is generally only used when reading flowchart data from the background to the front-end display.</td></tr>
                     </tbody>
                     <tr><td class="text-primary f16">deletedItem</td><td>Map[id:String]</td><td class="text-gray">(undefined)</td>
-                        <td class="text-muted text-left">在流程图的编辑操作中被删除掉的元素id-map集合；<br>以<code>元素id</code>为Key，元素类别名为value(共有<code>node'</code>、<code>'line'</code>、<code>'area'</code>三种取值)。
-                            <br><span class="text-warning">注意：由<code>this.exportAlter()</code>方法返回的FlowChart对象中不会有该属性。</span></td></tr>
-                    <tr><td class="text-primary f16">extra</td><td>Extra</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">可选属性：<code>Extra</code>结构的数据，流程图中的附加信息，多应用于Bpmn2.0规范的流程引擎。</td></tr>
+                        <td class="text-muted text-left">It is deleted in the editing operation in the flowchart id-map element set;
+                            <br>takes <code>element's id</code> as key，element category as value (There are <code>node'</code>, <code>'line'</code>, <code>'area'</code> three values).
+                            <br><span class="text-warning">Note: This property will not be available in the FlowChart object returned by the method <code>this.exportAlter()</code>.</span></td></tr>
+                    <tr><td class="text-primary f16">extra</td><td>Extra</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Optional attributes: <code>Extra</code> data, additional information in the flow diagram, is mostly applied to the process engine of the Bpmn 2.0 specification.</td></tr>
                 </table>
             </div>
         </div>
