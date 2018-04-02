@@ -422,10 +422,10 @@
                 </table>
             </div>
             <div id="exportBpmnXML" class="container-fluid" data-title="exportBpmnXML">
-                <h3><span class="text-gray">this.</span>exportBpmnXML() <small>返回值：String</small></h3>
+                <h3><span class="text-gray">this.</span>exportBpmnXML() <small>Return: String</small></h3>
                 <p class="indent28">把流程图中的数据以Bpmn2.0格式的XML字符串输出。注意：<br><span class="text-danger">
                     要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
-                <p class="f16">传参：<code>( nodeMaps )</code></p>
+                <p class="f16">Parameters: <code>( nodeMaps )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
                     <tbody class="text-center">
@@ -434,11 +434,24 @@
                     </tbody>
                 </table>
             </div>
+            <div id="exportDataFile" class="container-fluid" data-title="exportDataFile">
+                <h3><span class="text-gray">this.</span>exportDataFile() <small>Return: void</small></h3>
+                <p class="indent28">把流程图中的数据以json格式文件或Bpmn2.0的XML格式文件导出并让用户下载。注意：<br><span class="text-danger">
+                    要调用该方法，需扩展引入GooFlow.xml.js文件和GooFlow.export.js文件</span></p>
+                <p class="f16">Parameters: <code>( filename, fileType )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">filename</td><td>String</td><td class="text-muted text-left">用户下载导出文件时初始的文件名。</td></tr>
+                    <tr><td class="text-primary f16">fileType</td><td>String</td><td class="text-muted text-left">用户下载导出文件的类型，目前仅支持<code>'json'</code>、<code>'xml'</code>两种格式。</td></tr>
+                    </tbody>
+                </table>
+            </div>
             <div id="loadBpmnXML" class="container-fluid" data-title="loadBpmnXML">
-                <h3><span class="text-gray">this.</span>loadBpmnXML() <small>返回值：void</small></h3>
+                <h3><span class="text-gray">this.</span>loadBpmnXML() <small>Return: void</small></h3>
                 <p class="indent28">载入Bpmn2.0规范的XML文件格式的流程图数据。注意：<br><span class="text-danger">
                     要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
-                <p class="f16">传参：<code>( xmlDoc, nodesMap )</code></p>
+                <p class="f16">Parameters: <code>( xmlDoc, nodesMap )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
                     <tbody class="text-center">
@@ -449,10 +462,10 @@
                 </table>
             </div>
             <div id="loadBpmnXMLAjax" class="container-fluid" data-title="loadBpmnXMLAjax">
-                <h3><span class="text-gray">this.</span>loadBpmnXMLAjax() <small>返回值：void</small></h3>
+                <h3><span class="text-gray">this.</span>loadBpmnXMLAjax() <small>Return: void</small></h3>
                 <p class="indent28">用Ajax方式，远程读取Bpmn2.0规范的XML文件格式的流程图数据。注意：<br><span class="text-danger">
                     要调用该方法，需扩展引入GooFlow.xml.js文件</span></p>
-                <p class="f16">传参：<code>( param, nodesMap )</code></p>
+                <p class="f16">Parameters: <code>( param, nodesMap )</code></p>
                 <table class="table table-striped table-bordered">
                     <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
                     <tbody class="text-center">
