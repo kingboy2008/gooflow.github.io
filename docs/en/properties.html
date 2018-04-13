@@ -6,59 +6,59 @@
             <h2 class="text-primary">Basic Properties</h2>
             <div id="id" class="container-fluid" data-title="$id">
                 <h3><span class="text-gray">this.</span>$id <small>Type: String</small></h3>
-                <p class="indent28">被渲染为设计器的DOM对象的id；该属性是不能为空的，需要被渲染的设计器上具有id属性。</p>
+                <p class="indent28">The id of the DOM object rendered as the designer; this property cannot be empty, and the designer that needs to be rendered has the id attribute on it.</p>
             </div>
             <div id="bgDiv" class="container-fluid" data-title="$bgDiv">
                 <h3><span class="text-gray">this.</span>$bgDiv <small>Type: Jquery Object</small></h3>
-                <p class="indent28">设计器最外层框架的Jquery对象。</p>
+                <p class="indent28">The Jquery object of the designer's outermost frame.</p>
             </div>
             <div id="tool" class="container-fluid" data-title="$tool">
                 <h3><span class="text-gray">this.</span>$tool <small>Type: Jquery Object</small></h3>
-                <p class="indent28">设计器左侧工具栏的Jquery对象，仅初始化传参<code>options.haveTool=true</code>时有效；否则该属性为null。</p>
+                <p class="indent28">The Jquery object on the left side of the designer's toolbar, which is valid only when the parameter is initialized with <code>options.haveTool=true</code>; otherwise the property is null.</p>
             </div>
             <div id="head" class="container-fluid" data-title="$head">
                 <h3><span class="text-gray">this.</span>$head <small>Type: Jquery Object</small></h3>
-                <p class="indent28">设计器上方顶部栏的Jquery对象，包括标题框和顶部按钮组；仅初始化传参<code>options.haveHead=true</code>时有效；否则该属性为null。</p>
+                <p class="indent28">The top-column Jquery object above the designer, including the title box and the top button group; it is  valid only when the argument is initialized with <code>options.haveHead=true</code>; otherwise the property is null.</p>
             </div>
             <div id="workArea" class="container-fluid" data-title="$workArea">
                 <h3><span class="text-gray">this.</span>$workArea <small>Type: Jquery Object</small></h3>
-                <p class="indent28">装载结点/线条/分组泳道的绘图工作区，Jquery对象。</p>
+                <p class="indent28">Load the node/line/group lane drawing workspace, Jquery object.</p>
             </div>
             <div id="draw" class="container-fluid" data-title="$draw">
                 <h3><span class="text-gray">this.</span>$draw <small>Type: Dom</small></h3>
-                <p class="indent28">画矢量线条的Dom容器，处于工作区中。</p>
+                <p class="indent28">Paint a vector line of Dom containers in the workspace.</p>
             </div>
             <div id="group" class="container-fluid" data-title="$group">
                 <h3><span class="text-gray">this.</span>$group <small>Type: Jquery Object</small></h3>
-                <p class="indent28">仅用来装载分组泳道DOM元素的Jquery对象容器，处于工作区中。仅初始化传参<code>options.haveGroup=true</code>时下有效；否则该属性为null。</p>
+                <p class="indent28">A Jquery object container that is only used to load grouped swimlane DOM elements in the work area; it is valid only when the argument is initialized with <code>options.haveGroup=true</code>; otherwise the property is null.</p>
             </div>
             <div id="workExtendStep" class="container-fluid" data-title="$workExtendStep">
                 <h3><span class="text-gray">this.</span>$workExtendStep <small>Type: Number</small></h3>
-                <p class="indent28">在手动扩展绘图工作区的可用区域时，一次扩展宽/高后增加多少像素，默认200。</p>
+                <p class="indent28">When expanding the available area of​the drawing workspace manually, how many pixels are added after expanding/width at a time, the default is 200px.</p>
             </div>
             <div id="ghost" class="container-fluid" data-title="$ghost">
                 <h3><span class="text-gray">this.</span>$ghost <small>Type: Jquery Object</small></h3>
-                <p class="indent28">专门用在移动、调整大小等元素操作时，给用户操作的半透明浮动区。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+                <p class="indent28">A translucent floating area that is used by the user to operate on elements such as moving and resizing. Only if <code>this.$editable=true</code> the property is only present when.</p>
             </div>
             <div id="mpFrom" class="container-fluid" data-title="$mpFrom">
                 <h3><span class="text-gray">this.</span>$mpFrom <small>Type: Jquery Object</small></h3>
-                <p class="indent28">编辑模式下选中线以后，出现在起点的小框，用来移动以变更要连接的起始结点。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+                <p class="indent28">After the line is selected in edit mode, the small box at the end point arrow is used to move to change the arrival node to be connected. Only if <code>this.$editable=true</code> the property is only present when.</p>
             </div>
             <div id="mpTo" class="container-fluid" data-title="$mpTo">
                 <h3><span class="text-gray">this.</span>$mpTo <small>Type: Jquery Object</small></h3>
-                <p class="indent28">编辑模式下选中线以后，出现在终点箭头处的小框，用来移动以变更要连接的到达结点。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+                <p class="indent28">After the line is selected in edit mode, the small box at the end point arrow is used to move to change the arrival node to be connected. Only if <code>this.$editable=true</code> the property is only present when.</p>
             </div>
             <div id="textArea" class="container-fluid" data-title="$textArea">
                 <h3><span class="text-gray">this.</span>$textArea <small>Type: Jquery Object</small></h3>
-                <p class="indent28">编辑模式下双击元素后出现的浮动文本域，用来写重命名方法<code>setName</code>所需的新名称传参。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+                <p class="indent28">The floating text field that appears after double-clicking an element in edit mode is used to write <code>setName</code> the new name pass arguments required by the rename method . Only if <code>this.$editable=true</code> the property is only present when.</p>
             </div>
             <div id="lineMove" class="container-fluid" data-title="$lineMove">
                 <h3><span class="text-gray">this.</span>$lineMove <small>Type: Jquery Object</small></h3>
-                <p class="indent28">操作移动折线的中段时用到的浮动Div。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+                <p class="indent28">The floating Div used when manipulating the midline of a moving polyline. Only if <code>this.$editable=true</code> the property is only present when.</p>
             </div>
             <div id="lineOper" class="container-fluid" data-title="$lineOper">
                 <h3><span class="text-gray">this.</span>$lineOper <small>Type: Jquery Object</small></h3>
-                <p class="indent28">编辑模式下选定一条连线后出现的浮动操作栏，有改变线的类型和删除线等按钮。仅当<code>this.$editable=true</code>时该属性才存在。</p>
+                <p class="indent28">The floating Div used when manipulating the midline of a moving polyline. Only if <code>this.$editable=true</code> the property is only present when.</p>
             </div>
         </div>
 
@@ -66,48 +66,48 @@
             <h2 class="text-primary">Business Properties</h2>
             <div id="nowType" class="container-fluid" data-title="$nowType">
                 <h3><span class="text-gray">this.</span>$nowType <small>Type: String</small></h3>
-                <p class="indent28">当前要绘制的对象类型，开始时为<code>"cursor"</code>：即不绘制任何元素，只是作为鼠标指针进行元素选定。<br>
-                其它的取值还有：<code>"direct"</code>实线连线、<code>"dashed"</code>虚线连线、<code>"group"</code>分组泳道、<code>……</code>各种类型的节点。</p>
+                <p class="indent28">The current type of object to be drawn starts with <code>"cursor"</code>: no element is drawn, but is selected as a mouse pointer.<br>
+                Other values include: <code>"direct"</code> solid lines, <code>"dashed"</code> dotted lines, <code>"group"</code> grouping lanes, <code>……</code> various types of nodes.</p>
             </div>
             <div id="focus" class="container-fluid" data-title="$focus">
                 <h3><span class="text-gray">this.</span>$focus <small>Type: String</small></h3>
-                <p class="indent28">当前被选定的结点/转换线ID，如果没选中或者工作区被清空则为空字串。</p>
+                <p class="indent28">The currently selected node/conversion line ID, if not selected or the workspace is empty, it will be an empty string.</p>
             </div>
             <div id="editable" class="container-fluid" data-title="$editable">
                 <h3><span class="text-gray">this.</span>$editable <small>Type: Boolean</small></h3>
-                <p class="indent28">当前工作区是否可编辑，即是编辑模式还是仅浏览模式。</p>
+                <p class="indent28">Whether the current workspace is editable, that is, edit mode or browse mode only.</p>
             </div>
             <div id="nodeDom" class="container-fluid" data-title="$nodeDom">
                 <h3><span class="text-gray">this.</span>$nodeDom <small>Type: JsonMap</small></h3>
-                <p class="indent28">流程图中所有展示节点的Jquery对象Map集；以<code>节点id</code>为key，工作区中节点元素的<code>Jquery对象</code>为value。</p>
+                <p class="indent28">Map Jquery objects set flowchart showing all nodes; takes <code>Node's id</code> as key, the node's <code>Jquery Object</code> element as value.</p>
             </div>
             <div id="lineDom" class="container-fluid" data-title="$lineDom">
                 <h3><span class="text-gray">this.</span>$lineDom <small>Type: JsonMap</small></h3>
-                <p class="indent28">流程图中所有展示连线的Jquery对象Map集；以<code>连线id</code>为key，工作区中连线元素的<code>Dom对象</code>为value。</p>
+                <p class="indent28">Map Jquery objects set flowchart showing all lines; takes <code>Line's id</code> as key, the node's <code>Dom Object</code> element as value.</p>
             </div>
             <div id="areaDom" class="container-fluid" data-title="$areaDom">
                 <h3><span class="text-gray">this.</span>$areaDom <small>Type: JsonMap</small></h3>
-                <p class="indent28">流程图中所有展示分组泳道的Jquery对象Map集；以<code>分组泳道id</code>为key，工作区中分组泳道元素的<code>Jquery对象</code>为value。</p>
+                <p class="indent28">Map Jquery objects set flowchart showing all lanes; takes <code>Lane's id</code> as key, the lane's <code>Jquery Object</code> element as value.</p>
             </div>
             <div id="scale" class="container-fluid" data-title="$scale">
                 <h3><span class="text-gray">this.</span>$scale <small>Type: Number</small></h3>
-                <p class="indent28">工作区内流程图当前相对于原始大小的缩放比例，默认为1（100%），范围是<code>0.5~4</code>。</p>
+                <p class="indent28">The scale of the flowchart in the workspace is currently relative to the original size. The default is 1 (100%) and the range is <code>0.5~4</code>.</p>
             </div>
             <div id="headBtnEvents" class="container-fluid" data-title="$headBtnEvents">
                 <h3><span class="text-gray">this.</span>$headBtnEvents <small>Type: JsonMap</small></h3>
-                <p class="indent28">用户对头部栏另行自定义类型按钮的事件绑定map集合，以<code>按钮类型名</code>为key，对应的<code>function类型变量</code>为value。</p>
+                <p class="indent28">Users of the head of field additionally customize the type of event button bindings map collections to <code>button type name</code> as a key, corresponding <code>function type variable</code>to value.</p>
             </div>
             <div id="undoStack" class="container-fluid" data-title="$undoStack">
                 <h3><span class="text-gray">this.</span>$undoStack <small>Type: Array[Json Object]</small></h3>
-                <p class="indent28">“撤销操作”事务栈；仅当初始化传参<code>options.haveTool=true</code>且<code>options.useOperStack=true</code>时该属性才存在。</p>
+                <p class="indent28">The transaction stack of "undo"; only when initialization parameter passing <code>options.haveTool=true</code> and <code>options.useOperStack=true</code> when the property is only present.</p>
             </div>
             <div id="redoStack" class="container-fluid" data-title="$redoStack">
                 <h3><span class="text-gray">this.</span>$redoStack <small>Type: Array[Json Object]</small></h3>
-                <p class="indent28">“重做操作”事务栈；仅当初始化传参<code>options.haveTool=true</code>且<code>options.useOperStack=true</code>时该属性才存在。</p>
+                <p class="indent28">The transaction stack of "redo"; only when initialization parameter passing <code>options.haveTool=true</code> and <code>options.useOperStack=true</code> when the property is only present.</p>
             </div>
             <div id="isUndo" class="container-fluid" data-title="$isUndo">
                 <h3><span class="text-gray">this.</span>$isUndo <small>Type: Number</small></h3>
-                <p class="indent28">事务操作标志位，仅供设计器运作时内部调用。</p>
+                <p class="indent28">The transaction operation flag, which is only called internally by the designer when it operates.</p>
             </div>
         </div>
 
@@ -115,49 +115,50 @@
             <h2 class="text-primary">Data-store Properties</h2>
             <div id="title" class="container-fluid" data-title="$title">
                 <h3><span class="text-gray">this.</span>$title <small>Type: String</small></h3>
-                <p class="indent28">被载入的流程图名称；如果初始化时设定有有顶部栏和标题框，则显示于标题框中。</p>
+                <p class="indent28">The name of the flowchart to be loaded; if there is a top bar and a title bar when it is initialized, it is displayed in the title box.</p>
             </div>
             <div id="nodeData" class="container-fluid" data-title="$nodeData">
                 <h3><span class="text-gray">this.</span>$nodeData <small>Type: JsonMap</small></h3>
-                <p class="indent28">载入的流程图中所有节点数据Map集；以<code>节点id</code>为key，<code>NodeItem</code>类型结构的数据为value。
-                    <br>详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“NodeItem”</span>介绍。</p>
+                <p class="indent28">Loading of all the nodes in the flowchart Map data set; to <code>node's id</code>as a key, <code>NodeItem</code> data type structure to value.
+                    <br>For details, see <span class="text-warning">"NodeItem"</span> in the <a href="#structures">"Data Definition"</a> chapter.</p>
             </div>
             <div id="nodeCount" class="container-fluid" data-title="$nodeCount">
                 <h3><span class="text-gray">this.</span>$nodeCount <small>Type: Number</small></h3>
-                <p class="indent28">载入的流程图中节点的数量，初始为0。</p>
+                <p class="indent28">The number of nodes in the loaded flowchart, initially 0.</p>
             </div>
             <div id="lineData" class="container-fluid" data-title="$lineData">
                 <h3><span class="text-gray">this.</span>$lineData <small>Type: JsonMap</small></h3>
-                <p class="indent28">载入的流程图中所有连线数据Map集；以<code>连线id</code>为key，<code>LineItem</code>类型结构的数据为value。
-                    <br>详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“LineItem”</span>介绍。</p>
+                <p class="indent28">Loading of all the lines in the flowchart Map data set; to <code>line's id</code>as a key, <code>LineItem</code> data type structure to value.
+                    <br>For details, see <span class="text-warning">"LineItem"</span> in the <a href="#structures">"Data Definition"</a> chapter.</p>
             </div>
             <div id="lineCount" class="container-fluid" data-title="$lineCount">
                 <h3><span class="text-gray">this.</span>$lineCount <small>Type: Number</small></h3>
-                <p class="indent28">载入的流程图中连线的数量，初始为0。</p>
+                <p class="indent28">The number of lines in the loaded flowchart, initially 0.</p>
             </div>
             <div id="areaData" class="container-fluid" data-title="$areaData">
                 <h3><span class="text-gray">this.</span>$areaData <small>Type: JsonMap</small></h3>
-                <p class="indent28">载入的流程图中所有分组泳道数据Map集；以<code>分组泳道id</code>为key，<code>AreaItem</code>类型结构的数据为value。
-                    <br>详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“AreaItem”</span>介绍。</p>
+                <p class="indent28">Loading of all the grouping lanes in the flowchart Map data set; to <code>lane's id</code>as a key, <code>AreaItem</code> data type structure to value.
+                    <br>For details, see <span class="text-warning">"AreaItem"</span> in the <a href="#structures">"Data Definition"</a> chapter.</p>
             </div>
             <div id="areaCount" class="container-fluid" data-title="$areaCount">
                 <h3><span class="text-gray">this.</span>$areaCount <small>Type: Number</small></h3>
-                <p class="indent28">载入的流程图中分组泳道的数量，初始为0。</p>
+                <p class="indent28">The number of grouped lanes in the loaded flowchart, initially 0.</p>
             </div>
             <div id="max" class="container-fluid" data-title="$max">
                 <h3><span class="text-gray">this.</span>$max <small>Type: Number</small></h3>
-                <p class="indent28">计算默认元素名称中，后缀序列号的SEQUENCE，默认值为1；<br>
-                    初始值来自构造方法中options传参的initNum属性，或者载入流程图JSON数据中的initNum属性；<br>
-                    当有流程图中有元素被手动新增时，该值会自加1。</p>
+                <p class="indent28">Calculate the SEQUENCE of the suffix sequence number in the default element name. The default value is 1;<br>
+                    the initial value comes from the initNum attribute of the parameters passed in the constructor, or the initNum attribute of the flowchart JSON data is loaded;<br>
+                    when there are elements in the flowchart, When manually added, the value increases by one.</p>
             </div>
             <div id="deletedItem" class="container-fluid" data-title="$deletedItem">
                 <h3><span class="text-gray">this.</span>$deletedItem <small>Type: JsonMap( {id: String )</small></h3>
-                <p class="indent28">在流程图的编辑操作中被删除掉的元素id-map集合；<br>以<code>元素id</code>为Key，元素类别名为value(共有<code>node'</code>、<code>'line'</code>、<code>'area'</code>三种取值)。</p>
+                <p class="indent28">It is deleted in the editing operation in the flowchart id-map element set;<br>
+                    to <code>element's id</code>as key，element category name as value(There are three values: <code>node'</code>, <code>'line'</code>, <code>'area'</code>).</p>
             </div>
             <div id="extra" class="container-fluid" data-title="$extra">
                 <h3><span class="text-gray">this.</span>$extra <small>Type: Extra</small></h3>
-                <p class="indent28">载入的流程图中的附加数据Map集，不直接参与流程图的构建，输出流程图数据时将原样返回。
-                    详见<a href="#structures">“数据结构定义”</a>章节中的<span class="text-warning">“Extra”</span>介绍。</p>
+                <p class="indent28">The additional data map set in the loaded flowchart does not directly participate in the construction of the flowchart, and the output of the flowchart data will be returned as it is.
+                    For details, see <span class="text-warning">"Extra"</span> in the <a href="#structures">"Data Definition"</a> chapter.</p>
             </div>
         </div>
 

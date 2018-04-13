@@ -6,7 +6,10 @@ var g_info={};
 			url: 'https://sdlddr.github.io/Gooflow/assets/info.json', dataType: 'json',
 			success: function (data) {
 				g_info=data;
-				$(".tips-small").html('V'+g_info.version+'&nbsp;&nbsp;|&nbsp;&nbsp;'+g_info.publicDate+(lang.text==='zh'?' 发布':' released'))
+				$(".tips-small").html('V'+g_info.version+'&nbsp;&nbsp;|&nbsp;&nbsp;'+g_info.publicDate+(lang.text==='zh'?' 发布':' released'));
+				$(".version").click(function(){
+					window.open("https://sdlddr.github.io/Gooflow/dist/GooFlow-"+g_info.version+".zip");
+				});
 			}
 		});
 	}

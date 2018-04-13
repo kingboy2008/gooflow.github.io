@@ -86,12 +86,12 @@ pre{font-size:14px}
 }
 
 .sidenav{border-left:#ededed 1px solid}
-.sidenav li>a{padding:3px 0 3px 15px;color:#999;}
+.sidenav li>a{padding:3px 0 3px 12px;color:#999;}
 .sidenav li>a:focus, .sidenav li>a:hover{
     border-left:#20A0FF 1px solid;margin-left:-1px;
     background-color: transparent;color:#20A0FF
 }
-.sidenav li.active>a,.sidenav li.active>a:hover,.sidenav li.active>a:focus{color:#20A0FF;padding-left:13px;margin-left:-1px;border-left:#20A0FF 3px solid;}
+.sidenav li.active>a,.sidenav li.active>a:hover,.sidenav li.active>a:focus{color:#20A0FF;padding-left:10px;margin-left:-1px;border-left:#20A0FF 3px solid;}
 .sidenav.nav .nav{display:none;padding-bottom:3px;}
 .sidenav.nav>.active>ul{display:block;}
 .sidenav.nav .nav li>a{padding:0 0 2px 25px;}
