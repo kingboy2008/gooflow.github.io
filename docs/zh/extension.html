@@ -62,5 +62,30 @@ var instance = GooFlow.init('selector', options);</code></pre></li>
             <blockquote><small>注意：如果你既要用Css sprite，又要用导出流程图片文件的方法，请务必确保css sprite方式定义的各节点图标全都只来自同一个背景图片文件！</small></blockquote>
         </div>
 
+        <div id="shapeIcon" class="container-fluid" data-title="新的节点形状">
+            <h2 class="text-primary">新的节点形状</h2>
+            <p>觉得GooFlow自带的节点不够专业？那就使用新的形状吧！</p>
+            <p>从1.3.4版本开始，GooFlow增加支持椭圆、菱形、平行四边形、胶囊形4种节点形状。用户能更好地表现流程图的意义。</p>
+            <p>使用方法：初始化时在传参options中，给toolBtns数组单元定义里直接加上后缀，扩展定义节点样式类。</p>
+            <p>如同浸染一个圆形节点时使用<code>原有类型+" round"</code>方式一样，GooFlow目前支持以下几种形状</p>
+            <table class="table table-bordered">
+                <thead><tr style="background:#f9f9f9">
+                    <th class="text-center">&nbsp;</th><th class="text-center">圆形</th><th class="text-center">椭圆</th>
+                    <th class="text-center">菱形</th><th class="text-center">平行四边形</th><th class="text-center">胶囊形</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td class="text-center">截图</td>
+                        <td class="text-center"><img src="../assets/img/spnode1.png" class="img-responsive center-block"></td>
+                        <td class="text-center"><img src="../assets/img/spnode2.png" class="img-responsive center-block"></td>
+                        <td class="text-center"><img src="../assets/img/spnode3.png" class="img-responsive center-block"></td>
+                        <td class="text-center"><img src="../assets/img/spnode4.png" class="img-responsive center-block"></td>
+                        <td class="text-center"><img src="../assets/img/spnode5.png" class="img-responsive center-block"></td>
+                    </tr>
+                    <tr><td class="text-center">写法</td><td><code>原有类型+" round"</code></td><td><code>原有类型+" ellipse"</code></td>
+                        <td><code>原有类型+" rhomb"</code></td><td><code>原有类型+" parallelogram"</code></td><td><code>原有类型+" capsule"</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
     </article>
 </div>
