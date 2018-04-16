@@ -72,5 +72,31 @@ var instance = GooFlow.init('selector', options);</code></pre></li>
             <blockquote><small>Note: If you want to use both the Css sprite and the export process image file, make sure that the node icons defined in the css sprite mode all come from the same background image file!</small></blockquote>
         </div>
 
+
+        <div id="shapeIcon" class="container-fluid" data-title="New Node Shape">
+            <h2 class="text-primary">New Node Shape</h2>
+            <p>Think GooFlow's own node is not professional enough? Then use the new shape!</p>
+            <p>Since version 1.3.4, GooFlow has added support for oval, diamond, parallelogram, and capsule shapes. Users can better represent the meaning of the flowchart.</p>
+            <p>Usage: In the initialization parameter, pass the parameter to the toolBtns array element directly to add the suffix and extend the definition node style class.</p>
+            <p>GooFlow currently supports the following shapes, just as it does for a circular node with <code>nodeType+" round"</code>.</p>
+            <table class="table table-bordered">
+                <thead><tr style="background:#f9f9f9">
+                    <th class="text-center">&nbsp;</th><th class="text-center">Circular</th><th class="text-center">Ellipse</th>
+                    <th class="text-center">Diamond</th><th class="text-center">Parallelogram</th><th class="text-center">Capsule</th>
+                </tr></thead>
+                <tbody>
+                <tr><td class="text-center">Screenshots</td>
+                    <td class="text-center"><img src="../assets/img/spnode1.png" class="img-responsive center-block"></td>
+                    <td class="text-center"><img src="../assets/img/spnode2.png" class="img-responsive center-block"></td>
+                    <td class="text-center"><img src="../assets/img/spnode3.png" class="img-responsive center-block"></td>
+                    <td class="text-center"><img src="../assets/img/spnode4.png" class="img-responsive center-block"></td>
+                    <td class="text-center"><img src="../assets/img/spnode5.png" class="img-responsive center-block"></td>
+                </tr>
+                <tr><td class="text-center">Grammar</td><td><code>nodeType+" round"</code></td><td><code>nodeType+" ellipse"</code></td>
+                    <td><code>nodeType+" rhomb"</code></td><td><code>nodeType+" parallelogram"</code></td><td><code>nodeType+" capsule"</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
     </article>
 </div>
