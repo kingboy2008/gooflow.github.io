@@ -65,6 +65,8 @@
                     <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the node has been marked.</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the node was edited by the user in edit mode.</td></tr>
                     <tr><td class="text-primary f16">areaId</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">The id of lane which the node belongs to, it is when <code>undefined</code> the time will not belong to any group lane.</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Optional items. The specific background color of this node object has a priority higher than <code>GooFlow.color.node</code>.</td></tr>
+                    <tr><td class="text-primary f16">fontColor</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Optional items. The specific text color of this node object has a priority higher than <code>GooFlow.color.font</code>.</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Any type and any number of custom attributes are added by the user as needed.</td></tr>
                     </tbody>
                 </table>
@@ -81,11 +83,13 @@
                     <tr><td class="text-primary f16">from</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">Required, the starting node id of the line.</td></tr>
                     <tr><td class="text-primary f16">to</td><td>String</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">Required, the target id of the line.</td></tr>
                     <tr><td class="text-primary f16">type</td><td>String</td><td class="text-gray">sl</td><td class="text-muted text-left">There are three types of line types: <code>'sl'</code>straight lines, <code>'lr'</code> folding lines that can be moved left and right in the <code>'tb'</code> middle section, and folding lines that can move up and down in the middle section.</td></tr>
-                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">An abstract value in pixels.<br>When <code>type='lr'</code>the time is required, the middle line indicates the X-coordinate values with respect to a work area; <br>
+                    <tr><td class="text-primary f16">M</td><td>Number</td><td class="text-gray">(undefiend)</td><td class="text-muted text-left">An abstract value in pixels.<br>When <code>type='lr'</code> the time is required, the middle line indicates the X-coordinate values with respect to a work area; <br>
                         if <code>type='tb'</code> time is required, the middle line indicates the Y-coordinate values with respect to the work area. <br>When <code>type='sl'</code> the absence of any significance.</td></tr>
                     <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the line has been marked.</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the line was edited by the user in edit mode.</td></tr>
-                    <tr><td class="text-primary f16">dashed</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the dash pattern, as is <code>undefined</code>when the solid line represents the default.</td></tr>
+                    <tr><td class="text-primary f16">dashed</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the dash pattern, as is <code>undefined</code> when the solid line represents the default.</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Optional items. The line color just belong to this line object has a priority higher than <code>GooFlow.color.line</code>.</td></tr>
+                    <tr><td class="text-primary f16">fontColor</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Optional items. The text color just belong to this line object has a priority higher than <code>GooFlow.color.lineFont</code>.</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Any type and any number of custom attributes are added by the user as needed.</td></tr>
                     </tbody>
                 </table>
@@ -103,7 +107,7 @@
                     <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-gray">0</td><td class="text-muted text-left">The top distance of lane relative to the work area, in pixels.</td></tr>
                     <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-gray">200</td><td class="text-muted text-left">Group lane width, in pixels; valid only when non-circular nodes.</td></tr>
                     <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-gray">100</td><td class="text-muted text-left">Group lane height, in pixels; valid only for non-circular nodes.</td></tr>
-                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(4 random values)</td><td class="text-muted text-left">There are <code>"red","yellow","blue","green"</code> four colors on the lane.</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(5 random values)</td><td class="text-muted text-left">There are <code>"red","yellow","blue","green","milk"</code> five colors on the lane.</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Whether the lanes were edited by the user in edit mode.</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">Any type and any number of custom attributes are added by the user as needed.</td></tr>
                     </tbody>

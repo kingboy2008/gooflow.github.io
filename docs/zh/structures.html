@@ -65,6 +65,8 @@
                     <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">节点是否已被标注。</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下节点是否被用户编辑过。</td></tr>
                     <tr><td class="text-primary f16">areaId</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">该节点所属分组泳道的id，当为<code>undefined</code>时表示不属于任何分组。</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">选填项。该节点对象特有的背景颜色，优先级高于<code>GooFlow.color.node</code>。</td></tr>
+                    <tr><td class="text-primary f16">fontColor</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">选填项。该节点对象特有的文字颜色，优先级高于<code>GooFlow.color.font</code>。</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
                     </tbody>
                 </table>
@@ -86,6 +88,8 @@
                     <tr><td class="text-primary f16">marked</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">连线是否已被标注。</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下连线是否被用户编辑过。</td></tr>
                     <tr><td class="text-primary f16">dashed</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">是否为虚线样式，当为<code>undefined</code>时表示默认实线。</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">选填项。该连线对象特有的线条颜色，优先级高于<code>GooFlow.color.line</code>。</td></tr>
+                    <tr><td class="text-primary f16">fontColor</td><td>String</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">选填项。该连线对象特有的文字颜色，优先级高于<code>GooFlow.color.lineFont</code>。</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
                     </tbody>
                 </table>
@@ -103,7 +107,7 @@
                     <tr><td class="text-primary f16">top</td><td>Number</td><td class="text-gray">0</td><td class="text-muted text-left">分组泳道相对于工作区的顶距，单位像素。</td></tr>
                     <tr><td class="text-primary f16">width</td><td>Number</td><td class="text-gray">200</td><td class="text-muted text-left">分组泳道宽度，单位像素；仅非圆形节点时有效。</td></tr>
                     <tr><td class="text-primary f16">height</td><td>Number</td><td class="text-gray">100</td><td class="text-muted text-left">分组泳道高度，单位像素；仅非圆形节点时有效。</td></tr>
-                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(4种随机值)</td><td class="text-muted text-left">分组区的颜色,有<code>"red","yellow","blue","green"</code>四种。</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-gray">(5种随机值)</td><td class="text-muted text-left">分组区的颜色,有<code>"red","yellow","blue","green","milk"</code>五种。</td></tr>
                     <tr><td class="text-primary f16">alt</td><td>Boolean</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">在编辑模式下分组泳道是否被用户编辑过。</td></tr>
                     <tr><td class="text-primary f16">……</td><td>Object</td><td class="text-gray">(undefined)</td><td class="text-muted text-left">任意类型、任意数量的自定义属性，由用户根据需要自行添加。</td></tr>
                     </tbody>

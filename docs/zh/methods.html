@@ -68,6 +68,22 @@
                 <p class="indent28">取消所有节点/连线被选定的状态。</p>
                 <p class="f16">传参：<span class="text-gray">(无)</span></p>
             </div>
+            <div id="copyNode" class="container-fluid" data-title="copyNode">
+                <h3><span class="text-gray">this.</span>copyNode() <small>返回值：void</small></h3>
+                <p class="indent28">复制一个节点详细信息以供接下来的粘贴操作。</p>
+                <p class="f16">传参：<code>( id )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">要复制节点的id。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="parseNode" class="container-fluid" data-title="parseNode">
+                <h3><span class="text-gray">this.</span>parseNode() <small>返回值：void</small></h3>
+                <p class="indent28">粘贴一个最近被复制的节点。</p>
+                <p class="f16">传参：<span class="text-gray">(无)</span></p>
+            </div>
             <div id="reinitSize" class="container-fluid" data-title="reinitSize">
                 <h3><span class="text-gray">this.</span>reinitSize() <small>返回值：void</small></h3>
                 <p class="indent28">重构整个流程图设计器的宽高，在浏览器窗口大小改变或者父容器宽高改变时，执行这个方法能让设计器重新适应新的宽高显示。</p>
