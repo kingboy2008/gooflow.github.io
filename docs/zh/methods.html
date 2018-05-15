@@ -354,6 +354,58 @@
                     </tbody>
                 </table>
             </div>
+            <div id="setItemExtra" class="container-fluid" data-title="setItemExtra">
+                <h3><span class="text-gray">this.</span>setItemExtra() <small>返回值：void</small></h3>
+                <p class="indent28">快捷批量设置某个单元的自定义扩展属性，用户可用其设置只与具体业务相关的独有属性。</p>
+                <p class="f16">传参：<code>( id, type, extra )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    <tr><td class="text-primary f16">extra</td><td>Json Object</td><td class="text-muted text-left">用户需要扩展的只与具体业务相关的独有属性集合。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="delItemExtra" class="container-fluid" data-title="delItemExtra">
+                <h3><span class="text-gray">this.</span>delItemExtra() <small>返回值：void</small></h3>
+                <p class="indent28">快捷批量删除某个单元的自定义扩展属性，用户可用其删除只与具体业务相关的独有属性。</p>
+                <p class="f16">传参：<code>( id, type, propKeys )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    <tr><td class="text-primary f16">propKeys</td><td>Array[String]</td><td class="text-muted text-left">用户需求清空掉的只与具体业务相关的独有属性集合。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="setItemColor" class="container-fluid" data-title="setItemColor">
+                <h3><span class="text-gray">this.</span>setItemColor() <small>返回值：void</small></h3>
+                <p class="indent28">设置某个单元的自定义颜色。</p>
+                <p class="f16">传参：<code>( id, type, color )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线两种。</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-muted text-left">元素的新背景颜色或线条颜色。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="setItemFontColor" class="container-fluid" data-title="setItemFontColor">
+                <h3><span class="text-gray">this.</span>setItemFontColor() <small>返回值：void</small></h3>
+                <p class="indent28">设置某个单元的自字义文字颜色。</p>
+                <p class="f16">传参：<code>( id, type, color )</code></p>
+                <table class="table table-striped table-bordered">
+                    <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
+                    <tbody class="text-center">
+                    <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线两种。</td></tr>
+                    <tr><td class="text-primary f16">color</td><td>String</td><td class="text-muted text-left">元素的新文字颜色。</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div id="ioMethods" class="container-fluid" data-title="数据I/O接口">
@@ -367,7 +419,8 @@
                     <thead><tr><th>名称</th><th>类型/格式</th><th>描述</th></tr></thead>
                     <tbody class="text-center">
                     <tr><td class="text-primary f16">id</td><td>String</td><td class="text-muted text-left">元素的id</td></tr>
-                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。</td></tr>
+                    <tr><td class="text-primary f16">type</td><td>String</td><td class="text-muted text-left">选填项：元素的类型，有<code>'node'</code>节点、<code>'line'</code>连线、<code>'area'</code>分组泳道三种。
+                        <br/>当本项不填写时，会遍历所有节点、连线、泳道元素，并返回找到的第一个id为传参id值的元素数据。</td></tr>
                     </tbody>
                 </table>
             </div>
